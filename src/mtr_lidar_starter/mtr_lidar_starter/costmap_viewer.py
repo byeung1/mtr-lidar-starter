@@ -5,6 +5,17 @@ from rclpy.executors import ExternalShutdownException
 from .lidar_node import LidarNode
 
 
+def cost_colors(costs):
+    """Gray unknown; green -> yellow -> red as observed costs increase."""
+    colors = np.full((*costs.shape, 3), (45, 50, 58), dtype=np.uint8)
+    observed = costs >= 0
+    t = np.clip(costs[observed] / 100.0, 0, 1)
+    colors[observed, 0] = np.rint(60 + 185 * np.minimum(2 * t, 1)).astype(np.uint8)
+    colors[observed, 1] = np.rint(210 - 155 * np.maximum(2 * t - 1, 0)).astype(np.uint8)
+    colors[observed, 2] = 55
+    return colors
+
+
 def main():
     import pygame
     rclpy.init()
@@ -32,15 +43,14 @@ def main():
             if result is not None:
                 if result is not rendered:
                     costs = result.costs
-                    colors = np.full((*costs.shape, 3), (45, 50, 58), dtype=np.uint8)
-                    inflated = (costs > 0) & (costs < 100)
-                    colors[inflated, 0] = 255
-                    colors[inflated, 1] = (210 - costs[inflated]).astype(np.uint8)
-                    colors[inflated, 2] = 40
-                    colors[costs == 100] = (245, 55, 55)
+                    colors = cost_colors(costs)
                     # Screen right is -Y; screen up is +X (forward).
                     surface = pygame.surfarray.make_surface(colors[::-1, ::-1, :])
                     surface = pygame.transform.scale(surface, (800, 800))
+                    # Each of the 100 x 100 tiles is eight screen pixels wide.
+                    for pixel in range(0, 801, 8):
+                        pygame.draw.line(surface, (30, 34, 40), (pixel, 0), (pixel, 800))
+                        pygame.draw.line(surface, (30, 34, 40), (0, pixel), (800, pixel))
                     rendered = result
                 screen.blit(surface, (0, 0))
                 width = result.costs.shape[1] * result.resolution
@@ -48,11 +58,11 @@ def main():
                 sy = round((result.origin_x + width) / width * 800)
                 pygame.draw.circle(screen, (75, 210, 255), (sx, sy), 6)
                 pygame.draw.line(screen, (75, 210, 255), (sx, sy), (sx, sy - 22), 3)
-                label = f'{result.frame_id} | {result.resolution:g} m/cell | {result.obstacle_points:,} selected points'
+                label = f'{result.frame_id} | 100 x 100 | {result.resolution:g} m/cell | {result.obstacle_points:,} points'
             else:
                 label = 'Waiting for /lidar/points...'
             screen.blit(font.render(label, True, (235, 235, 235)), (12, 810))
-            screen.blit(font.render('Up: +X   Left: +Y   Red: obstacle   Orange: buffer   Gray: unknown', True, (235, 235, 235)), (12, 840))
+            screen.blit(font.render('Up: +X  Left: +Y  Cost: green (low) to red (high)  Gray: unknown', True, (235, 235, 235)), (12, 840))
             pygame.display.flip()
             clock.tick(30)
     except (KeyboardInterrupt, ExternalShutdownException):

@@ -178,21 +178,37 @@ This launches the viewer and one looping bag player. Close the window or press
 Escape to close the viewer; use Ctrl+C in the terminal to stop the launch and
 bag player. A desktop display is required (WSLg on WSL).
 
-`processing.py` builds a fresh 20 m square grid for every scan, at 0.1 m per
-cell, in the incoming sensor frame. It keeps points with sensor-relative Z
-between -1 and 2 m, excludes returns within 0.5 m horizontally, and ignores
-points outside the grid. These are provisional filters, not ground detection;
-tune `Processor` constructor settings for the sensor mounting and scene.
+`processing.py` builds a fresh **100 x 100** grid for every scan in the
+incoming sensor frame. The default area remains 20 m square (X/Y from -10
+to +10 m), so each tile is 0.2 m square. Set `Processor(size_m=...)` to
+change the covered area while keeping exactly 100 cells along each axis.
+This is a configured local range, not an inferred hardware maximum range.
 
-Selected XY positions mark obstacle cells (100). A circular 0.6 m inflation
-buffer assigns decreasing costs (1–99) around obstacles. Other cells remain
-unknown (-1): absence of a return does not establish free space. No ray
-clearing, motion compensation, tracking, or temporal accumulation is included.
-The inflation radius is a starting visualization setting, not a measured boat
-footprint or validated clearance.
+Points must have sensor-relative Z between -1 and 2 m and horizontal range
+at least 0.5 m. Nonfinite points and points outside the grid are excluded.
+These are provisional filters, not ground detection.
 
-`costmap_viewer.py` reuses the ROS adapter and displays its results at up to
-30 frames per second. Red means obstacle, orange means inflation, gray means
-unknown, and the cyan marker shows the sensor origin. Forward (+X) points up;
-left (+Y) points left. It displays the latest scan and holds it between arrivals.
-The regular `bash run.sh` still computes costmaps without opening a window.
+For each occupied tile, let N be its point count and d its mean horizontal
+return distance. Costs are rounded and clipped to 1–100 using:
+
+```text
+density = N / (N + density_scale)     # default density_scale = 10 points
+proximity = 1 - clip(d / maximum_corner_distance, 0, 1)
+cost = 100 * density * (0.5 + 0.5 * proximity)
+```
+
+More returns increase cost; closer returns increase cost. Fixed normalization
+keeps scores comparable between scans with the same settings. Point count
+is a concentration measure because all tiles have equal area; it also depends
+on scan sampling and sensor geometry, so this score is not collision probability.
+Empty tiles stay unknown (-1), rather than being assumed free.
+
+The previous obstacle inflation buffer is replaced by direct tile scores.
+No ray clearing, motion compensation, tracking, or temporal accumulation is
+included. Each scan replaces the map.
+
+`costmap_viewer.py` displays the latest scan at up to 30 frames per second.
+Tile colors progress from green (low cost) through yellow to red (high cost).
+Gray means unknown. Grid lines expose all 100 x 100 tiles. The cyan marker
+shows the sensor origin. Forward (+X) points up; left (+Y) points left.
+The regular `bash run.sh` computes costmaps without opening a window.
