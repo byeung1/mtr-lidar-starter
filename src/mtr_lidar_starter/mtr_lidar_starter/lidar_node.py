@@ -11,10 +11,11 @@ from sensor_msgs_py import point_cloud2
 from .processing import Processor
 
 class LidarNode(Node):
-    def __init__(self):
+    def __init__(self, result_callback=None):
         super().__init__('lidar_starter')
         topic = self.declare_parameter('input_topic', '/lidar/points').value
         self.processor = Processor()
+        self.result_callback = result_callback
         self.previous_stamp = None
         self.last_log = 0.0
         self.count = 0
@@ -36,7 +37,8 @@ class LidarNode(Node):
             self.get_logger().info('Input time moved backwards; processor reset for replay')
         self.previous_stamp = stamp
         result = self.processor.process(xyz, stamp_seconds=stamp, frame_id=cloud.header.frame_id)
-        # Add publishers or pass result to your chosen visualization here.
+        if self.result_callback is not None:
+            self.result_callback(result)
         self.count += 1
         now = time.monotonic()
         if now - self.last_log >= 2.0:

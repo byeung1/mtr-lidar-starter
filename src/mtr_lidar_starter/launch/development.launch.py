@@ -11,7 +11,8 @@ def generate_launch_description():
         DeclareLaunchArgument('bag', default_value='bags/obstacle_case'),
         DeclareLaunchArgument('play_bag', default_value='true'),
         DeclareLaunchArgument('use_sim_time', default_value='true'),
-        Node(package='mtr_lidar_starter', executable='lidar_node', output='screen',
+        DeclareLaunchArgument('executable', default_value='lidar_node'),
+        Node(package='mtr_lidar_starter', executable=LaunchConfiguration('executable'), output='screen',
              parameters=[{'use_sim_time': ParameterValue(LaunchConfiguration('use_sim_time'), value_type=bool)}]),
         TimerAction(period=2.0, actions=[ExecuteProcess(
             cmd=['ros2', 'bag', 'play', bag, '--clock', '--loop', '--read-ahead-queue-size', '30'],

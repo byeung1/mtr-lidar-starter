@@ -37,8 +37,8 @@ The Fast DDS profile is applied to the launch and its child processes.
 Edit `src/mtr_lidar_starter/mtr_lidar_starter/processing.py`.
 `Processor.process()` receives a finite `(N, 3)` float32 NumPy array of XYZ
 points, the cloud timestamp, and its frame ID. The starter imposes no height,
-range, clustering, or grid architecture. The initial function does nothing;
-console scan counts prove the input reaches it.
+range, clustering, or grid architecture. The processor returns a per-scan obstacle costmap; console scan counts confirm
+the input reaches it.
 
 Restart `bash run.sh` after Python edits. With symlink installation, existing
 Python files do not need a rebuild. Rebuild after adding modules, dependencies,
@@ -47,7 +47,7 @@ the adapter calls it when cloud timestamps move backwards at a bag loop.
 
 Choose your own outputs. Add ROS publishers in `lidar_node.py`, return results
 from `process()`, or add your own nodes. For a GUI, keep its event loop responsive
-and avoid blocking the ROS callback. No occupancy-grid or viewer is included.
+and avoid blocking the ROS callback. A Pygame costmap viewer is included; no ROS occupancy-grid publisher is included.
 
 ## Input contract
 
@@ -165,3 +165,34 @@ Jazzy playback has been tested; Humble portability of future code is not assumed
 This archive includes source and recording only, not installed ROS or generated
 build artifacts. MIT applies to the starter code; the recording is supplied by
 the repository owner for this handoff.
+
+## 2D local costmap and Pygame viewer
+
+```bash
+sudo apt install -y python3-pygame
+bash build.sh
+bash run.sh executable:=costmap_viewer
+```
+
+This launches the viewer and one looping bag player. Close the window or press
+Escape to close the viewer; use Ctrl+C in the terminal to stop the launch and
+bag player. A desktop display is required (WSLg on WSL).
+
+`processing.py` builds a fresh 20 m square grid for every scan, at 0.1 m per
+cell, in the incoming sensor frame. It keeps points with sensor-relative Z
+between -1 and 2 m, excludes returns within 0.5 m horizontally, and ignores
+points outside the grid. These are provisional filters, not ground detection;
+tune `Processor` constructor settings for the sensor mounting and scene.
+
+Selected XY positions mark obstacle cells (100). A circular 0.6 m inflation
+buffer assigns decreasing costs (1–99) around obstacles. Other cells remain
+unknown (-1): absence of a return does not establish free space. No ray
+clearing, motion compensation, tracking, or temporal accumulation is included.
+The inflation radius is a starting visualization setting, not a measured boat
+footprint or validated clearance.
+
+`costmap_viewer.py` reuses the ROS adapter and displays its results at up to
+30 frames per second. Red means obstacle, orange means inflation, gray means
+unknown, and the cyan marker shows the sensor origin. Forward (+X) points up;
+left (+Y) points left. It displays the latest scan and holds it between arrivals.
+The regular `bash run.sh` still computes costmaps without opening a window.
