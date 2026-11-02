@@ -6,13 +6,10 @@ from .lidar_node import LidarNode
 
 
 def cost_colors(costs):
-    """Gray unknown; green -> yellow -> red as observed costs increase."""
-    colors = np.full((*costs.shape, 3), (45, 50, 58), dtype=np.uint8)
-    observed = costs >= 0
-    t = np.clip(costs[observed] / 100.0, 0, 1)
-    colors[observed, 0] = np.rint(60 + 185 * np.minimum(2 * t, 1)).astype(np.uint8)
-    colors[observed, 1] = np.rint(210 - 155 * np.maximum(2 * t - 1, 0)).astype(np.uint8)
-    colors[observed, 2] = 55
+    """Gray unknown; green ray-observed space; red near-height returns."""
+    colors = np.full((*costs.shape, 3), (60, 210, 55), dtype=np.uint8)
+    colors[costs < 0] = (100, 105, 110)
+    colors[costs > 0] = (245, 55, 55)
     return colors
 
 
@@ -62,7 +59,7 @@ def main():
             else:
                 label = 'Waiting for /lidar/points...'
             screen.blit(font.render(label, True, (235, 235, 235)), (12, 810))
-            screen.blit(font.render('Up: +X  Left: +Y  Cost: green (low) to red (high)  Gray: unknown', True, (235, 235, 235)), (12, 840))
+            screen.blit(font.render('Up: +X  Left: +Y  Green: observed  Red: at LiDAR height  Gray: unknown', True, (235, 235, 235)), (12, 840))
             pygame.display.flip()
             clock.tick(30)
     except (KeyboardInterrupt, ExternalShutdownException):

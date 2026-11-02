@@ -184,31 +184,26 @@ to +10 m), so each tile is 0.2 m square. Set `Processor(size_m=...)` to
 change the covered area while keeping exactly 100 cells along each axis.
 This is a configured local range, not an inferred hardware maximum range.
 
-Points must have sensor-relative Z between -1 and 2 m and horizontal range
-at least 0.5 m. Nonfinite points and points outside the grid are excluded.
-These are provisional filters, not ground detection.
+Only returns within **-0.2 to +0.2 m of sensor Z = 0** mark obstacles.
+Adjust `Processor(min_height=..., max_height=...)` to change this band.
+This assumes the LiDAR frame Z axis is up; it is not a gravity-corrected
+height or object classifier. Nonfinite returns and returns within 0.5 m
+horizontally are excluded.
 
-For each occupied tile, let N be its point count and d its mean horizontal
-return distance. Costs are rounded and clipped to 1–100 using:
+Tiles start unknown (-1, gray). Near-height returns inside the grid mark
+obstacle tiles (100, red), regardless of concentration or distance. Rays
+from the sensor to those returns mark traversed tiles observed (0, green),
+stopping at the first obstacle tile. Returns beyond the grid can clear
+ray paths to its edge without marking an edge obstacle. Only the configured
+height band supplies clearing evidence.
 
-```text
-density = N / (N + density_scale)     # default density_scale = 10 points
-proximity = 1 - clip(d / maximum_corner_distance, 0, 1)
-cost = 100 * density * (0.5 + 0.5 * proximity)
-```
-
-More returns increase cost; closer returns increase cost. Fixed normalization
-keeps scores comparable between scans with the same settings. Point count
-is a concentration measure because all tiles have equal area; it also depends
-on scan sampling and sensor geometry, so this score is not collision probability.
-Empty tiles stay unknown (-1), rather than being assumed free.
-
-The previous obstacle inflation buffer is replaced by direct tile scores.
-No ray clearing, motion compensation, tracking, or temporal accumulation is
-included. Each scan replaces the map.
+Directions without these observations, including behind the sensor if no
+returns are present there, remain gray. Areas beyond an obstacle remain
+unknown unless another unobstructed ray observes them. The inner 0.5 m
+region remains unknown. Each scan replaces the map; no temporal accumulation,
+inflation, or motion compensation is included.
 
 `costmap_viewer.py` displays the latest scan at up to 30 frames per second.
-Tile colors progress from green (low cost) through yellow to red (high cost).
-Gray means unknown. Grid lines expose all 100 x 100 tiles. The cyan marker
-shows the sensor origin. Forward (+X) points up; left (+Y) points left.
-The regular `bash run.sh` computes costmaps without opening a window.
+Grid lines expose all 100 x 100 tiles. The cyan marker shows the sensor origin.
+Forward (+X) points up; left (+Y) points left. The regular `bash run.sh`
+computes costmaps without opening a window.
