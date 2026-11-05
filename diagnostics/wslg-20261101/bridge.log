@@ -1,0 +1,2 @@
+[INFO] [1793584964.979530916] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/lidar_wamv_sensor/scan/points (gz.msgs.PointCloudPacked) -> /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/lidar_wamv_sensor/scan/points (sensor_msgs/msg/PointCloud2)] (Lazy 0)
+[INFO] [1793585130.461536565] [rclcpp]: signal_handler(SIGINT/SIGTERM)

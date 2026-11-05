@@ -1,0 +1,840 @@
+[INFO] [launch]: All log files can be found below /home/byeung1/.ros/log/2026-11-02-00-20-43-456759-BY-Laptop-39816
+[INFO] [launch]: Default logging verbosity is set to INFO
+['xacro', '/tmp/vrx-nav2-model-yyageemm/navigation_robot.urdf', 'namespace:=wamv', 'locked:=true', 'vrx_sensors_enabled:=true', 'thruster_config:=H']
+[INFO] [gazebo-1]: process started with pid [39824]
+[INFO] [monitor_sim-2]: process started with pid [39825]
+[INFO] [create-3]: process started with pid [39827]
+[INFO] [parameter_bridge-4]: process started with pid [39828]
+[INFO] [ground_truth-5]: process started with pid [39829]
+[INFO] [cloud_filter-6]: process started with pid [39830]
+[INFO] [thrust_adapter-7]: process started with pid [39831]
+[INFO] [map_server-8]: process started with pid [39832]
+[INFO] [planner_server-9]: process started with pid [39833]
+[INFO] [controller_server-10]: process started with pid [39862]
+[INFO] [bt_navigator-11]: process started with pid [39865]
+[INFO] [waypoint_follower-12]: process started with pid [39869]
+[INFO] [lifecycle_manager-13]: process started with pid [39875]
+[create-3] [INFO] [1793596844.297424613] [ros_gz_sim]: Requesting list of world names.
+[planner_server-9] [INFO] [1793596844.309750528] [planner_server]: 
+[planner_server-9] 	planner_server lifecycle node launched. 
+[planner_server-9] 	Waiting on external lifecycle transitions to activate
+[planner_server-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-9] [INFO] [1793596844.312517981] [planner_server]: Creating
+[parameter_bridge-4] [INFO] [1793596844.313083191] [nav_lidar_bridge]: Creating GZ->ROS Bridge: [/world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/lidar_wamv_sensor/scan/points (gz.msgs.PointCloudPacked) -> /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/lidar_wamv_sensor/scan/points (sensor_msgs/msg/PointCloud2)] (Lazy 0)
+[map_server-8] [INFO] [1793596844.313691148] [map_server]: 
+[map_server-8] 	map_server lifecycle node launched. 
+[map_server-8] 	Waiting on external lifecycle transitions to activate
+[map_server-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-8] [INFO] [1793596844.313780805] [map_server]: Creating
+[parameter_bridge-4] [INFO] [1793596844.316800323] [nav_lidar_bridge]: Creating GZ->ROS Bridge: [/world/sydney_regatta/clock (gz.msgs.Clock) -> /world/sydney_regatta/clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[planner_server-9] [INFO] [1793596844.334033463] [global_costmap.global_costmap]: 
+[planner_server-9] 	global_costmap lifecycle node launched. 
+[planner_server-9] 	Waiting on external lifecycle transitions to activate
+[planner_server-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-9] [INFO] [1793596844.334809656] [global_costmap.global_costmap]: Creating Costmap
+[lifecycle_manager-13] [INFO] [1793596844.341773027] [lifecycle_manager_boat]: Creating
+[controller_server-10] [INFO] [1793596844.346476757] [controller_server]: 
+[controller_server-10] 	controller_server lifecycle node launched. 
+[controller_server-10] 	Waiting on external lifecycle transitions to activate
+[controller_server-10] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-13] [INFO] [1793596844.348591247] [lifecycle_manager_boat]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[controller_server-10] [INFO] [1793596844.350365367] [controller_server]: Creating controller server
+[waypoint_follower-12] [INFO] [1793596844.358511474] [waypoint_follower]: 
+[waypoint_follower-12] 	waypoint_follower lifecycle node launched. 
+[waypoint_follower-12] 	Waiting on external lifecycle transitions to activate
+[waypoint_follower-12] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[waypoint_follower-12] [INFO] [1793596844.359106056] [waypoint_follower]: Creating
+[controller_server-10] [INFO] [1793596844.367665470] [local_costmap.local_costmap]: 
+[controller_server-10] 	local_costmap lifecycle node launched. 
+[controller_server-10] 	Waiting on external lifecycle transitions to activate
+[controller_server-10] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-10] [INFO] [1793596844.368159587] [local_costmap.local_costmap]: Creating Costmap
+[bt_navigator-11] [INFO] [1793596844.375949673] [bt_navigator]: 
+[bt_navigator-11] 	bt_navigator lifecycle node launched. 
+[bt_navigator-11] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-11] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-11] [INFO] [1793596844.376903943] [bt_navigator]: Creating
+[lifecycle_manager-13] [INFO] [1793596844.445900742] [lifecycle_manager_boat]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-13] [INFO] [1793596844.445973094] [lifecycle_manager_boat]: [34m[1mConfiguring map_server[0m[0m
+[map_server-8] [INFO] [1793596844.446693510] [map_server]: Configuring
+[map_server-8] [INFO] [1793596844.446794162] [map_io]: Loading yaml file: /home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/share/vrx_nav2/config/water.yaml
+[map_server-8] [INFO] [1793596844.447087227] [map_io]: resolution: 0.25
+[map_server-8] [INFO] [1793596844.447099303] [map_io]: origin[0]: -10
+[map_server-8] [INFO] [1793596844.447104232] [map_io]: origin[1]: -20
+[map_server-8] [INFO] [1793596844.447107956] [map_io]: origin[2]: 0
+[map_server-8] [INFO] [1793596844.447111786] [map_io]: free_thresh: 0.196
+[map_server-8] [INFO] [1793596844.447115448] [map_io]: occupied_thresh: 0.65
+[map_server-8] [INFO] [1793596844.447120217] [map_io]: mode: trinary
+[map_server-8] [INFO] [1793596844.447124241] [map_io]: negate: 0
+[map_server-8] [INFO] [1793596844.447288024] [map_io]: Loading image_file: /home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/share/vrx_nav2/config/water.pgm
+[map_server-8] [INFO] [1793596844.448026442] [map_io]: Read map /home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/share/vrx_nav2/config/water.pgm: 200 X 160 map @ 0.25 m/cell
+[lifecycle_manager-13] [INFO] [1793596844.457887164] [lifecycle_manager_boat]: [34m[1mConfiguring planner_server[0m[0m
+[planner_server-9] [INFO] [1793596844.458236731] [planner_server]: Configuring
+[planner_server-9] [INFO] [1793596844.458271771] [global_costmap.global_costmap]: Configuring
+[planner_server-9] [INFO] [1793596844.466296709] [global_costmap.global_costmap]: Using plugin "static_layer"
+[planner_server-9] [INFO] [1793596844.469927099] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[planner_server-9] [INFO] [1793596844.472169303] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[planner_server-9] [INFO] [1793596844.472224479] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[planner_server-9] [INFO] [1793596844.473231362] [global_costmap.global_costmap]: Subscribed to Topics: lidar
+[planner_server-9] [INFO] [1793596844.479007365] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[planner_server-9] [INFO] [1793596844.479063281] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[planner_server-9] [INFO] [1793596844.479809295] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[planner_server-9] [INFO] [1793596844.509760435] [planner_server]: Created global planner plugin GridBased of type nav2_smac_planner::SmacPlannerHybrid
+[planner_server-9] [INFO] [1793596844.509842151] [planner_server]: Configuring GridBased of type SmacPlannerHybrid
+[planner_server-9] [INFO] [1793596844.515979999] [planner_server]: Even sized heuristic lookup table size set 80.000000, increasing size by 1 to make odd
+[planner_server-9] [INFO] [1793596844.630202085] [planner_server]: Configured plugin GridBased of type SmacPlannerHybrid with maximum iterations 100000, max on approach iterations 1000, and not allowing unknown traversal. Tolerance 0.75.Using motion model: Dubin.
+[planner_server-9] [INFO] [1793596844.630263587] [planner_server]: Planner Server has GridBased  planners available.
+[lifecycle_manager-13] [INFO] [1793596844.641758870] [lifecycle_manager_boat]: [34m[1mConfiguring controller_server[0m[0m
+[controller_server-10] [INFO] [1793596844.642079256] [controller_server]: Configuring controller interface
+[controller_server-10] [INFO] [1793596844.642098848] [controller_server]: getting progress checker plugins..
+[controller_server-10] [INFO] [1793596844.642351244] [controller_server]: getting goal checker plugins..
+[controller_server-10] [INFO] [1793596844.642590761] [controller_server]: Controller frequency set to 5.0000Hz
+[controller_server-10] [INFO] [1793596844.642638935] [local_costmap.local_costmap]: Configuring
+[controller_server-10] [INFO] [1793596844.650476578] [local_costmap.local_costmap]: Using plugin "static_layer"
+[controller_server-10] [INFO] [1793596844.653689180] [local_costmap.local_costmap]: Subscribing to the map topic (/map) with transient local durability
+[controller_server-10] [INFO] [1793596844.655546628] [local_costmap.local_costmap]: Initialized plugin "static_layer"
+[controller_server-10] [INFO] [1793596844.655593276] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[controller_server-10] [INFO] [1793596844.656313714] [local_costmap.local_costmap]: Subscribed to Topics: lidar
+[controller_server-10] [INFO] [1793596844.660219543] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[controller_server-10] [INFO] [1793596844.660268649] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-10] [INFO] [1793596844.660727814] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[controller_server-10] [INFO] [1793596844.687681911] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-10] [INFO] [1793596844.688027827] [controller_server]: Controller Server has progress_checker  progress checkers available.
+[controller_server-10] [INFO] [1793596844.688429945] [controller_server]: Created goal checker : goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-10] [INFO] [1793596844.688711631] [controller_server]: Controller Server has goal_checker  goal checkers available.
+[controller_server-10] [INFO] [1793596844.689514639] [controller_server]: Created controller : FollowPath of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-10] [INFO] [1793596844.696179391] [controller_server]: Controller Server has FollowPath  controllers available.
+[lifecycle_manager-13] [INFO] [1793596844.706390493] [lifecycle_manager_boat]: [34m[1mConfiguring bt_navigator[0m[0m
+[bt_navigator-11] [INFO] [1793596844.706721152] [bt_navigator]: Configuring
+[bt_navigator-11] [INFO] [1793596844.714611483] [bt_navigator]: Creating navigator id navigate_to_pose of type nav2_bt_navigator::NavigateToPoseNavigator
+[bt_navigator-11] [WARN] [1793596844.719664811] [bt_navigator]: Error_code parameters were not set. Using default values of: follow_path_error_code compute_path_error_code
+[bt_navigator-11] Make sure these match your BT and there are not other sources of error codes youreported to your application
+[bt_navigator-11] [INFO] [1793596844.781650098] [bt_navigator]: Creating navigator id navigate_through_poses of type nav2_bt_navigator::NavigateThroughPosesNavigator
+[lifecycle_manager-13] [INFO] [1793596844.806548316] [lifecycle_manager_boat]: [34m[1mConfiguring waypoint_follower[0m[0m
+[waypoint_follower-12] [INFO] [1793596844.806829664] [waypoint_follower]: Configuring
+[waypoint_follower-12] [INFO] [1793596844.832063045] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
+[lifecycle_manager-13] [INFO] [1793596844.835369989] [lifecycle_manager_boat]: [34m[1mActivating map_server[0m[0m
+[map_server-8] [INFO] [1793596844.835616389] [map_server]: Activating
+[map_server-8] [INFO] [1793596844.835888617] [map_server]: Creating bond (map_server) to lifecycle manager.
+[planner_server-9] [INFO] [1793596844.836104634] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 200 X 160 at 0.250000 m/pix
+[controller_server-10] [INFO] [1793596844.836119999] [local_costmap.local_costmap]: StaticLayer: Resizing static layer to 200 X 160 at 0.250000 m/pix
+[ground_truth-5] [WARN] [1793596844.860915780] [sim_ground_truth]: SIMULATION ONLY: Gazebo ground truth, not a real localization solution
+[lifecycle_manager-13] [INFO] [1793596844.941115460] [lifecycle_manager_boat]: Server map_server connected with bond.
+[lifecycle_manager-13] [INFO] [1793596844.941167351] [lifecycle_manager_boat]: [34m[1mActivating planner_server[0m[0m
+[planner_server-9] [INFO] [1793596844.941565783] [planner_server]: Activating
+[planner_server-9] [INFO] [1793596844.941608609] [global_costmap.global_costmap]: Activating
+[planner_server-9] [INFO] [1793596844.941617552] [global_costmap.global_costmap]: Checking transform
+[planner_server-9] [INFO] [1793596844.941668851] [global_costmap.global_costmap]: Timed out waiting for transform from nav_base to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[gazebo-1] [1;32m[Msg] [0m[1;32mGazebo Sim Server v[0m[1;32m8.15.0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLoading SDF world file[[0m[1;32m/home/byeung1/vrx_ws/install/share/vrx_gz/worlds/sydney_regatta.sdf[0m[1;32m].[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing entity system service on [[0m[1;32m/[0m[1;32mentity/system/add[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [Physics.cc:1004] [0m[1;36mLoaded [[0m[1;36mgz::physics::dartsim::Plugin[0m[1;36m] from library [[0m[1;36m/opt/ros/jazzy/opt/gz_physics_vendor/lib/gz-physics-7/engine-plugins/libgz-physics-dartsim-plugin.so[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::Physics[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mCreate[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/create_multiple[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mCreate[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/create_multiple/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mRemove[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/remove[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mRemove[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/remove/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/set_pose[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/set_pose/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/set_pose_vector[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPose[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/set_pose_vector/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLight configuration[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/light_config[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLight configuration[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/light_config/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPhysics[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/set_physics[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPhysics[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/set_physics/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mSphericalCoordinates[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/set_spherical_coordinates[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mSphericalCoordinates[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/set_spherical_coordinates/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mEnable collision[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/enable_collision[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mEnable collision[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/enable_collision/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDisable collision[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/disable_collision[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDisable collision[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/disable_collision/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/visual_config[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/visual_config/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/wheel_slip[0m[1;32m] (async)[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mMaterial[0m[1;32m service on [[0m[1;32m/world/sydney_regatta/wheel_slip/blocking[0m[1;32m] (blocking)[0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::UserCommands[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Sensors.cc:697] [0m[1;36mConfiguring Sensors system[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Sensors.cc:557] [0m[1;36mSensorsPrivate::Run[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::Sensors[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Sensors.cc:532] [0m[1;36mSensorsPrivate::RenderThread started[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Sensors.cc:337] [0m[1;36mWaiting for init[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::Imu[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Magnetometer.cc:261] [0m[1;36mMagnetometer: using param [use_units_gauss: [0m[1;36m1[0m[1;36m].[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Magnetometer.cc:269] [0m[1;36mMagnetometer: using param [use_earth_frame_ned: [0m[1;36m1[0m[1;36m].[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::Magnetometer[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::ForceTorque[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing particle emitter information on [[0m[1;32m/world/sydney_regatta/particle_emitters[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::ParticleEmitter[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::SceneBroadcaster[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::Contact[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::NavSat[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [USVWind.cc:160] [0m[1;36mwamv[0m[1;36m loaded[0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mWind direction unit vector = [0m[1;32m-0.5[0m[1;32m [0m[1;32m-0.866025[0m[1;32m [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mWind mean velocity = [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mvar wind gain constants = [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mvar wind time constants = [0m[1;32m2[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mupdate rate  = [0m[1;32m10[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mtopic wind speed  = [0m[1;32m/vrx/debug/wind/speed[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mtopic wind direction = [0m[1;32m/vrx/debug/wind/direction[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mRandom seed value = [0m[1;32m10[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mVar wind filter gain = [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mvrx::USVWind[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mvrx::PublisherPlugin[0m[1;36m] for entity [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mInput Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mmodel:     [0m[1;32mPMS[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mnumber:     [0m[1;32m3[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mscale:      [0m[1;32m1.1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mangle:      [0m[1;32m0.4[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepness:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitude:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiod:     [0m[1;32m5[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirection:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mtau:  [0m[1;32m2[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mgain:  [0m[1;32m1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDerived Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitudes:  [0m[1;32m0.121167[0m[1;32m, [0m[1;32m0.130759[0m[1;32m, [0m[1;32m0.128568[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mwavenumbers: [0m[1;32m0.133171[0m[1;32m, [0m[1;32m0.161136[0m[1;32m, [0m[1;32m0.194975[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32momegas:      [0m[1;32m1.1424[0m[1;32m, [0m[1;32m1.25664[0m[1;32m, [0m[1;32m1.3823[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiods:     [0m[1;32m[Msg] [0m[1;32m5.5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m4.54545[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mphases:      [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepnesses: [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirections:  [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m-0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m1[0m[1;32m [0m[1;32m0[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mvrx::WaveVisual[0m[1;36m] for entity [[0m[1;36m17[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mInput Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mmodel:     [0m[1;32mPMS[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mnumber:     [0m[1;32m3[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mscale:      [0m[1;32m1.1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mangle:      [0m[1;32m0.4[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepness:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitude:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiod:     [0m[1;32m5[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirection:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mtau:  [0m[1;32m2[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mgain:  [0m[1;32m1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDerived Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitudes:  [0m[1;32m0.121167[0m[1;32m, [0m[1;32m0.130759[0m[1;32m, [0m[1;32m0.128568[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mwavenumbers: [0m[1;32m0.133171[0m[1;32m, [0m[1;32m0.161136[0m[1;32m, [0m[1;32m0.194975[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32momegas:      [0m[1;32m1.1424[0m[1;32m, [0m[1;32m1.25664[0m[1;32m, [0m[1;32m1.3823[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiods:     [0m[1;32m[Msg] [0m[1;32m5.5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m4.54545[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mphases:      [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepnesses: [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirections:  [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m-0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m1[0m[1;32m [0m[1;32m0[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [PolyhedraBuoyancyDrag.cc:236] [0m[1;36mFound buoyancy element(s), looking at each element...[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [PolyhedraBuoyancyDrag.cc:248] [0m[1;36mBuoyancy object:[0m
+[gazebo-1] [1;36m	Link: [0m[1;36mlink[0m[1;36m[[0m[1;36m19[0m[1;36m][0m
+[gazebo-1] [1;36m	Pose: [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m-0.3[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m	Geometry: [0m[1;36mCylinder:0.325,0.1[0m[1;36m[0m
+[gazebo-1] [1;36m	Mass: [0m[1;36m20[0m[1;36m[0m
+[gazebo-1] [1;36m	Water height: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m	Water velocity: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mvrx::PolyhedraBuoyancyDrag[0m[1;36m] for entity [[0m[1;36m18[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mInput Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mmodel:     [0m[1;32mPMS[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mnumber:     [0m[1;32m3[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mscale:      [0m[1;32m1.1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mangle:      [0m[1;32m0.4[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepness:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitude:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiod:     [0m[1;32m5[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirection:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mtau:  [0m[1;32m2[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mgain:  [0m[1;32m1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDerived Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitudes:  [0m[1;32m0.121167[0m[1;32m, [0m[1;32m0.130759[0m[1;32m, [0m[1;32m0.128568[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mwavenumbers: [0m[1;32m0.133171[0m[1;32m, [0m[1;32m0.161136[0m[1;32m, [0m[1;32m0.194975[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32momegas:      [0m[1;32m1.1424[0m[1;32m, [0m[1;32m1.25664[0m[1;32m, [0m[1;32m1.3823[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiods:     [0m[1;32m[Msg] [0m[1;32m5.5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m4.54545[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mphases:      [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepnesses: [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirections:  [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m-0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m1[0m[1;32m [0m[1;32m0[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [PolyhedraBuoyancyDrag.cc:236] [0m[1;36mFound buoyancy element(s), looking at each element...[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [PolyhedraBuoyancyDrag.cc:248] [0m[1;36mBuoyancy object:[0m
+[gazebo-1] [1;36m	Link: [0m[1;36mlink[0m[1;36m[[0m[1;36m24[0m[1;36m][0m
+[gazebo-1] [1;36m	Pose: [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m-0.3[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m	Geometry: [0m[1;36mCylinder:0.325,0.1[0m[1;36m[0m
+[gazebo-1] [1;36m	Mass: [0m[1;36m20[0m[1;36m[0m
+[gazebo-1] [1;36m	Water height: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m	Water velocity: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mvrx::PolyhedraBuoyancyDrag[0m[1;36m] for entity [[0m[1;36m23[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mInput Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mmodel:     [0m[1;32mPMS[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mnumber:     [0m[1;32m3[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mscale:      [0m[1;32m1.1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mangle:      [0m[1;32m0.4[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepness:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitude:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiod:     [0m[1;32m5[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirection:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mtau:  [0m[1;32m2[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mgain:  [0m[1;32m1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDerived Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitudes:  [0m[1;32m0.121167[0m[1;32m, [0m[1;32m0.130759[0m[1;32m, [0m[1;32m0.128568[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mwavenumbers: [0m[1;32m0.133171[0m[1;32m, [0m[1;32m0.161136[0m[1;32m, [0m[1;32m0.194975[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32momegas:      [0m[1;32m1.1424[0m[1;32m, [0m[1;32m1.25664[0m[1;32m, [0m[1;32m1.3823[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiods:     [0m[1;32m[Msg] [0m[1;32m5.5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m4.54545[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mphases:      [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepnesses: [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirections:  [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m-0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m1[0m[1;32m [0m[1;32m0[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [PolyhedraBuoyancyDrag.cc:236] [0m[1;36mFound buoyancy element(s), looking at each element...[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [PolyhedraBuoyancyDrag.cc:248] [0m[1;36mBuoyancy object:[0m
+[gazebo-1] [1;36m	Link: [0m[1;36mlink[0m[1;36m[[0m[1;36m29[0m[1;36m][0m
+[gazebo-1] [1;36m	Pose: [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m-0.3[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m	Geometry: [0m[1;36mCylinder:0.325,0.1[0m[1;36m[0m
+[gazebo-1] [1;36m	Mass: [0m[1;36m20[0m[1;36m[0m
+[gazebo-1] [1;36m	Water height: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m	Water velocity: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mvrx::PolyhedraBuoyancyDrag[0m[1;36m] for entity [[0m[1;36m28[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mInput Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mmodel:     [0m[1;32mPMS[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mnumber:     [0m[1;32m3[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mscale:      [0m[1;32m1.1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mangle:      [0m[1;32m0.4[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepness:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitude:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiod:     [0m[1;32m5[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirection:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mtau:  [0m[1;32m2[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mgain:  [0m[1;32m1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDerived Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitudes:  [0m[1;32m0.121167[0m[1;32m, [0m[1;32m0.130759[0m[1;32m, [0m[1;32m0.128568[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mwavenumbers: [0m[1;32m0.133171[0m[1;32m, [0m[1;32m0.161136[0m[1;32m, [0m[1;32m0.194975[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32momegas:      [0m[1;32m1.1424[0m[1;32m, [0m[1;32m1.25664[0m[1;32m, [0m[1;32m1.3823[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiods:     [0m[1;32m[Msg] [0m[1;32m5.5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m4.54545[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mphases:      [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepnesses: [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirections:  [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m-0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m1[0m[1;32m [0m[1;32m0[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [PolyhedraBuoyancyDrag.cc:236] [0m[1;36mFound buoyancy element(s), looking at each element...[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [PolyhedraBuoyancyDrag.cc:248] [0m[1;36mBuoyancy object:[0m
+[gazebo-1] [1;36m	Link: [0m[1;36mlink[0m[1;36m[[0m[1;36m34[0m[1;36m][0m
+[gazebo-1] [1;36m	Pose: [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m-0.3[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m	Geometry: [0m[1;36mCylinder:0.325,0.1[0m[1;36m[0m
+[gazebo-1] [1;36m	Mass: [0m[1;36m20[0m[1;36m[0m
+[gazebo-1] [1;36m	Water height: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m	Water velocity: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mvrx::PolyhedraBuoyancyDrag[0m[1;36m] for entity [[0m[1;36m33[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mInput Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mmodel:     [0m[1;32mPMS[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mnumber:     [0m[1;32m3[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mscale:      [0m[1;32m1.1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mangle:      [0m[1;32m0.4[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepness:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitude:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiod:     [0m[1;32m5[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirection:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mtau:  [0m[1;32m2[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mgain:  [0m[1;32m1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDerived Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitudes:  [0m[1;32m0.121167[0m[1;32m, [0m[1;32m0.130759[0m[1;32m, [0m[1;32m0.128568[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mwavenumbers: [0m[1;32m0.133171[0m[1;32m, [0m[1;32m0.161136[0m[1;32m, [0m[1;32m0.194975[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32momegas:      [0m[1;32m1.1424[0m[1;32m, [0m[1;32m1.25664[0m[1;32m, [0m[1;32m1.3823[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiods:     [0m[1;32m[Msg] [0m[1;32m5.5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m4.54545[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mphases:      [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepnesses: [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirections:  [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m-0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m1[0m[1;32m [0m[1;32m0[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [PolyhedraBuoyancyDrag.cc:236] [0m[1;36mFound buoyancy element(s), looking at each element...[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [PolyhedraBuoyancyDrag.cc:248] [0m[1;36mBuoyancy object:[0m
+[gazebo-1] [1;36m	Link: [0m[1;36mlink[0m[1;36m[[0m[1;36m39[0m[1;36m][0m
+[gazebo-1] [1;36m	Pose: [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m	Geometry: [0m[1;36mSphere:0.21[0m[1;36m[0m
+[gazebo-1] [1;36m	Mass: [0m[1;36m3.5[0m[1;36m[0m
+[gazebo-1] [1;36m	Water height: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m	Water velocity: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mvrx::PolyhedraBuoyancyDrag[0m[1;36m] for entity [[0m[1;36m38[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mInput Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mmodel:     [0m[1;32mPMS[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mnumber:     [0m[1;32m3[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mscale:      [0m[1;32m1.1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mangle:      [0m[1;32m0.4[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepness:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitude:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiod:     [0m[1;32m5[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirection:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mtau:  [0m[1;32m2[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mgain:  [0m[1;32m1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDerived Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitudes:  [0m[1;32m0.121167[0m[1;32m, [0m[1;32m0.130759[0m[1;32m, [0m[1;32m0.128568[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mwavenumbers: [0m[1;32m0.133171[0m[1;32m, [0m[1;32m0.161136[0m[1;32m, [0m[1;32m0.194975[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32momegas:      [0m[1;32m1.1424[0m[1;32m, [0m[1;32m1.25664[0m[1;32m, [0m[1;32m1.3823[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiods:     [0m[1;32m[Msg] [0m[1;32m5.5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m4.54545[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mphases:      [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepnesses: [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirections:  [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m-0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m1[0m[1;32m [0m[1;32m0[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [PolyhedraBuoyancyDrag.cc:236] [0m[1;36mFound buoyancy element(s), looking at each element...[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [PolyhedraBuoyancyDrag.cc:248] [0m[1;36mBuoyancy object:[0m
+[gazebo-1] [1;36m	Link: [0m[1;36mlink[0m[1;36m[[0m[1;36m43[0m[1;36m][0m
+[gazebo-1] [1;36m	Pose: [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m	Geometry: [0m[1;36mSphere:0.21[0m[1;36m[0m
+[gazebo-1] [1;36m	Mass: [0m[1;36m3.5[0m[1;36m[0m
+[gazebo-1] [1;36m	Water height: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m	Water velocity: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mvrx::PolyhedraBuoyancyDrag[0m[1;36m] for entity [[0m[1;36m42[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mInput Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mmodel:     [0m[1;32mPMS[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mnumber:     [0m[1;32m3[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mscale:      [0m[1;32m1.1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mangle:      [0m[1;32m0.4[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepness:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitude:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiod:     [0m[1;32m5[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirection:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mtau:  [0m[1;32m2[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mgain:  [0m[1;32m1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDerived Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitudes:  [0m[1;32m0.121167[0m[1;32m, [0m[1;32m0.130759[0m[1;32m, [0m[1;32m0.128568[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mwavenumbers: [0m[1;32m0.133171[0m[1;32m, [0m[1;32m0.161136[0m[1;32m, [0m[1;32m0.194975[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32momegas:      [0m[1;32m1.1424[0m[1;32m, [0m[1;32m1.25664[0m[1;32m, [0m[1;32m1.3823[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiods:     [0m[1;32m[Msg] [0m[1;32m5.5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m4.54545[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mphases:      [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepnesses: [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirections:  [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m-0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m1[0m[1;32m [0m[1;32m0[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [PolyhedraBuoyancyDrag.cc:236] [0m[1;36mFound buoyancy element(s), looking at each element...[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [PolyhedraBuoyancyDrag.cc:248] [0m[1;36mBuoyancy object:[0m
+[gazebo-1] [1;36m	Link: [0m[1;36mlink[0m[1;36m[[0m[1;36m138[0m[1;36m][0m
+[gazebo-1] [1;36m	Pose: [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m-0.02[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m	Geometry: [0m[1;36mSphere:0.0285[0m[1;36m[0m
+[gazebo-1] [1;36m	Mass: [0m[1;36m0.04[0m[1;36m[0m
+[gazebo-1] [1;36m	Water height: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m	Water velocity: [0m[1;36m0[0m[1;36m[0m
+[planner_server-9] [INFO] [1793596845.441769870] [global_costmap.global_costmap]: Timed out waiting for transform from nav_base to map to become available, tf error: Invalid frame ID "nav_base" passed to canTransform argument source_frame - frame does not exist
+[create-3] [INFO] [1793596845.446709088] [ros_gz_sim]: Entity creation successful.
+[INFO] [create-3]: process has finished cleanly [pid 39827]
+[INFO] [optical_frame_publisher-14]: process started with pid [40042]
+[INFO] [optical_frame_publisher-15]: process started with pid [40043]
+[INFO] [optical_frame_publisher-16]: process started with pid [40044]
+[INFO] [parameter_bridge-17]: process started with pid [40045]
+[INFO] [pose_tf_broadcaster-18]: process started with pid [40046]
+[INFO] [robot_state_publisher-19]: process started with pid [40047]
+[robot_state_publisher-19] [WARN] [1793596845.657903707] [kdl_parser]: The root link wamv/base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[robot_state_publisher-19] [INFO] [1793596845.658114243] [wamv.robot_state_publisher]: Robot initialized
+[parameter_bridge-17] [INFO] [1793596845.682420449] [wamv.ros_gz_bridge]: Creating GZ->ROS Bridge: [/model/wamv/pose (gz.msgs.Pose_V) -> /model/wamv/pose (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.685301102] [wamv.ros_gz_bridge]: Creating GZ->ROS Bridge: [/model/wamv/pose_static (gz.msgs.Pose_V) -> /model/wamv/pose_static (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.685989778] [wamv.ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/sydney_regatta/model/wamv/joint_state (gz.msgs.Model) -> /world/sydney_regatta/model/wamv/joint_state (sensor_msgs/msg/JointState)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.687639298] [wamv.ros_gz_bridge]: Creating GZ->ROS Bridge: [/vrx/contacts (gz.msgs.Contacts) -> /vrx/contacts (ros_gz_interfaces/msg/Contacts)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.689543020] [wamv.ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_left_camera_sensor/image (gz.msgs.Image) -> /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_left_camera_sensor/image (sensor_msgs/msg/Image)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.690320178] [wamv.ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_left_camera_sensor/camera_info (gz.msgs.CameraInfo) -> /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_left_camera_sensor/camera_info (sensor_msgs/msg/CameraInfo)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.691103074] [wamv.ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_right_camera_sensor/image (gz.msgs.Image) -> /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_right_camera_sensor/image (sensor_msgs/msg/Image)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.691649820] [wamv.ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_right_camera_sensor/camera_info (gz.msgs.CameraInfo) -> /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_right_camera_sensor/camera_info (sensor_msgs/msg/CameraInfo)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.692151999] [wamv.ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/lidar_wamv_sensor/scan (gz.msgs.LaserScan) -> /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/lidar_wamv_sensor/scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.692912065] [wamv.ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/lidar_wamv_sensor/scan/points (gz.msgs.PointCloudPacked) -> /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/lidar_wamv_sensor/scan/points (sensor_msgs/msg/PointCloud2)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.693717944] [wamv.ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/middle_right_camera_sensor/image (gz.msgs.Image) -> /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/middle_right_camera_sensor/image (sensor_msgs/msg/Image)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.694308190] [wamv.ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/middle_right_camera_sensor/camera_info (gz.msgs.CameraInfo) -> /world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/middle_right_camera_sensor/camera_info (sensor_msgs/msg/CameraInfo)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.694887859] [wamv.ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/sydney_regatta/model/wamv/link/wamv/gps_wamv_link/sensor/navsat/navsat (gz.msgs.NavSat) -> /world/sydney_regatta/model/wamv/link/wamv/gps_wamv_link/sensor/navsat/navsat (sensor_msgs/msg/NavSatFix)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.695588378] [wamv.ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/sydney_regatta/model/wamv/link/wamv/imu_wamv_link/sensor/imu_wamv_sensor/imu (gz.msgs.IMU) -> /world/sydney_regatta/model/wamv/link/wamv/imu_wamv_link/sensor/imu_wamv_sensor/imu (sensor_msgs/msg/Imu)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.696314085] [wamv.ros_gz_bridge]: Creating ROS->GZ Bridge: [wamv/thrusters/left/thrust (std_msgs/msg/Float64) -> wamv/thrusters/left/thrust (gz.msgs.Double)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.697376982] [wamv.ros_gz_bridge]: Creating ROS->GZ Bridge: [wamv/thrusters/left/pos (std_msgs/msg/Float64) -> wamv/thrusters/left/pos (gz.msgs.Double)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.698011068] [wamv.ros_gz_bridge]: Creating ROS->GZ Bridge: [wamv/thrusters/right/thrust (std_msgs/msg/Float64) -> wamv/thrusters/right/thrust (gz.msgs.Double)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.698635634] [wamv.ros_gz_bridge]: Creating ROS->GZ Bridge: [wamv/thrusters/right/pos (std_msgs/msg/Float64) -> wamv/thrusters/right/pos (gz.msgs.Double)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.699203879] [wamv.ros_gz_bridge]: Creating GZ->ROS Bridge: [wamv/sensors/acoustics/receiver/range_bearing (gz.msgs.Param) -> wamv/sensors/acoustics/receiver/range_bearing (ros_gz_interfaces/msg/ParamVec)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.699950506] [wamv.ros_gz_bridge]: Creating ROS->GZ Bridge: [/pinger/set_pinger_position (geometry_msgs/msg/Vector3) -> /pinger/set_pinger_position (gz.msgs.Vector3d)] (Lazy 0)
+[parameter_bridge-17] [INFO] [1793596845.700813791] [wamv.ros_gz_bridge]: Creating ROS->GZ Bridge: [/wamv/shooters/ball_shooter/fire (std_msgs/msg/Bool) -> /wamv/shooters/ball_shooter/fire (gz.msgs.Boolean)] (Lazy 0)
+[planner_server-9] [INFO] [1793596845.941737416] [global_costmap.global_costmap]: Timed out waiting for transform from nav_base to map to become available, tf error: Invalid frame ID "nav_base" passed to canTransform argument source_frame - frame does not exist
+[planner_server-9] [INFO] [1793596846.441807591] [global_costmap.global_costmap]: Timed out waiting for transform from nav_base to map to become available, tf error: Invalid frame ID "nav_base" passed to canTransform argument source_frame - frame does not exist
+[gazebo-1] [1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mvrx::PolyhedraBuoyancyDrag[0m[1;36m] for entity [[0m[1;36m137[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLoaded level [[0m[1;32mdefault[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing world controls on [[0m[1;32m/world/sydney_regatta[0m[1;32m/control], [[0m[1;32m/world/sydney_regatta[0m[1;32m/control/state] and [[0m[1;32m/world/sydney_regatta[0m[1;32m/playback/control][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing GUI information on [[0m[1;32m/world/sydney_regatta[0m[1;32m/[0m[1;32mgui/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mWorld [[0m[1;32msydney_regatta[0m[1;32m] initialized with [[0m[1;32m4ms[0m[1;32m] physics profile.[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing world SDF generation service on [[0m[1;32m/world/sydney_regatta[0m[1;32m/[0m[1;32mgenerate_world_sdf[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing world names on [[0m[1;32m/gazebo/worlds[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource path add service on [[0m[1;32m/gazebo/resource_paths/add[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource path get service on [[0m[1;32m/gazebo/resource_paths/get[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource path resolve service on [[0m[1;32m/gazebo/resource_paths/resolve[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mResource paths published on [[0m[1;32m/gazebo/resource_paths[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServer control service on [[0m[1;32m/server_control[0m[1;32m].[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mFound no publishers on /stats, adding root stats topic[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mFound no publishers on /clock, adding root clock topic[0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:627] [0m[1;36mCreating PostUpdate worker threads: [0m[1;36m8[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m0[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m1[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m2[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m3[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m4[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m5[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m6[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mThruster listening to commands on [[0m[1;32mwamv/thrusters/left/thrust[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mThruster listening to enable_deadband on [[0m[1;32mwamv/thrusters/left/thrust/enable_deadband[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [Thruster.cc:496] [0m[1;36mUsing velocity control for propeller joint.[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::Thruster[0m[1;36m] for entity [[0m[1;36m143[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mJointPositionController subscribing to Double messages on [[0m[1;32mwamv/thrusters/left/pos[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:302] [0m[1;36m[JointPositionController] system parameters:[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:303] [0m[1;36mp_gain: [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:304] [0m[1;36mi_gain: [[0m[1;36m0.1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:305] [0m[1;36md_gain: [[0m[1;36m0.01[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:306] [0m[1;36mi_max: [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:307] [0m[1;36mi_min: [[0m[1;36m-1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:308] [0m[1;36mcmd_max: [[0m[1;36m1000[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:309] [0m[1;36mcmd_min: [[0m[1;36m-1000[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:310] [0m[1;36mcmd_offset: [[0m[1;36m0[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:311] [0m[1;36mTopic: [[0m[1;36mwamv/thrusters/left/pos[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:312] [0m[1;36minitial_position: [[0m[1;36m0[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::JointPositionController[0m[1;36m] for entity [[0m[1;36m143[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mThruster listening to commands on [[0m[1;32mwamv/thrusters/right/thrust[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mThruster listening to enable_deadband on [[0m[1;32mwamv/thrusters/right/thrust/enable_deadband[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [Thruster.cc:496] [0m[1;36mUsing velocity control for propeller joint.[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::Thruster[0m[1;36m] for entity [[0m[1;36m143[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mJointPositionController subscribing to Double messages on [[0m[1;32mwamv/thrusters/right/pos[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:302] [0m[1;36m[JointPositionController] system parameters:[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:303] [0m[1;36mp_gain: [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:304] [0m[1;36mi_gain: [[0m[1;36m0.1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:305] [0m[1;36md_gain: [[0m[1;36m0.01[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:306] [0m[1;36mi_max: [[0m[1;36m1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:307] [0m[1;36mi_min: [[0m[1;36m-1[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:308] [0m[1;36mcmd_max: [[0m[1;36m1000[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:309] [0m[1;36mcmd_min: [[0m[1;36m-1000[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:310] [0m[1;36mcmd_offset: [[0m[1;36m0[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:311] [0m[1;36mTopic: [[0m[1;36mwamv/thrusters/right/pos[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:312] [0m[1;36minitial_position: [[0m[1;36m0[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::JointPositionController[0m[1;36m] for entity [[0m[1;36m143[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mInput Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mmodel:     [0m[1;32mPMS[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mnumber:     [0m[1;32m3[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mscale:      [0m[1;32m1.1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mangle:      [0m[1;32m0.4[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepness:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitude:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiod:     [0m[1;32m5[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirection:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mtau:  [0m[1;32m2[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mgain:  [0m[1;32m1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDerived Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitudes:  [0m[1;32m0.121167[0m[1;32m, [0m[1;32m0.130759[0m[1;32m, [0m[1;32m0.128568[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mwavenumbers: [0m[1;32m0.133171[0m[1;32m, [0m[1;32m0.161136[0m[1;32m, [0m[1;32m0.194975[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32momegas:      [0m[1;32m1.1424[0m[1;32m, [0m[1;32m1.25664[0m[1;32m, [0m[1;32m1.3823[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiods:     [0m[1;32m[Msg] [0m[1;32m5.5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m4.54545[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mphases:      [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepnesses: [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirections:  [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m-0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m1[0m[1;32m [0m[1;32m0[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:188] [0m[1;36mSurface plugin successfully configured with the following [0m[1;36mparameters:[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:190] [0m[1;36m  <link_name>: [0m[1;36mwamv/base_link[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:191] [0m[1;36m  <vehicle_length>: [0m[1;36m4.9[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:192] [0m[1;36m  <hull_radius>: [0m[1;36m0.213[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:193] [0m[1;36m  <fluid_level>: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:194] [0m[1;36m  <fluid_density>: [0m[1;36m1000[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:195] [0m[1;36m  <points>:[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:197] [0m[1;36m    [[0m[1;36m0.6[0m[1;36m [0m[1;36m1.03[0m[1;36m [0m[1;36m0[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:197] [0m[1;36m    [[0m[1;36m-1.4[0m[1;36m [0m[1;36m1.03[0m[1;36m [0m[1;36m0[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mvrx::Surface[0m[1;36m] for entity [[0m[1;36m143[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mInput Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mmodel:     [0m[1;32mPMS[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mnumber:     [0m[1;32m3[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mscale:      [0m[1;32m1.1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mangle:      [0m[1;32m0.4[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepness:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitude:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiod:     [0m[1;32m5[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirection:  [0m[1;32m0[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mtau:  [0m[1;32m2[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mgain:  [0m[1;32m1[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mDerived Parameters:[0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mamplitudes:  [0m[1;32m0.121167[0m[1;32m, [0m[1;32m0.130759[0m[1;32m, [0m[1;32m0.128568[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mwavenumbers: [0m[1;32m0.133171[0m[1;32m, [0m[1;32m0.161136[0m[1;32m, [0m[1;32m0.194975[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32momegas:      [0m[1;32m1.1424[0m[1;32m, [0m[1;32m1.25664[0m[1;32m, [0m[1;32m1.3823[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mperiods:     [0m[1;32m[Msg] [0m[1;32m5.5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m5[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m4.54545[0m[1;32m, [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mphases:      [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32msteepnesses: [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m0[0m[1;32m, [0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mdirections:  [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m-0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m1[0m[1;32m [0m[1;32m0[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m0.921061[0m[1;32m [0m[1;32m0.389418[0m[1;32m; [0m[1;32m[Msg] [0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:188] [0m[1;36mSurface plugin successfully configured with the following [0m[1;36mparameters:[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:190] [0m[1;36m  <link_name>: [0m[1;36mwamv/base_link[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:191] [0m[1;36m  <vehicle_length>: [0m[1;36m4.9[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:192] [0m[1;36m  <hull_radius>: [0m[1;36m0.213[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:193] [0m[1;36m  <fluid_level>: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:194] [0m[1;36m  <fluid_density>: [0m[1;36m1000[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:195] [0m[1;36m  <points>:[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:197] [0m[1;36m    [[0m[1;36m0.6[0m[1;36m [0m[1;36m-1.03[0m[1;36m [0m[1;36m0[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Surface.cc:197] [0m[1;36m    [[0m[1;36m-1.4[0m[1;36m [0m[1;36m-1.03[0m[1;36m [0m[1;36m0[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mvrx::Surface[0m[1;36m] for entity [[0m[1;36m143[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:164] [0m[1;36mSimpleHydrodynamics plugin successfully configured with the [0m[1;36mfollowing parameters:[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:166] [0m[1;36m  <link_name>: [0m[1;36mwamv/base_link[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:167] [0m[1;36m  <xDotU>: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:168] [0m[1;36m  <yDotV>: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:169] [0m[1;36m  <zDotW>: [0m[1;36m0.1[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:170] [0m[1;36m  <kDotP>: [0m[1;36m0.1[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:171] [0m[1;36m  <mDotQ>: [0m[1;36m0.1[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:172] [0m[1;36m  <nDotR>: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:173] [0m[1;36m  <xU>: [0m[1;36m100[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:174] [0m[1;36m  <xUU>: [0m[1;36m150[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:175] [0m[1;36m  <yV>: [0m[1;36m100[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:176] [0m[1;36m  <yVV>: [0m[1;36m100[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:177] [0m[1;36m  <zW>: [0m[1;36m500[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:178] [0m[1;36m  <zWW>: [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:179] [0m[1;36m  <kP>: [0m[1;36m300[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:180] [0m[1;36m  <kPP>: [0m[1;36m600[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:181] [0m[1;36m  <mQ>: [0m[1;36m900[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:182] [0m[1;36m  <mQQ>: [0m[1;36m900[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:183] [0m[1;36m  <nR>: [0m[1;36m800[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimpleHydrodynamics.cc:184] [0m[1;36m  <nRR>: [0m[1;36m800[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mvrx::SimpleHydrodynamics[0m[1;36m] for entity [[0m[1;36m143[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [DetachableJoint.cc:137] [0m[1;36mDetach topic is: [0m[1;36m/vrx/release[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [DetachableJoint.cc:143] [0m[1;36mDetachableJoint subscribing to messages on [0m[1;36m[[0m[1;36m/vrx/release[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [DetachableJoint.cc:160] [0m[1;36mAttach topic is: [0m[1;36m/model/wamv/detachable_joint/attach[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [DetachableJoint.cc:195] [0m[1;36mOutput topic is: [0m[1;36m/model/platform/detachable_joint/state[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::DetachableJoint[0m[1;36m] for entity [[0m[1;36m143[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::PosePublisher[0m[1;36m] for entity [[0m[1;36m143[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mgz::sim::systems::JointStatePublisher[0m[1;36m] for entity [[0m[1;36m143[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mvrx::AcousticPingerPlugin[0m[1;36m] for entity [[0m[1;36m143[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [BallShooterPlugin.cc:212] [0m[1;36m<projectile><model_name>: [0m[1;36mblue_projectile[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [BallShooterPlugin.cc:213] [0m[1;36m<projectile><link_name>: [0m[1;36mlink[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [BallShooterPlugin.cc:214] [0m[1;36m<frame>: [0m[1;36mwamv/ball_shooter_launcher_link[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [BallShooterPlugin.cc:215] [0m[1;36m<num_shots>: [0m[1;36m4[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [BallShooterPlugin.cc:216] [0m[1;36m<pose>: [0m[1;36m0.14[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m [0m[1;36m0[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [BallShooterPlugin.cc:218] [0m[1;36m<shot_force>: [0m[1;36m65[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [BallShooterPlugin.cc:219] [0m[1;36m<topic>: [0m[1;36mwamv/shooters/ball_shooter/fire[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SystemManager.cc:80] [0m[1;36mLoaded system [[0m[1;36mvrx::BallShooterPlugin[0m[1;36m] for entity [[0m[1;36m143[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [UserCommands.cc:1093] [0m[1;36mCreated entity [[0m[1;36m143[0m[1;36m] named [[0m[1;36mwamv[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mContact system publishing on [0m[1;32m/vrx/contacts[0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [USVWind.cc:282] [0m[1;36mwamv[0m[1;36m initialized[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SDFFeatures.cc:333] [0m[1;36mMesh construction from an SDF has not been implemented yet for [0m[1;36mdartsim. Use AttachMeshShapeFeature to use mesh shapes.[0m
+[gazebo-1] [1;36m[Dbg] [SDFFeatures.cc:865] [0m[1;36mThe geometry element of collision [[0m[1;36mcollision[0m[1;36m] [0m[1;36mcouldn't be created[0m
+[gazebo-1] [1;36m[Dbg] [SimulationFeatures.cc:90] [0m[1;36mSimulation timestep set to: [0m[1;36m0.004[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Sensors.cc:953] [0m[1;36mInitialization needed[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Sensors.cc:349] [0m[1;36mInitializing render context[0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mLoading plugin [[0m[1;32mgz-rendering-ogre2[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [ImuSensor.cc:150] [0m[1;36mIMU data for [[0m[1;36mwamv::wamv/imu_wamv_link::imu_wamv_sensor[0m[1;36m] advertised on [[0m[1;36mworld/sydney_regatta/model/wamv/link/wamv/imu_wamv_link/sensor/imu_wamv_sensor/imu[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing scene information on [[0m[1;32m/world/sydney_regatta[0m[1;32m/[0m[1;32mscene/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing graph information on [[0m[1;32m/world/sydney_regatta[0m[1;32m/[0m[1;32mscene/graph[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing full state on [[0m[1;32m/world/sydney_regatta[0m[1;32m/[0m[1;32mstate[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mServing full state (async) on [[0m[1;32m/world/sydney_regatta[0m[1;32m/[0m[1;32mstate_async[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing scene information on [[0m[1;32m/world/sydney_regatta/scene/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing entity deletions on [[0m[1;32m/world/sydney_regatta/scene/deletion[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing state changes on [[0m[1;32m/world/sydney_regatta/state[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing pose messages on [[0m[1;32m/world/sydney_regatta[0m[1;32m/[0m[1;32mpose/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;32m[Msg] [0m[1;32mPublishing dynamic pose messages on [[0m[1;32m/world/sydney_regatta[0m[1;32m/[0m[1;32mdynamic_pose/info[0m[1;32m][0m[1;32m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:654] [0m[1;36mExiting postupdate worker thread ([0m[1;36mExiting postupdate worker thread ([Dbg] [SimulationRunner.cc:654] [0m[1;36m0[0m[1;36m)[Dbg] [SimulationRunner.cc:654] [0m[1;36mExiting postupdate worker thread ([0m[1;36m4[0m[1;36m)[0m[1;36m0[0m[1;36m[Dbg] [SimulationRunner.cc:654] [0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36mExiting postupdate worker thread (Exiting postupdate worker thread ([0m[1;36m2[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[0m
+[planner_server-9] [INFO] [1793596846.941847886] [global_costmap.global_costmap]: start
+[planner_server-9] [INFO] [1793596847.443545831] [planner_server]: Activating plugin GridBased of type SmacPlannerHybrid
+[planner_server-9] [INFO] [1793596847.446781357] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[lifecycle_manager-13] [INFO] [1793596847.553224794] [lifecycle_manager_boat]: Server planner_server connected with bond.
+[lifecycle_manager-13] [INFO] [1793596847.553289132] [lifecycle_manager_boat]: [34m[1mActivating controller_server[0m[0m
+[controller_server-10] [INFO] [1793596847.553638364] [controller_server]: Activating
+[controller_server-10] [INFO] [1793596847.553672916] [local_costmap.local_costmap]: Activating
+[controller_server-10] [INFO] [1793596847.553679279] [local_costmap.local_costmap]: Checking transform
+[controller_server-10] [INFO] [1793596847.553800943] [local_costmap.local_costmap]: start
+[controller_server-10] [INFO] [1793596847.905364413] [controller_server]: Activating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-10] [INFO] [1793596847.905419326] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[lifecycle_manager-13] [INFO] [1793596848.339205641] [lifecycle_manager_boat]: Server controller_server connected with bond.
+[lifecycle_manager-13] [INFO] [1793596848.339268788] [lifecycle_manager_boat]: [34m[1mActivating bt_navigator[0m[0m
+[bt_navigator-11] [INFO] [1793596848.339622664] [bt_navigator]: Activating
+[bt_navigator-11] [INFO] [1793596848.395876588] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[lifecycle_manager-13] [INFO] [1793596848.501438403] [lifecycle_manager_boat]: Server bt_navigator connected with bond.
+[lifecycle_manager-13] [INFO] [1793596848.501496288] [lifecycle_manager_boat]: [34m[1mActivating waypoint_follower[0m[0m
+[waypoint_follower-12] [INFO] [1793596848.501887895] [waypoint_follower]: Activating
+[waypoint_follower-12] [INFO] [1793596848.501920605] [waypoint_follower]: Creating bond (waypoint_follower) to lifecycle manager.
+[lifecycle_manager-13] [INFO] [1793596848.608138993] [lifecycle_manager_boat]: Server waypoint_follower connected with bond.
+[lifecycle_manager-13] [INFO] [1793596848.608221318] [lifecycle_manager_boat]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-13] [INFO] [1793596848.608229329] [lifecycle_manager_boat]: [34m[1mCreating bond timer...[0m[0m
+[parameter_bridge-17] [INFO] [1793596848.802106063] [wamv.ros_gz_bridge]: Passing message from ROS std_msgs/msg/Float64 to Gazebo gz.msgs.Double (showing msg only once per type)
+[gazebo-1] [1;33m[Wrn] [Ogre2Camera.cc:423] [0m[1;33mOgre2Camera::SetVisibilityMask: Mask bits [0m[1;33mc0000000[0m[1;33m are set but will be ignored as they conflict with the [0m[1;33mreserved bits used internally by the ogre2 backend.[0m[1;33m[0m
+[gazebo-1] [1;33m[Wrn] [Ogre2Camera.cc:423] [0m[1;33mOgre2Camera::SetVisibilityMask: Mask bits [0m[1;33mc0000000[0m[1;33m are set but will be ignored as they conflict with the [0m[1;33mreserved bits used internally by the ogre2 backend.[0m[1;33m[0m
+[gazebo-1] [1;36mExiting postupdate worker thread ([0m[1;36m1[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36mExiting postupdate worker thread ([0m[1;36mExiting postupdate worker thread ([0m[1;36m6[0m[1;36m)[0m[1;36mExiting postupdate worker thread (Exiting postupdate worker thread ([0m[1;36m5[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m3[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:627] [0m[1;36mCreating PostUpdate worker threads: [0m[1;36m12[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m0[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m1[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m2[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m3[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m4[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m5[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m6[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m7[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m8[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m9[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [SimulationRunner.cc:638] [0m[1;36mCreating postupdate worker thread ([0m[1;36m10[0m[1;36m)[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:376] [0m[1;36mIdentified joint [[0m[1;36mwamv/left_chassis_engine_joint[0m[1;36m] as Entity [[0m[1;36m244[0m[1;36m][0m
+[gazebo-1] [1;36m[Dbg] [JointPositionController.cc:376] [0m[1;36mIdentified joint [[0m[1;36mwamv/right_chassis_engine_joint[0m[1;36m] as Entity [[0m[1;36m247[0m[1;36m][0m
+[gazebo-1] [1;36m[Dbg] [RenderUtil.cc:2646] [0m[1;36mCreate scene [[0m[1;36mscene[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [Sensors.cc:391] [0m[1;36mRendering Thread initialized[0m[1;36mRendering Thread initialized[Dbg] [Sensors.cc:953] [0m[1;36mInitialization needed[0m[1;36mInitialization needed[0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [CameraSensor.cc:405] [0m[1;36mCamera images for [[0m[1;36mwamv::wamv/base_link::front_left_camera_sensor[0m[1;36m] advertised on [[0m[1;36mworld/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_left_camera_sensor/image[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [CameraSensor.cc:695] [0m[1;36mCamera info for [[0m[1;36mwamv::wamv/base_link::front_left_camera_sensor[0m[1;36m] advertised on [[0m[1;36m/world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_left_camera_sensor/camera_info[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [CameraSensor.cc:405] [0m[1;36mCamera images for [[0m[1;36mwamv::wamv/base_link::front_right_camera_sensor[0m[1;36m] advertised on [[0m[1;36mworld/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_right_camera_sensor/image[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [CameraSensor.cc:695] [0m[1;36mCamera info for [[0m[1;36mwamv::wamv/base_link::front_right_camera_sensor[0m[1;36m] advertised on [[0m[1;36m/world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/front_right_camera_sensor/camera_info[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;36m[Dbg] [CameraSensor.cc:405] [0m[1;36mCamera images for [[0m[1;36mwamv::wamv/base_link::middle_right_camera_sensor[0m[1;36m] advertised on [[0m[1;36mworld/sydney_regatta/model/wamv/link/wamv/base_link/sensor/middle_right_camera_sensor/image[0m[1;36m][0m[1;36m[0m
+[gazebo-1] [1;33m[Wrn] [Ogre2Camera.cc:423] [0m[1;33mOgre2Camera::SetVisibilityMask: Mask bits [0m[1;33mc0000000[0m[1;33m are set but will be ignored as they conflict with the [0m[1;33mreserved bits used internally by the ogre2 backend.[0m[1;33m[0m
+[gazebo-1] [1;33m[Wrn] [Ogre2RenderTarget.cc:668] [0m[1;33mAnti-aliasing level of '[0m[1;33m[0m[1;33m' [0m[1;33mis not supported; valid FSAA levels are: [0m[1;33m[ 0 ][0m[1;33m. Setting to 1[0m[1;33m[0m
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[robot_state_publisher-19] [INFO] [1793596938.274538076] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[ERROR] [monitor_sim-2]: process has died [pid 39825, exit code -2, cmd 'python3 /home/byeung1/vrx_ws/install/share/vrx_ros/launch/monitor_sim.py'].
+[pose_tf_broadcaster-18] [INFO] [1793596938.274552456] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[optical_frame_publisher-16] [INFO] [1793596938.274596365] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[optical_frame_publisher-15] [INFO] [1793596938.274594702] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[parameter_bridge-17] [INFO] [1793596938.274609630] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[planner_server-9] [INFO] [1793596938.274594382] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[planner_server-9] [INFO] [1793596938.274701640] [planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[planner_server-9] [INFO] [1793596938.274787366] [planner_server]: Deactivating
+[planner_server-9] [INFO] [1793596938.274838746] [global_costmap.global_costmap]: Deactivating
+[lifecycle_manager-13] [INFO] [1793596938.274689928] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lifecycle_manager-13] [INFO] [1793596938.274760080] [lifecycle_manager_boat]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_manager_boat)
+[lifecycle_manager-13] [INFO] [1793596938.274795373] [lifecycle_manager_boat]: [34m[1mTerminating bond timer...[0m[0m
+[map_server-8] [INFO] [1793596938.274682931] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[map_server-8] [INFO] [1793596938.274784011] [map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[map_server-8] [INFO] [1793596938.274871097] [map_server]: Deactivating
+[map_server-8] [INFO] [1793596938.274891022] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[parameter_bridge-4] [INFO] [1793596938.274847678] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[monitor_sim-2] Traceback (most recent call last):
+[monitor_sim-2]   File "/home/byeung1/vrx_ws/install/share/vrx_ros/launch/monitor_sim.py", line 38, in <module>
+[monitor_sim-2]     monitor_sim()
+[monitor_sim-2]   File "/home/byeung1/vrx_ws/install/share/vrx_ros/launch/monitor_sim.py", line 27, in monitor_sim
+[monitor_sim-2]     time.sleep(1)
+[monitor_sim-2] KeyboardInterrupt
+[optical_frame_publisher-14] [INFO] [1793596938.275044486] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [robot_state_publisher-19]: sending signal 'SIGINT' to process[robot_state_publisher-19]
+[INFO] [pose_tf_broadcaster-18]: sending signal 'SIGINT' to process[pose_tf_broadcaster-18]
+[INFO] [parameter_bridge-17]: sending signal 'SIGINT' to process[parameter_bridge-17]
+[INFO] [optical_frame_publisher-16]: sending signal 'SIGINT' to process[optical_frame_publisher-16]
+[ERROR] [pose_tf_broadcaster-18]: process has died [pid 40046, exit code -2, cmd '/home/byeung1/vrx_ws/install/lib/vrx_ros/pose_tf_broadcaster --ros-args -r __ns:=/wamv'].
+[INFO] [optical_frame_publisher-15]: sending signal 'SIGINT' to process[optical_frame_publisher-15]
+[INFO] [optical_frame_publisher-14]: sending signal 'SIGINT' to process[optical_frame_publisher-14]
+[ERROR] [optical_frame_publisher-16]: process has died [pid 40044, exit code -2, cmd '/home/byeung1/vrx_ws/install/lib/vrx_ros/optical_frame_publisher 1 --ros-args -r __ns:=/wamv -r input/image:=sensors/cameras/middle_right_camera_sensor/image_raw -r output/image:=sensors/cameras/middle_right_camera_sensor/optical/image_raw -r input/camera_info:=sensors/cameras/middle_right_camera_sensor/camera_info -r output/camera_info:=sensors/cameras/middle_right_camera_sensor/optical/camera_info'].
+[INFO] [lifecycle_manager-13]: sending signal 'SIGINT' to process[lifecycle_manager-13]
+[ERROR] [optical_frame_publisher-15]: process has died [pid 40043, exit code -2, cmd '/home/byeung1/vrx_ws/install/lib/vrx_ros/optical_frame_publisher 1 --ros-args -r __ns:=/wamv -r input/image:=sensors/cameras/front_right_camera_sensor/image_raw -r output/image:=sensors/cameras/front_right_camera_sensor/optical/image_raw -r input/camera_info:=sensors/cameras/front_right_camera_sensor/camera_info -r output/camera_info:=sensors/cameras/front_right_camera_sensor/optical/camera_info'].
+[INFO] [waypoint_follower-12]: sending signal 'SIGINT' to process[waypoint_follower-12]
+[ERROR] [optical_frame_publisher-14]: process has died [pid 40042, exit code -2, cmd '/home/byeung1/vrx_ws/install/lib/vrx_ros/optical_frame_publisher 1 --ros-args -r __ns:=/wamv -r input/image:=sensors/cameras/front_left_camera_sensor/image_raw -r output/image:=sensors/cameras/front_left_camera_sensor/optical/image_raw -r input/camera_info:=sensors/cameras/front_left_camera_sensor/camera_info -r output/camera_info:=sensors/cameras/front_left_camera_sensor/optical/camera_info'].
+[INFO] [bt_navigator-11]: sending signal 'SIGINT' to process[bt_navigator-11]
+[INFO] [controller_server-10]: sending signal 'SIGINT' to process[controller_server-10]
+[INFO] [planner_server-9]: sending signal 'SIGINT' to process[planner_server-9]
+[ERROR] [waypoint_follower-12]: process has died [pid 39869, exit code -2, cmd '/home/byeung1/mtr-lidar-starter/nav2_ws/.deps/root/opt/ros/jazzy/lib/nav2_waypoint_follower/waypoint_follower --ros-args -r __node:=waypoint_follower --params-file /home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/share/vrx_nav2/config/nav2.yaml --params-file /tmp/launch_params_omvcty9i -r cmd_vel:=/nav/cmd_vel'].
+[INFO] [map_server-8]: sending signal 'SIGINT' to process[map_server-8]
+[INFO] [thrust_adapter-7]: sending signal 'SIGINT' to process[thrust_adapter-7]
+[INFO] [cloud_filter-6]: sending signal 'SIGINT' to process[cloud_filter-6]
+[INFO] [ground_truth-5]: sending signal 'SIGINT' to process[ground_truth-5]
+[ERROR] [map_server-8]: process has died [pid 39832, exit code -2, cmd '/home/byeung1/mtr-lidar-starter/nav2_ws/.deps/root/opt/ros/jazzy/lib/nav2_map_server/map_server --ros-args -r __node:=map_server --params-file /home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/share/vrx_nav2/config/nav2.yaml --params-file /tmp/launch_params_ounqm0yk -r cmd_vel:=/nav/cmd_vel'].
+[INFO] [parameter_bridge-4]: sending signal 'SIGINT' to process[parameter_bridge-4]
+[ERROR] [thrust_adapter-7]: process has died [pid 39831, exit code -2, cmd '/home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/lib/vrx_nav2/thrust_adapter --ros-args --params-file /tmp/launch_params_5o9ctu7z'].
+[INFO] [gazebo-1]: sending signal 'SIGINT' to process[gazebo-1]
+[waypoint_follower-12] [INFO] [1793596938.275302242] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[waypoint_follower-12] [INFO] [1793596938.275397866] [waypoint_follower]: Running Nav2 LifecycleNode rcl preshutdown (waypoint_follower)
+[waypoint_follower-12] [INFO] [1793596938.275469233] [waypoint_follower]: Deactivating
+[waypoint_follower-12] [INFO] [1793596938.275494937] [waypoint_follower]: Destroying bond (waypoint_follower) to lifecycle manager.
+[ERROR] [ground_truth-5]: process has died [pid 39829, exit code -2, cmd '/home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/lib/vrx_nav2/ground_truth --ros-args --params-file /tmp/launch_params_qunpc3fh'].
+[controller_server-10] [INFO] [1793596938.277932011] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[controller_server-10] [INFO] [1793596938.278082184] [controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[controller_server-10] [INFO] [1793596938.278157396] [controller_server]: Deactivating
+[controller_server-10] [INFO] [1793596938.278176317] [controller_server]: Deactivating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-10] [INFO] [1793596938.278240335] [local_costmap.local_costmap]: Deactivating
+[bt_navigator-11] [INFO] [1793596938.281279298] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[bt_navigator-11] [INFO] [1793596938.281395328] [bt_navigator]: Running Nav2 LifecycleNode rcl preshutdown (bt_navigator)
+[bt_navigator-11] [INFO] [1793596938.281466010] [bt_navigator]: Deactivating
+[bt_navigator-11] [INFO] [1793596938.281497719] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[bt_navigator-11] [INFO] [1793596938.291846233] [bt_navigator]: Cleaning up
+[map_server-8] [INFO] [1793596938.285758376] [map_server]: Cleaning up
+[map_server-8] [INFO] [1793596938.285827300] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[waypoint_follower-12] [INFO] [1793596938.285824855] [waypoint_follower]: Cleaning up
+[robot_state_publisher-19] [INFO] [1793596938.302748518] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[map_server-8] [INFO] [1793596938.305501141] [map_server]: Destroying
+[waypoint_follower-12] [INFO] [1793596938.306353449] [waypoint_follower]: Destroying bond (waypoint_follower) to lifecycle manager.
+[parameter_bridge-17] [INFO] [1793596938.310721972] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[waypoint_follower-12] [INFO] [1793596938.314473912] [waypoint_follower]: Destroying
+[cloud_filter-6] Traceback (most recent call last):
+[cloud_filter-6]   File "/home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/lib/vrx_nav2/cloud_filter", line 33, in <module>
+[cloud_filter-6]     sys.exit(load_entry_point('vrx-nav2', 'console_scripts', 'cloud_filter')())
+[cloud_filter-6]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[cloud_filter-6]   File "/home/byeung1/mtr-lidar-starter/nav2_ws/build/vrx_nav2/vrx_nav2/cloud_filter.py", line 92, in main
+[cloud_filter-6]     spin(CloudFilter)
+[cloud_filter-6]   File "/home/byeung1/mtr-lidar-starter/nav2_ws/build/vrx_nav2/vrx_nav2/runtime.py", line 12, in spin
+[cloud_filter-6]     executor.spin()
+[cloud_filter-6]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 359, in spin
+[cloud_filter-6]     self._spin_once_impl()
+[cloud_filter-6]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 918, in _spin_once_impl
+[cloud_filter-6]     raise handler.exception()
+[cloud_filter-6]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/task.py", line 286, in _execute_coroutine_step
+[cloud_filter-6]     result = coro.send(None)
+[cloud_filter-6]              ^^^^^^^^^^^^^^^
+[cloud_filter-6]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 584, in handler
+[cloud_filter-6]     call_coroutine = take_from_wait_list(entity)
+[cloud_filter-6]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[cloud_filter-6]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 470, in _take_subscription
+[cloud_filter-6]     msg_info = sub.handle.take_message(sub.msg_type, sub.raw)
+[cloud_filter-6]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[cloud_filter-6] RuntimeError: Unable to convert call argument '0' to Python object (#define PYBIND11_DETAILED_ERROR_MESSAGES or compile in debug mode for details)
+[cloud_filter-6] Error in sys.excepthook:
+[cloud_filter-6] Traceback (most recent call last):
+[cloud_filter-6]   File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 228, in partial_apport_excepthook
+[cloud_filter-6]     return apport_excepthook(binary, exc_type, exc_obj, exc_tb)
+[cloud_filter-6]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[cloud_filter-6]   File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 66, in apport_excepthook
+[cloud_filter-6]     import apport.report
+[cloud_filter-6]   File "/usr/lib/python3/dist-packages/apport/__init__.py", line 7, in <module>
+[cloud_filter-6]     from apport.packaging_impl import impl as packaging
+[cloud_filter-6]   File "/usr/lib/python3/dist-packages/apport/packaging_impl/__init__.py", line 33, in <module>
+[cloud_filter-6]     impl = load_packaging_implementation()
+[cloud_filter-6]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[cloud_filter-6]   File "/usr/lib/python3/dist-packages/apport/packaging_impl/__init__.py", line 27, in load_packaging_implementation
+[cloud_filter-6]     module = importlib.import_module(
+[cloud_filter-6]              ^^^^^^^^^^^^^^^^^^^^^^^^
+[cloud_filter-6]   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+[cloud_filter-6]     return _bootstrap._gcd_import(name[level:], package, level)
+[cloud_filter-6]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[cloud_filter-6]   File "/usr/lib/python3/dist-packages/apport/packaging_impl/apt_dpkg.py", line 49, in <module>
+[parameter_bridge-4] [INFO] [1793596938.351501622] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[cloud_filter-6]     import apt
+[cloud_filter-6]   File "/usr/lib/python3/dist-packages/apt/__init__.py", line 21, in <module>
+[cloud_filter-6]     import apt_pkg
+[cloud_filter-6] KeyboardInterrupt
+[cloud_filter-6] 
+[cloud_filter-6] Original exception was:
+[cloud_filter-6] Traceback (most recent call last):
+[cloud_filter-6]   File "/home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/lib/vrx_nav2/cloud_filter", line 33, in <module>
+[cloud_filter-6]     sys.exit(load_entry_point('vrx-nav2', 'console_scripts', 'cloud_filter')())
+[cloud_filter-6]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[cloud_filter-6]   File "/home/byeung1/mtr-lidar-starter/nav2_ws/build/vrx_nav2/vrx_nav2/cloud_filter.py", line 92, in main
+[cloud_filter-6]     spin(CloudFilter)
+[cloud_filter-6]   File "/home/byeung1/mtr-lidar-starter/nav2_ws/build/vrx_nav2/vrx_nav2/runtime.py", line 12, in spin
+[cloud_filter-6]     executor.spin()
+[cloud_filter-6]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 359, in spin
+[cloud_filter-6]     self._spin_once_impl()
+[cloud_filter-6]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 918, in _spin_once_impl
+[cloud_filter-6]     raise handler.exception()
+[cloud_filter-6]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/task.py", line 286, in _execute_coroutine_step
+[cloud_filter-6]     result = coro.send(None)
+[cloud_filter-6]              ^^^^^^^^^^^^^^^
+[cloud_filter-6]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 584, in handler
+[cloud_filter-6]     call_coroutine = take_from_wait_list(entity)
+[cloud_filter-6]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[cloud_filter-6]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 470, in _take_subscription
+[cloud_filter-6]     msg_info = sub.handle.take_message(sub.msg_type, sub.raw)
+[cloud_filter-6]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[cloud_filter-6] RuntimeError: Unable to convert call argument '0' to Python object (#define PYBIND11_DETAILED_ERROR_MESSAGES or compile in debug mode for details)
+[bt_navigator-11] [INFO] [1793596938.353283011] [bt_navigator]: Completed Cleaning up
+[bt_navigator-11] [INFO] [1793596938.353362237] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[bt_navigator-11] [INFO] [1793596938.353963175] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lifecycle_manager-13] [INFO] [1793596938.356798693] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lifecycle_manager-13] [INFO] [1793596938.357879418] [lifecycle_manager_boat]: Destroying lifecycle_manager_boat
+[bt_navigator-11] [INFO] [1793596938.361000362] [bt_navigator]: Destroying
+[INFO] [parameter_bridge-4]: process has finished cleanly [pid 39828]
+[INFO] [parameter_bridge-17]: process has finished cleanly [pid 40045]
+[INFO] [robot_state_publisher-19]: process has finished cleanly [pid 40047]
+[planner_server-9] [INFO] [1793596938.442191296] [planner_server]: Deactivating plugin GridBased of type SmacPlannerHybrid
+[planner_server-9] [INFO] [1793596938.442259514] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[planner_server-9] [INFO] [1793596938.452501460] [planner_server]: Cleaning up
+[planner_server-9] [INFO] [1793596938.457281403] [global_costmap.global_costmap]: Cleaning up
+[planner_server-9] [INFO] [1793596938.460855324] [planner_server]: Cleaning up plugin GridBased of type SmacPlannerHybrid
+[planner_server-9] [INFO] [1793596938.461065028] [planner_server]: Destroying plugin GridBased of type SmacPlannerHybrid
+[planner_server-9] [INFO] [1793596938.468332635] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[planner_server-9] [INFO] [1793596938.469482395] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [lifecycle_manager-13]: process has finished cleanly [pid 39875]
+[planner_server-9] [INFO] [1793596938.472461600] [global_costmap.global_costmap]: Destroying
+[INFO] [bt_navigator-11]: process has finished cleanly [pid 39865]
+[planner_server-9] [INFO] [1793596938.478709775] [planner_server]: Destroying
+[ERROR] [cloud_filter-6]: process has died [pid 39830, exit code 1, cmd '/home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/lib/vrx_nav2/cloud_filter --ros-args --params-file /tmp/launch_params_xdcxt4b9'].
+[controller_server-10] [INFO] [1793596938.554134913] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[controller_server-10] [INFO] [1793596938.564508173] [controller_server]: Cleaning up
+[controller_server-10] [INFO] [1793596938.564581135] [controller_server]: Cleaning up controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-10] [INFO] [1793596938.564677840] [local_costmap.local_costmap]: Cleaning up
+[controller_server-10] [INFO] [1793596938.575646213] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[controller_server-10] [INFO] [1793596938.576527803] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[controller_server-10] [INFO] [1793596938.578413355] [local_costmap.local_costmap]: Destroying
+[controller_server-10] [INFO] [1793596938.581561071] [controller_server]: Destroying
+[INFO] [planner_server-9]: process has finished cleanly [pid 39833]
+[INFO] [controller_server-10]: process has finished cleanly [pid 39862]
+[gazebo-1] Segmentation fault (core dumped)
+[ERROR] [gazebo-1]: process has died [pid 39824, exit code -2, cmd 'ruby /opt/ros/jazzy/opt/gz_tools_vendor/bin/gz sim -v 4 -r -s  sydney_regatta.sdf --force-version 8'].
+[gazebo-1] [1;36m[Dbg] [CameraSensor.cc:695] [0m[1;36mCamera info for [[0m[1;36mwamv::wamv/base_link::middle_right_camera_sensor[0m[1;36m] advertised on [[0m[1;36m/world/sydney_regatta/model/wamv/link/wamv/base_link/sensor/middle_right_camera_sensor/camera_in

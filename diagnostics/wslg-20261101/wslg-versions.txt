@@ -1,0 +1,11 @@
+WSLg: 1.0.79
+Architecture: x86_64
+Built: 2026-06-25T17:27:16Z
+OS: Microsoft Azure Linux 3.0
+
+wslg:            6942bb534b537302a7a22617261d9274db3cfa37
+DirectX-Headers: v1.608.0
+FreeRDP:         c4030980b29322a9cb2190711a5fadeeeb8b6a33
+mesa:            23.1.0
+pulseaudio:      c33051f2296af748ac5cd13e51abfac4d129e4c7
+weston:          a7e35fdab455dce5774b43b8aff682f748307e31

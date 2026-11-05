@@ -1,0 +1,729 @@
+21:09:52: Creating resource group General
+21:09:52: Creating resource group Internal
+21:09:52: Creating resource group Autodetect
+21:09:52: SceneManagerFactory for type 'DefaultSceneManager' registered.
+21:09:52: Registering ResourceManager for type Material
+21:09:52: Registering ResourceManager for type Mesh
+21:09:52: Registering ResourceManager for type Mesh2
+21:09:52: Registering ResourceManager for type OldSkeleton
+21:09:52: MovableObjectFactory for type 'ParticleSystem' registered.
+21:09:52: ArchiveFactory for archive type FileSystem registered.
+21:09:52: ArchiveFactory for archive type Zip registered.
+21:09:52: ArchiveFactory for archive type EmbeddedZip registered.
+21:09:52: DDS codec registering
+21:09:52: FreeImage version: 3.18.0
+21:09:52: This program uses FreeImage, a free, open source image library supporting all common bitmap formats. See http://freeimage.sourceforge.net for details
+21:09:52: Supported formats: bmp,ico,jpg,jif,jpeg,jpe,jng,koa,iff,lbm,mng,pbm,pbm,pcd,pcx,pgm,pgm,png,ppm,ppm,ras,tga,targa,tif,tiff,wap,wbmp,wbm,psd,psb,cut,xbm,xpm,gif,hdr,g3,sgi,rgb,rgba,bw,exr,j2k,j2c,jp2,pfm,pct,pict,pic,3fr,arw,bay,bmq,cap,cine,cr2,crw,cs1,dc2,dcr,drf,dsc,dng,erf,fff,ia,iiq,k25,kc2,kdc,mdc,mef,mos,mrw,nef,nrw,orf,pef,ptx,pxn,qtk,raf,raw,rdc,rw2,rwl,rwz,sr2,srf,srw,sti,x3f,webp,jxr,wdp,hdp
+21:09:52: ETC codec registering
+21:09:52: OITD codec registering
+21:09:52: Registering ResourceManager for type HighLevelGpuProgram
+21:09:52: MovableObjectFactory for type 'Decal' registered.
+21:09:52: MovableObjectFactory for type 'InternalCubemapProbe' registered.
+21:09:52: MovableObjectFactory for type 'Entity' registered.
+21:09:52: MovableObjectFactory for type 'Item' registered.
+21:09:52: MovableObjectFactory for type 'Light' registered.
+21:09:52: MovableObjectFactory for type 'Rectangle2Dv2' registered.
+21:09:52: MovableObjectFactory for type 'BillboardSet' registered.
+21:09:52: MovableObjectFactory for type 'ManualObject2' registered.
+21:09:52: MovableObjectFactory for type 'BillboardChain' registered.
+21:09:52: MovableObjectFactory for type 'RibbonTrail' registered.
+21:09:52: MovableObjectFactory for type 'WireAabb' registered.
+21:09:52: *-*-* OGRE Initialising
+21:09:52: *-*-* Version 2.3.3 (Daedalus)
+21:09:52: OverlayElementFactory for type Panel registered.
+21:09:52: OverlayElementFactory for type BorderPanel registered.
+21:09:52: OverlayElementFactory for type TextArea registered.
+21:09:52: Registering ResourceManager for type Font
+21:09:52: Loading library /opt/ros/jazzy/opt/gz_ogre_next_vendor/lib/OGRE-Next/RenderSystem_GL3Plus.so
+21:09:52: Installing plugin: GL 3+ RenderSystem
+21:09:52: OpenGL 3+ Rendering Subsystem created.
+21:09:52: Found Num EGL Devices: 1
+21:09:52: EGL Device: EGL_MESA_device_software EGL_EXT_device_drm_render_node #0
+21:09:52: Trying to init device: EGL_MESA_device_software EGL_EXT_device_drm_render_node #0...
+21:09:52: Created GL 4.5 context for device EGL_MESA_device_software EGL_EXT_device_drm_render_node #0
+21:09:52: Destroying device: EGL_MESA_device_software EGL_EXT_device_drm_render_node #0...
+21:09:52: Plugin successfully installed
+21:09:52: Loading library /opt/ros/jazzy/opt/gz_ogre_next_vendor/lib/OGRE-Next/Plugin_ParticleFX.so
+21:09:52: Installing plugin: ParticleFX
+21:09:52: Particle Emitter Type 'Point' registered
+21:09:52: Particle Emitter Type 'Box' registered
+21:09:52: Particle Emitter Type 'Ellipsoid' registered
+21:09:52: Particle Emitter Type 'Cylinder' registered
+21:09:52: Particle Emitter Type 'Ring' registered
+21:09:52: Particle Emitter Type 'HollowEllipsoid' registered
+21:09:52: Particle Affector Type 'LinearForce' registered
+21:09:52: Particle Affector Type 'ColourFader' registered
+21:09:52: Particle Affector Type 'ColourFader2' registered
+21:09:52: Particle Affector Type 'ColourImage' registered
+21:09:52: Particle Affector Type 'ColourInterpolator' registered
+21:09:52: Particle Affector Type 'Scaler' registered
+21:09:52: Particle Affector Type 'Rotator' registered
+21:09:52: Particle Affector Type 'DirectionRandomiser' registered
+21:09:52: Particle Affector Type 'DeflectorPlane' registered
+21:09:52: Plugin successfully installed
+21:09:52: CPU Identifier & Features
+21:09:52: -------------------------
+21:09:52:  *   CPU ID: GenuineIntel: 11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz
+21:09:52:  *   Logical cores: 12
+21:09:52:  *      SSE: yes
+21:09:52:  *     SSE2: yes
+21:09:52:  *     SSE3: yes
+21:09:52:  *      MMX: yes
+21:09:52:  *   MMXEXT: yes
+21:09:52:  *    3DNOW: no
+21:09:52:  * 3DNOWEXT: no
+21:09:52:  *     CMOV: yes
+21:09:52:  *      TSC: yes
+21:09:52:  *      FPU: yes
+21:09:52:  *      PRO: yes
+21:09:52:  *       HT: no
+21:09:52: -------------------------
+21:09:52: ******************************
+*** Starting GLX Subsystem ***
+******************************
+21:09:52: GL3PlusRenderSystem::_createRenderWindow "OgreWindow(0)_0", 1x1 windowed  miscParams: FSAA=0 border=none contentScalingFactor=1.000000 currentGLContext=true externalGLControl=true gamma=Yes parentWindowHandle=4194322 stereoMode=Frame Sequential 
+21:09:52: GLXWindow::create used FBConfigID = 267
+21:09:52: GL Version = 4.6.0.0
+21:09:52: GL_VERSION = 4.6 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.24.04.4
+21:09:52: GL_VENDOR = Microsoft Corporation
+21:09:52: GL_RENDERER = D3D12 (NVIDIA GeForce RTX 3050 Laptop GPU)
+21:09:52: GL_EXTENSIONS = 
+21:09:52: GL_AMD_conservative_depth
+21:09:52: GL_AMD_draw_buffers_blend
+21:09:52: GL_AMD_multi_draw_indirect
+21:09:52: GL_AMD_query_buffer_object
+21:09:52: GL_AMD_shader_trinary_minmax
+21:09:52: GL_AMD_texture_texture4
+21:09:52: GL_AMD_vertex_shader_layer
+21:09:52: GL_AMD_vertex_shader_viewport_index
+21:09:52: GL_ANGLE_texture_compression_dxt3
+21:09:52: GL_ANGLE_texture_compression_dxt5
+21:09:52: GL_APPLE_packed_pixels
+21:09:52: GL_ARB_ES2_compatibility
+21:09:52: GL_ARB_ES3_1_compatibility
+21:09:52: GL_ARB_ES3_2_compatibility
+21:09:52: GL_ARB_ES3_compatibility
+21:09:52: GL_ARB_arrays_of_arrays
+21:09:52: GL_ARB_base_instance
+21:09:52: GL_ARB_blend_func_extended
+21:09:52: GL_ARB_buffer_storage
+21:09:52: GL_ARB_clear_buffer_object
+21:09:52: GL_ARB_clear_texture
+21:09:52: GL_ARB_clip_control
+21:09:52: GL_ARB_color_buffer_float
+21:09:52: GL_ARB_compatibility
+21:09:52: GL_ARB_compressed_texture_pixel_storage
+21:09:52: GL_ARB_compute_shader
+21:09:52: GL_ARB_compute_variable_group_size
+21:09:52: GL_ARB_conditional_render_inverted
+21:09:52: GL_ARB_conservative_depth
+21:09:52: GL_ARB_copy_buffer
+21:09:52: GL_ARB_copy_image
+21:09:52: GL_ARB_cull_distance
+21:09:52: GL_ARB_debug_output
+21:09:52: GL_ARB_depth_buffer_float
+21:09:52: GL_ARB_depth_clamp
+21:09:52: GL_ARB_depth_texture
+21:09:52: GL_ARB_derivative_control
+21:09:52: GL_ARB_direct_state_access
+21:09:52: GL_ARB_draw_buffers
+21:09:52: GL_ARB_draw_buffers_blend
+21:09:52: GL_ARB_draw_elements_base_vertex
+21:09:52: GL_ARB_draw_indirect
+21:09:52: GL_ARB_draw_instanced
+21:09:52: GL_ARB_enhanced_layouts
+21:09:52: GL_ARB_explicit_attrib_location
+21:09:52: GL_ARB_explicit_uniform_location
+21:09:52: GL_ARB_fragment_coord_conventions
+21:09:52: GL_ARB_fragment_layer_viewport
+21:09:52: GL_ARB_fragment_program
+21:09:52: GL_ARB_fragment_program_shadow
+21:09:52: GL_ARB_fragment_shader
+21:09:52: GL_ARB_framebuffer_no_attachments
+21:09:52: GL_ARB_framebuffer_object
+21:09:52: GL_ARB_framebuffer_sRGB
+21:09:52: GL_ARB_get_program_binary
+21:09:52: GL_ARB_get_texture_sub_image
+21:09:52: GL_ARB_gl_spirv
+21:09:52: GL_ARB_gpu_shader5
+21:09:52: GL_ARB_gpu_shader_fp64
+21:09:52: GL_ARB_gpu_shader_int64
+21:09:52: GL_ARB_half_float_pixel
+21:09:52: GL_ARB_half_float_vertex
+21:09:52: GL_ARB_indirect_parameters
+21:09:52: GL_ARB_instanced_arrays
+21:09:52: GL_ARB_internalformat_query
+21:09:52: GL_ARB_internalformat_query2
+21:09:52: GL_ARB_invalidate_subdata
+21:09:52: GL_ARB_map_buffer_alignment
+21:09:52: GL_ARB_map_buffer_range
+21:09:52: GL_ARB_multi_bind
+21:09:52: GL_ARB_multi_draw_indirect
+21:09:52: GL_ARB_multisample
+21:09:52: GL_ARB_multitexture
+21:09:52: GL_ARB_occlusion_query
+21:09:52: GL_ARB_occlusion_query2
+21:09:52: GL_ARB_parallel_shader_compile
+21:09:52: GL_ARB_pipeline_statistics_query
+21:09:52: GL_ARB_pixel_buffer_object
+21:09:52: GL_ARB_point_parameters
+21:09:52: GL_ARB_point_sprite
+21:09:52: GL_ARB_polygon_offset_clamp
+21:09:52: GL_ARB_program_interface_query
+21:09:52: GL_ARB_provoking_vertex
+21:09:52: GL_ARB_query_buffer_object
+21:09:52: GL_ARB_robust_buffer_access_behavior
+21:09:52: GL_ARB_robustness
+21:09:52: GL_ARB_sample_shading
+21:09:52: GL_ARB_sampler_objects
+21:09:52: GL_ARB_seamless_cube_map
+21:09:52: GL_ARB_separate_shader_objects
+21:09:52: GL_ARB_shader_atomic_counter_ops
+21:09:52: GL_ARB_shader_atomic_counters
+21:09:52: GL_ARB_shader_ballot
+21:09:52: GL_ARB_shader_bit_encoding
+21:09:52: GL_ARB_shader_draw_parameters
+21:09:52: GL_ARB_shader_group_vote
+21:09:52: GL_ARB_shader_image_load_store
+21:09:52: GL_ARB_shader_image_size
+21:09:52: GL_ARB_shader_objects
+21:09:52: GL_ARB_shader_precision
+21:09:52: GL_ARB_shader_storage_buffer_object
+21:09:52: GL_ARB_shader_subroutine
+21:09:52: GL_ARB_shader_texture_image_samples
+21:09:52: GL_ARB_shader_texture_lod
+21:09:52: GL_ARB_shading_language_100
+21:09:52: GL_ARB_shading_language_420pack
+21:09:52: GL_ARB_shading_language_include
+21:09:52: GL_ARB_shading_language_packing
+21:09:52: GL_ARB_shadow
+21:09:52: GL_ARB_spirv_extensions
+21:09:52: GL_ARB_stencil_texturing
+21:09:52: GL_ARB_sync
+21:09:52: GL_ARB_tessellation_shader
+21:09:52: GL_ARB_texture_barrier
+21:09:52: GL_ARB_texture_border_clamp
+21:09:52: GL_ARB_texture_buffer_object
+21:09:52: GL_ARB_texture_buffer_object_rgb32
+21:09:52: GL_ARB_texture_buffer_range
+21:09:52: GL_ARB_texture_compression
+21:09:52: GL_ARB_texture_compression_bptc
+21:09:52: GL_ARB_texture_compression_rgtc
+21:09:52: GL_ARB_texture_cube_map
+21:09:52: GL_ARB_texture_cube_map_array
+21:09:52: GL_ARB_texture_env_add
+21:09:52: GL_ARB_texture_env_combine
+21:09:52: GL_ARB_texture_env_crossbar
+21:09:52: GL_ARB_texture_env_dot3
+21:09:52: GL_ARB_texture_filter_anisotropic
+21:09:52: GL_ARB_texture_float
+21:09:52: GL_ARB_texture_gather
+21:09:52: GL_ARB_texture_mirror_clamp_to_edge
+21:09:52: GL_ARB_texture_mirrored_repeat
+21:09:52: GL_ARB_texture_multisample
+21:09:52: GL_ARB_texture_non_power_of_two
+21:09:52: GL_ARB_texture_query_levels
+21:09:52: GL_ARB_texture_query_lod
+21:09:52: GL_ARB_texture_rectangle
+21:09:52: GL_ARB_texture_rg
+21:09:52: GL_ARB_texture_rgb10_a2ui
+21:09:52: GL_ARB_texture_stencil8
+21:09:52: GL_ARB_texture_storage
+21:09:52: GL_ARB_texture_storage_multisample
+21:09:52: GL_ARB_texture_swizzle
+21:09:52: GL_ARB_texture_view
+21:09:52: GL_ARB_timer_query
+21:09:52: GL_ARB_transform_feedback2
+21:09:52: GL_ARB_transform_feedback3
+21:09:52: GL_ARB_transform_feedback_instanced
+21:09:52: GL_ARB_transform_feedback_overflow_query
+21:09:52: GL_ARB_transpose_matrix
+21:09:52: GL_ARB_uniform_buffer_object
+21:09:52: GL_ARB_vertex_array_bgra
+21:09:52: GL_ARB_vertex_array_object
+21:09:52: GL_ARB_vertex_attrib_64bit
+21:09:52: GL_ARB_vertex_attrib_binding
+21:09:52: GL_ARB_vertex_buffer_object
+21:09:52: GL_ARB_vertex_program
+21:09:52: GL_ARB_vertex_shader
+21:09:52: GL_ARB_vertex_type_10f_11f_11f_rev
+21:09:52: GL_ARB_vertex_type_2_10_10_10_rev
+21:09:52: GL_ARB_viewport_array
+21:09:52: GL_ARB_window_pos
+21:09:52: GL_ATI_blend_equation_separate
+21:09:52: GL_ATI_draw_buffers
+21:09:52: GL_ATI_fragment_shader
+21:09:52: GL_ATI_meminfo
+21:09:52: GL_ATI_separate_stencil
+21:09:52: GL_ATI_texture_env_combine3
+21:09:52: GL_ATI_texture_float
+21:09:52: GL_EXT_EGL_image_storage
+21:09:52: GL_EXT_EGL_image_storage_compression
+21:09:52: GL_EXT_EGL_sync
+21:09:52: GL_EXT_abgr
+21:09:52: GL_EXT_bgra
+21:09:52: GL_EXT_blend_color
+21:09:52: GL_EXT_blend_equation_separate
+21:09:52: GL_EXT_blend_func_separate
+21:09:52: GL_EXT_blend_minmax
+21:09:52: GL_EXT_blend_subtract
+21:09:52: GL_EXT_compiled_vertex_array
+21:09:52: GL_EXT_copy_texture
+21:09:52: GL_EXT_debug_label
+21:09:52: GL_EXT_direct_state_access
+21:09:52: GL_EXT_draw_buffers2
+21:09:52: GL_EXT_draw_instanced
+21:09:52: GL_EXT_draw_range_elements
+21:09:52: GL_EXT_fog_coord
+21:09:52: GL_EXT_framebuffer_blit
+21:09:52: GL_EXT_framebuffer_multisample
+21:09:52: GL_EXT_framebuffer_multisample_blit_scaled
+21:09:52: GL_EXT_framebuffer_object
+21:09:52: GL_EXT_framebuffer_sRGB
+21:09:52: GL_EXT_gpu_program_parameters
+21:09:52: GL_EXT_gpu_shader4
+21:09:52: GL_EXT_memory_object
+21:09:52: GL_EXT_memory_object_fd
+21:09:52: GL_EXT_multi_draw_arrays
+21:09:52: GL_EXT_packed_depth_stencil
+21:09:52: GL_EXT_packed_float
+21:09:52: GL_EXT_packed_pixels
+21:09:52: GL_EXT_pixel_buffer_object
+21:09:52: GL_EXT_point_parameters
+21:09:52: GL_EXT_polygon_offset_clamp
+21:09:52: GL_EXT_provoking_vertex
+21:09:52: GL_EXT_rescale_normal
+21:09:52: GL_EXT_secondary_color
+21:09:52: GL_EXT_semaphore
+21:09:52: GL_EXT_semaphore_fd
+21:09:52: GL_EXT_separate_specular_color
+21:09:52: GL_EXT_shader_integer_mix
+21:09:52: GL_EXT_shadow_funcs
+21:09:52: GL_EXT_stencil_two_side
+21:09:52: GL_EXT_stencil_wrap
+21:09:52: GL_EXT_subtexture
+21:09:52: GL_EXT_texture
+21:09:52: GL_EXT_texture3D
+21:09:52: GL_EXT_texture_array
+21:09:52: GL_EXT_texture_buffer_object
+21:09:52: GL_EXT_texture_compression_dxt1
+21:09:52: GL_EXT_texture_compression_rgtc
+21:09:52: GL_EXT_texture_compression_s3tc
+21:09:52: GL_EXT_texture_cube_map
+21:09:52: GL_EXT_texture_edge_clamp
+21:09:52: GL_EXT_texture_env_add
+21:09:52: GL_EXT_texture_env_combine
+21:09:52: GL_EXT_texture_env_dot3
+21:09:52: GL_EXT_texture_filter_anisotropic
+21:09:52: GL_EXT_texture_integer
+21:09:52: GL_EXT_texture_lod_bias
+21:09:52: GL_EXT_texture_object
+21:09:52: GL_EXT_texture_rectangle
+21:09:52: GL_EXT_texture_sRGB
+21:09:52: GL_EXT_texture_sRGB_decode
+21:09:52: GL_EXT_texture_shared_exponent
+21:09:52: GL_EXT_texture_snorm
+21:09:52: GL_EXT_texture_storage
+21:09:52: GL_EXT_texture_swizzle
+21:09:52: GL_EXT_timer_query
+21:09:52: GL_EXT_transform_feedback
+21:09:52: GL_EXT_vertex_array
+21:09:52: GL_EXT_vertex_array_bgra
+21:09:52: GL_EXT_vertex_attrib_64bit
+21:09:52: GL_IBM_multimode_draw_arrays
+21:09:52: GL_IBM_rasterpos_clip
+21:09:52: GL_IBM_texture_mirrored_repeat
+21:09:52: GL_INGR_blend_func_separate
+21:09:52: GL_KHR_context_flush_control
+21:09:52: GL_KHR_debug
+21:09:52: GL_KHR_no_error
+21:09:52: GL_KHR_parallel_shader_compile
+21:09:52: GL_KHR_robust_buffer_access_behavior
+21:09:52: GL_KHR_robustness
+21:09:52: GL_KHR_texture_compression_astc_ldr
+21:09:52: GL_KHR_texture_compression_astc_sliced_3d
+21:09:52: GL_MESA_framebuffer_flip_y
+21:09:52: GL_MESA_pack_invert
+21:09:52: GL_MESA_shader_integer_functions
+21:09:52: GL_MESA_texture_signed_rgba
+21:09:52: GL_MESA_window_pos
+21:09:52: GL_NVX_gpu_memory_info
+21:09:52: GL_NV_ES1_1_compatibility
+21:09:52: GL_NV_blend_square
+21:09:52: GL_NV_conditional_render
+21:09:52: GL_NV_copy_depth_to_color
+21:09:52: GL_NV_copy_image
+21:09:52: GL_NV_depth_clamp
+21:09:52: GL_NV_fog_distance
+21:09:52: GL_NV_half_float
+21:09:52: GL_NV_light_max_exponent
+21:09:52: GL_NV_packed_depth_stencil
+21:09:52: GL_NV_primitive_restart
+21:09:52: GL_NV_texgen_reflection
+21:09:52: GL_NV_texture_barrier
+21:09:52: GL_NV_texture_env_combine4
+21:09:52: GL_NV_texture_rectangle
+21:09:52: GL_NV_vdpau_interop
+21:09:52: GL_OES_EGL_image
+21:09:52: GL_OES_read_format
+21:09:52: GL_S3_s3tc
+21:09:52: GL_SGIS_generate_mipmap
+21:09:52: GL_SGIS_texture_border_clamp
+21:09:52: GL_SGIS_texture_edge_clamp
+21:09:52: GL_SGIS_texture_lod
+21:09:52: GL_SUN_multi_draw_arrays
+21:09:52: **************************************
+21:09:52: ***   OpenGL 3+ Renderer Started   ***
+21:09:52: **************************************
+21:09:52: Registering ResourceManager for type GpuProgram
+21:09:52: RenderSystem capabilities
+21:09:52: -------------------------
+21:09:52: RenderSystem Name: OpenGL 3+ Rendering Subsystem
+21:09:52: GPU Vendor: microsoft
+21:09:52: Device Name: D3D12 (NVIDIA GeForce RTX 3050 Laptop GPU)
+21:09:52: Driver Version: 4.6.0.0
+21:09:52:  * Fixed function pipeline: no
+21:09:52:  * Hardware generation of mipmaps: yes
+21:09:52:  * Texture blending: yes
+21:09:52:  * Anisotropic texture filtering: yes
+21:09:52:  * Dot product texture operation: yes
+21:09:52:  * Cube mapping: yes
+21:09:52:  * Hardware stencil buffer: yes
+21:09:52:    - Stencil depth: 8
+21:09:52:    - Two sided stencil support: yes
+21:09:52:    - Wrap stencil values: yes
+21:09:52:  * Hardware vertex / index buffers: yes
+21:09:52:  * 32-bit index buffers: yes
+21:09:52:  * Vertex programs: yes
+21:09:52:  * Number of floating-point constants for vertex programs: 16352
+21:09:52:  * Number of integer constants for vertex programs: 16352
+21:09:52:  * Number of boolean constants for vertex programs: 16352
+21:09:52:  * Fragment programs: yes
+21:09:52:  * Number of floating-point constants for fragment programs: 16380
+21:09:52:  * Number of integer constants for fragment programs: 16380
+21:09:52:  * Number of boolean constants for fragment programs: 16380
+21:09:52:  * Geometry programs: yes
+21:09:52:  * Number of floating-point constants for geometry programs: 16352
+21:09:52:  * Number of integer constants for geometry programs: 16352
+21:09:52:  * Number of boolean constants for geometry programs: 16352
+21:09:52:  * Tessellation Hull programs: yes
+21:09:52:  * Number of floating-point constants for tessellation hull programs: 16384
+21:09:52:  * Number of integer constants for tessellation hull programs: 16384
+21:09:52:  * Number of boolean constants for tessellation hull programs: 16384
+21:09:52:  * Tessellation Domain programs: yes
+21:09:52:  * Number of floating-point constants for tessellation domain programs: 16352
+21:09:52:  * Number of integer constants for tessellation domain programs: 16352
+21:09:52:  * Number of boolean constants for tessellation domain programs: 16352
+21:09:52:  * Compute programs: yes
+21:09:52:  * Number of floating-point constants for compute programs: 16384
+21:09:52:  * Number of integer constants for compute programs: 16384
+21:09:52:  * Number of boolean constants for compute programs: 16384
+21:09:52:  * Supported Shader Profiles: glsl glsl130 glsl140 glsl150 glsl330 glsl400 glsl410 glsl420 glsl430 glsl440
+21:09:52:  * Texture Compression: yes
+21:09:52:    - DXT: yes
+21:09:52:    - VTC: no
+21:09:52:    - PVRTC: no
+21:09:52:    - ATC: no
+21:09:52:    - ETC1: no
+21:09:52:    - ETC2: yes
+21:09:52:    - BC4/BC5: yes
+21:09:52:    - BC6H/BC7: yes
+21:09:52:    - ASTC: yes
+21:09:52:  * Hardware Occlusion Query: yes
+21:09:52:  * User clip planes: yes
+21:09:52:  * VET_UBYTE4 vertex element type: yes
+21:09:52:  * Infinite far plane projection: yes
+21:09:52:  * Hardware render-to-texture: yes
+21:09:52:  * Floating point textures: yes
+21:09:52:  * Non-power-of-two textures: yes
+21:09:52:  * 1d textures: yes
+21:09:52:  * Volume textures: yes
+21:09:52:  * Max Texture resolution (2D) 16384
+21:09:52:  * Max Texture resolution (3D) 2048
+21:09:52:  * Max Texture resolution (Cubemaps) 16384
+21:09:52:  * Multiple Render Targets: 8
+21:09:52:    - With different bit depths: yes
+21:09:52:  * Point Sprites: yes
+21:09:52:  * Extended point parameters: yes
+21:09:52:  * Max Point Size: 255
+21:09:52:  * Vertex texture fetch: yes
+21:09:52:  * Number of world matrices: 0
+21:09:52:  * Number of texture units: 16
+21:09:52:  * Stencil buffer depth: 8
+21:09:52:  * Number of vertex blend matrices: 0
+21:09:52:    - Max vertex textures: 32
+21:09:52:    - Vertex textures shared: yes
+21:09:52:  * Render to Vertex Buffer : yes
+21:09:52:  * Hardware Atomic Counters: yes
+21:09:52:  * Compute max threads per threadgroup per axis: 1024, 1024, 64
+21:09:52:  * Compute max threads per threadgroup total: 1024
+21:09:52:  * GL 1.5 without VBO workaround: no
+21:09:52:  * Frame Buffer objects: yes
+21:09:52:  * Frame Buffer objects (ARB extension): no
+21:09:52:  * Frame Buffer objects (ATI extension): no
+21:09:52:  * PBuffer support: no
+21:09:52:  * GL 1.5 without HW-occlusion workaround: no
+21:09:52:  * Vertex Array Objects: yes
+21:09:52:  * Separate shader objects: no
+21:09:52:  * Using Reverse Z: yes
+21:09:52: DefaultWorkQueue('Root') initialising on thread main.
+21:09:52: Particle Renderer Type 'billboard' registered
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/2.0/scripts/Compositors' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/2.0/scripts/materials/Common' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/2.0/scripts/materials/Common/GLSL' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/2.0/scripts/materials/Terra' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/2.0/scripts/materials/Terra/GLSL' of type 'FileSystem' to resource group 'General'
+21:09:52: HLMS Library path '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/Hlms/Gz' has no piece files. Are you sure you provided the right path with read access?
+21:09:52: HLMS Library path '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/Hlms/Gz' has no piece files. Are you sure you provided the right path with read access?
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/materials/programs' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/materials/programs/GLSL' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/materials/programs/Metal' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/materials/scripts' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/materials/textures' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/Compute/Tools' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/Compute/Tools/Any' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/Compute/Tools/GLSL' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/Compute/Tools/HLSL' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/Compute/Tools/Metal' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/VCT' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/VCT/ImageVoxelizer' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/VCT/Visualizer' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/Hlms/Common/Any' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/Hlms/Common/GLSL' of type 'FileSystem' to resource group 'General'
+21:09:52: Added resource location '/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz/gz-rendering8/ogre2/media/Hlms/Pbs/Any' of type 'FileSystem' to resource group 'General'
+21:09:52: Pars21:09:52: Texture memory budget exceeded. Stalling GPU.
+21:09:52: Stalling was not enough. Freeing memory.
+21:09:52: Can't assign material scene::Material(65448) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:53: Can't assign material scene::Material(65444) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:53: Can't assign material scene::Material(65440) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:53: Can't assign material scene::Material(65436) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:53: Texture memory budget exceeded. Stalling GPU.
+21:09:53: Can't assign material scene::Material(65432) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:54: Can't assign material scene::Material(65428) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:54: Texture memory budget exceeded. Stalling GPU.
+21:09:54: Stalling was not enough. Freeing memory.
+21:09:54: Can't assign material scene::Material(65424) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:54: Texture memory budget exceeded. Stalling GPU.
+21:09:54: Stalling was not enough. Freeing memory.
+21:09:54: Can't assign material scene::Material(65420) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:54: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gz/models/coast_waves/meshes' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:54: Initialising resource group General
+21:09:54: Can't assign material scene::Material(65414) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:54: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_red/5/meshes' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:54: Initialising resource group General
+21:09:54: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_red/5/materials/textures/' of type 'FileSystem' to resource group 'General'
+21:09:54: Texture memory budget exceeded. Stalling GPU.
+21:09:54: Stalling was not enough. Freeing memory.
+21:09:54: Can't assign material scene::Material(65410) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:54: Can't assign material scene::Material(65410) because this Mat21:09:54: Texture memory budget exceeded. Stalling GPU.
+21:09:54: Stalling was not enough. Freeing memory.
+21:09:54: Texture memory budget exceeded. Stalling GPU.
+21:09:54: Stalling was not enough. Freeing memory.
+21:09:54: Can't assign material scene::Material(65436) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:55: Texture memory budget exceeded. Stalling GPU.
+21:09:55: Stalling was not enough. Freeing memory.
+21:09:55: Can't assign material scene::Material(65432) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:55: Can't assign material scene::Material(65428) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:55: Can't assign material scene::Material(65424) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:55: Texture memory budget exceeded. Stalling GPU.
+21:09:55: Can't assign material scene::Material(65420) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65416) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Texture memory budget exceeded. Stalling GPU.
+21:09:56: Stalling was not enough. Freeing memory.
+21:09:56: Can't assign material scene::Material(65412) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Texture memory budget exceeded. Stalling GPU.
+21:09:56: Stalling was not enough. Freeing memory.
+21:09:56: Can't assign material scene::Material(65408) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gz/models/coast_waves/meshes' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:56: Initialising resource group General
+21:09:56: Can't assign material scene::Material(65402) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_red/5/meshes' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:56: Initialising resource group General
+21:09:56: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/mb_marker_buoy_red/5/materials/textures/' of type 'FileSystem' to resource group 'General'
+21:09:56: Texture memory budget exceeded. Stalling GPU.
+21:09:56: Stalling was not enough. Freeing memory.
+21:09:56: Can't assign material scene::Material(65398) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65398) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Texture memory budget exceeded. Stalling GPU.
+21:09:56: Can't assign material scene::Material(65398) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65398) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/mb_round_buoy_orange/5/meshes' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:56: Initialising resource group General
+21:09:56: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/mb_round_buoy_orange/5/materials/textures/' of type 'FileSystem' to resource group 'General'
+21:09:56: Can't assign material scene::Material(65377) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65377) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Texture memory budget exceeded. Stalling GPU.
+21:09:56: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/post/4/meshes' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:56: Initialising resource group General
+21:09:56: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/post/4/materials/textures/' of type 'FileSystem' to resource group 'General'
+21:09:56: Can't assign material scene::Material(65366) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65366) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65366) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/antenna/5/meshes' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:56: Initialising resource group General
+21:09:56: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/antenna/5/meshes/' of type 'FileSystem' to resource group 'General'
+21:09:56: Can't assign material scene::Material(65356) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/tent/4/mesh' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:56: Initialising resource group General
+21:09:56: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/tent/4/mesh/' of type 'FileSystem' to resource group 'General'
+21:09:56: Texture memory budget exceeded. Stalling GPU.
+21:09:56: Stalling was not enough. Freeing memory.
+21:09:56: Can't assign material scene::Material(65352) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/foldable_table/4/mesh' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:56: Initialising resource group General
+21:09:56: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/foldable_table/4/mesh/' of type 'FileSystem' to resource group 'General'
+21:09:56: Texture memory budget exceeded. Stalling GPU.
+21:09:56: Stalling was not enough. Freeing memory.
+21:09:56: Can't assign material scene::Material(65348) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65348) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/foldable_chair/3/mesh' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:56: Initialising resource group General
+21:09:56: Added resource location '/home/byeung1/.gz/fuel/fuel.gazebosim.org/openrobotics/models/foldable_chair/3/mesh/' of type 'FileSystem' to resource group 'General'
+21:09:56: Texture memory budget exceeded. Stalling GPU.
+21:09:56: Stalling was not enough. Freeing memory.
+21:09:56: Texture memory budget exceeded. Stalling GPU.
+21:09:56: Stalling was not enough. Freeing memory.
+21:09:56: Can't assign material scene::Material(65341) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65341) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65341) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65352) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65348) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65348) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65341) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65341) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65341) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65352) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65348) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65348) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65341) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65341) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65341) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Can't assign material scene::Material(65519) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Added resource location '/home/byeung1/vrx_ws/install/share/wamv_description/models/WAM-V-Base/mesh' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:56: Initialising resource group General
+21:09:56: Can't assign material scene::Material(65290) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Added resource location '/home/byeung1/vrx_ws/install/share/wamv_description/models/WAM-V-Base/mesh/' of type 'FileSystem' to resource group 'General'
+21:09:56: Texture memory budget exceeded. Stalling GPU.
+21:09:56: Stalling was not enough. Freeing memory.
+21:09:56: Texture memory budget exceeded. Stalling GPU.
+21:09:56: Stalling was not enough. Freeing memory.
+21:09:56: Can't assign material scene::Material(65284) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:56: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gazebo/models/sensor_post/mesh' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:56: Initialising resource group General
+21:09:56: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gazebo/models/sensor_post/mesh/' of type 'FileSystem' to resource group 'General'
+21:09:57: Texture memory budget exceeded. Stalling GPU.
+21:09:57: Texture memory budget exceeded. Stalling GPU.
+21:09:57: Stalling was not enough. Freeing memory.
+21:09:57: Texture memory budget exceeded. Stalling GPU.
+21:09:57: Stalling was not enough. Freeing memory.
+21:09:57: Texture memory budget exceeded. Stalling GPU.
+21:09:57: Can't assign material scene::Material(65278) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:57: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gazebo/models/mono_camera/mesh' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:57: Initialising resource group General
+21:09:57: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gazebo/models/mono_camera/mesh/' of type 'FileSystem' to resource group 'General'
+21:09:57: Can't assign material scene::Material(65274) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:57: Can't assign material scene::Material(65284) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:57: Can't assign material scene::Material(65278) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:57: Can't assign material scene::Material(65274) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:57: Texture memory budget exceeded. Stalling GPU.
+21:09:57: Stalling was not enough. Freeing memory.
+21:09:57: Can't assign material scene::Material(65284) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:57: Can't assign material scene::Material(65278) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:57: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gazebo/models/3d_lidar/mesh' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:57: Initialising resource group General
+21:09:57: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gazebo/models/3d_lidar/mesh/' of type 'FileSystem' to resource group 'General'
+21:09:57: Texture memory budget exceeded. Stalling GPU.
+21:09:57: Stalling was not enough. Freeing memory.
+21:09:57: Can't assign material scene::Material(65247) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:57: Can't assign material scene::Material(65284) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:57: Can't assign material scene::Material(65278) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:57: Can't assign material scene::Material(65274) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:57: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gazebo/models/cpu_cases/mesh' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:57: Initialising resource group General
+21:09:57: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gazebo/models/cpu_cases/mesh/' of type 'FileSystem' to resource group 'General'
+21:09:57: Texture memory budget exceeded. Stalling GPU.
+21:09:57: Stalling was not enough. Freeing memory.
+21:09:57: Can't assign material scene::Material(65228) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:57: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gazebo/models/battery/mesh' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:57: Initialising resource group General
+21:09:57: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gazebo/models/battery/mesh/' of type 'FileSystem' to resource group 'General'
+21:09:57: Texture memory budget exceeded. Stalling GPU.
+21:09:57: Stalling was not enough. Freeing memory.
+21:09:57: Texture memory budget exceeded. Stalling GPU.
+21:09:57: Stalling was not enough. Freeing memory.
+21:09:57: Texture memory budget exceeded. Stalling GPU.
+21:09:57: Stalling was not enough. Freeing memory.
+21:09:57: Can't assign material scene::Material(65222) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:57: Can't assign material scene::Material(65222) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:58: Texture memory budget exceeded. Stalling GPU.
+21:09:58: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gazebo/models/ball_shooter/meshes' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:58: Initialising resource group General
+21:09:58: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gazebo/models/ball_shooter/meshes/' of type 'FileSystem' to resource group 'General'
+21:09:58: Texture memory budget exceeded. Stalling GPU.
+21:09:58: Stalling was not enough. Freeing memory.
+21:09:58: Can't assign material scene::Material(65211) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:58: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gazebo/models/ball_shooter/materials/Textures/' of type 'FileSystem' to resource group 'General'
+21:09:58: Can't assign material scene::Material(65205) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:58: Texture memory budget exceeded. Stalling GPU.
+21:09:58: Stalling was not enough. Freeing memory.
+21:09:58: Added resource location '/home/byeung1/vrx_ws/install/share/wamv_gazebo/models/gps/mesh' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:58: Initialising resource group General
+21:09:58: Added resource location '/home/byeung1/vrx_ws/install/share/wamv_gazebo/models/gps/mesh/' of type 'FileSystem' to resource group 'General'
+21:09:58: Texture memory budget exceeded. Stalling GPU.
+21:09:58: Stalling was not enough. Freeing memory.
+21:09:58: Can't assign material scene::Material(65199) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:58: Can't assign material scene::Material(65195) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:58: Added resource location '/home/byeung1/vrx_ws/install/share/wamv_description/models/engine/mesh' of type 'FileSystem' to resource group 'General' with recursive option
+21:09:58: Initialising resource group General
+21:09:58: Texture memory budget exceeded. Stalling GPU.
+21:09:58: Stalling was not enough. Freeing memory.
+21:09:58: Can't assign material scene::Material(65189) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:58: Added resource location '/home/byeung121:10:45: Can't assign material scene::Material(65206) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:10:45: Vertex Shader: 100000012VertexShader_vs
+Fragment Shader: 100000012PixelShader_ps
+ GLSL validation result : 
+active samplers with a different type refer to the same texture image unit
+t assign material scene::Material(65519) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:58: Can't assign material scene::Material(65189) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:58: Can't assign material scene::Material(65185) because this Material does not exist. Have you forgotten to define it in a .material script?
+21:09:58: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_vs_330.glsl' of type 'FileSystem' to resource group 'General'
+21:09:58: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_fs_330.glsl' of type 'FileSystem' to resource group 'General'
+21:09:58: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_vs_330.glsl' of type 'FileSystem' to resource group 'General'
+21:09:58: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_fs_330.glsl' of type 'FileSystem' to resource group 'General'
+21:09:58: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_vs_330.glsl' of type 'FileSystem' to resource group 'General'
+21:09:58: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_fs_330.glsl' of type 'FileSystem' to resource group 'General'
+21:09:58: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_vs_330.glsl' of type 'FileSystem' to resource group 'General'
+21:09:58: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_fs_330.glsl' of type 'FileSystem' to resource group 'General'
+21:09:58: Added resource location '/home/byeung1/vrx_ws/install/share/vrx_gz/models/coast_waves/materials/textures/' of type 'FileSystem' to resource group 'General'
+21:09:58: Texture memory budget exceeded. Stalling GPU.
+21:09:58: Texture memory budget exceeded. Stalling GPU.
+21:09:58: OGRE EXCEPTION(3:RenderingAPIException): Fixed Function pipeline is no longer allowed nor supported. The material Default/TransGreen must use shaders in HlmsLowLevel::calculateHashFor at ./.obj-x86_64-linux-gnu/gz_ogre_next_vendor-prefix/src/gz_ogre_next_vendor/OgreMain/src/OgreHlmsLowLevel.cpp (line 160)
+21:09:58: OGRE EXCEPTION(3:RenderingAPIException): Fixed Function pipeline is no longer allowed nor supported. The material Default/TransGreen must use shaders in HlmsLowLevel::calculateHashFor at ./.obj-x86_64-linux-gnu/gz_ogre_next_vendor-prefix/src/gz_ogre_next_vendor/OgreMain/src/OgreHlmsLowLevel.cpp (line 160)
+21:09:58: Couldn't apply datablock '[Hash 0x1dc5a795]' to this renderable. Using default one. Check previous log messages to see if there's more information.
+21:09:58: Vertex Shader: _gz_GerstnerWaves_vs_330.glsl
+Fragment Shader: _gz_GerstnerWaves_fs_330.glsl
+ GLSL validation result : 
+active samplers with a different type refer to the same texture image unit
+21:09:58: Vertex Shader: 100000003VertexShader_vs
+Fragment Shader: 100000003PixelShader_ps
+ GLSL validation result : 
+active samplers with a different type refer to the same texture image unit
+21:09:58: Vertex Shader: 100000004VertexShader_vs
+Fragment Shader: 100000004PixelShader_ps
+ GLSL validation result : 
+active samplers with a different type refer to the same texture image unit
+21:09:58: Vertex Shader: 100000005VertexShader_vs
+Fragment Shader: 100000005PixelShader_ps
+ GLSL validation result : 
+active samplers with a different type refer to the same texture image unit
+21:09:58: Vertex Shader: 100000006VertexShader_vs
+Fragment Shader: 100000006PixelShader_ps
+ GLSL validation result : 
+active samplers with a different type refer to the same texture image unit
+21:09:58: Vertex Shader: 100000007VertexShader_vs
+Fragment Shader: 100000007PixelShader_ps
+ GLSL validation result : 
+active samplers with a different type refer to the same texture image unit
+21:09:59: WARNING: Deleting mapped buffer without having it unmapped. This is often sign of a resource leak or a bad pattern. Umapping the buffer for you...
+21:10:45: Can't assign material scene::Material(65195) because this Material does not exist. Have you forgotten to define it in a .material script?

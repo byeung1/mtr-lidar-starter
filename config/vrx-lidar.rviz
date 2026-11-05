@@ -1,0 +1,44 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+Visualization Manager:
+  Class: ""
+  Global Options:
+    Background Color: 35; 35; 35
+    Fixed Frame: wamv/wamv/base_link/lidar_wamv_sensor
+    Frame Rate: 20
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Name: Grid
+      Enabled: true
+      Cell Size: 1
+      Plane Cell Count: 30
+      Reference Frame: <Fixed Frame>
+    - Class: rviz_default_plugins/PointCloud2
+      Name: LiDAR
+      Enabled: true
+      Topic:
+        Value: /lidar/points
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Depth: 5
+      Style: Points
+      Size (Pixels): 2
+      Color Transformer: AxisColor
+      Position Transformer: XYZ
+      Axis: Z
+      Decay Time: 0
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 25
+      Pitch: 0.8
+      Yaw: 0.8
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+Window Geometry:
+  Width: 1000
+  Height: 700

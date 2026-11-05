@@ -1,0 +1,299 @@
+Mon Nov  2 02:06:25 UTC 2026
+Linux BY-Laptop 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+WSLg: 1.0.79
+Architecture: x86_64
+Built: 2026-06-25T17:27:16Z
+OS: Microsoft Azure Linux 3.0
+
+wslg:            6942bb534b537302a7a22617261d9274db3cfa37
+DirectX-Headers: v1.608.0
+FreeRDP:         c4030980b29322a9cb2190711a5fadeeeb8b6a33
+mesa:            23.1.0
+pulseaudio:      c33051f2296af748ac5cd13e51abfac4d129e4c7
+weston:          a7e35fdab455dce5774b43b8aff682f748307e31
+TARGET         SOURCE           FSTYPE OPTIONS
+/tmp/.X11-unix none[/.X11-unix] tmpfs  ro,relatime
+crw-rw-rw- 1 root root 10, 258 Nov  1 19:51 /dev/dxg
+name of display: :0
+display: :0  screen: 0
+direct rendering: Yes
+Extended renderer info (GLX_MESA_query_renderer):
+    Vendor: Mesa (0xffffffff)
+    Device: llvmpipe (LLVM 20.1.2, 256 bits) (0xffffffff)
+    Version: 25.2.8
+    Accelerated: no
+    Video memory: 7830MB
+    Unified memory: yes
+    Preferred profile: core (0x1)
+    Max core profile version: 4.5
+    Max compat profile version: 4.5
+    Max GLES1 profile version: 1.1
+    Max GLES[23] profile version: 3.2
+Memory info (GL_ATI_meminfo):
+    VBO free memory - total: 0 MB, largest block: 0 MB
+    VBO free aux. memory - total: 6840 MB, largest block: 6840 MB
+    Texture free memory - total: 0 MB, largest block: 0 MB
+    Texture free aux. memory - total: 6840 MB, largest block: 6840 MB
+    Renderbuffer free memory - total: 0 MB, largest block: 0 MB
+    Renderbuffer free aux. memory - total: 6840 MB, largest block: 6840 MB
+Memory info (GL_NVX_gpu_memory_info):
+    Dedicated video memory: 0 MB
+    Total available memory: 7830 MB
+    Currently available dedicated video memory: 0 MB
+OpenGL vendor string: Mesa
+OpenGL renderer string: llvmpipe (LLVM 20.1.2, 256 bits)
+OpenGL core profile version string: 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4
+OpenGL core profile shading language version string: 4.50
+OpenGL core profile context flags: (none)
+OpenGL core profile profile mask: core profile
+
+OpenGL version string: 4.5 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.24.04.4
+OpenGL shading language version string: 4.50
+OpenGL context flags: (none)
+OpenGL profile mask: compatibility profile
+
+OpenGL ES profile version string: OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.24.04.4
+OpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.20
+
+name of display: :0
+display: :0  screen: 0
+direct rendering: Yes
+Extended renderer info (GLX_MESA_query_renderer):
+    Vendor: Microsoft Corporation (0xffffffff)
+    Device: D3D12 (NVIDIA GeForce RTX 3050 Laptop GPU) (0xffffffff)
+    Version: 25.2.8
+    Accelerated: yes
+    Video memory: 12043MB
+    Unified memory: no
+    Preferred profile: core (0x1)
+    Max core profile version: 4.6
+    Max compat profile version: 4.6
+    Max GLES1 profile version: 1.1
+    Max GLES[23] profile version: 3.1
+Memory info (GL_ATI_meminfo):
+    VBO free memory - total: 3354 MB, largest block: 3354 MB
+    VBO free aux. memory - total: 0 MB, largest block: 0 MB
+    Texture free memory - total: 3354 MB, largest block: 3354 MB
+    Texture free aux. memory - total: 0 MB, largest block: 0 MB
+    Renderbuffer free memory - total: 3354 MB, largest block: 3354 MB
+    Renderbuffer free aux. memory - total: 0 MB, largest block: 0 MB
+Memory info (GL_NVX_gpu_memory_info):
+    Dedicated video memory: 3962 MB
+    Total available memory: 12043 MB
+    Currently available dedicated video memory: 3354 MB
+OpenGL vendor string: Microsoft Corporation
+OpenGL renderer string: D3D12 (NVIDIA GeForce RTX 3050 Laptop GPU)
+OpenGL core profile version string: 4.6 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4
+OpenGL core profile shading language version string: 4.60
+OpenGL core profile context flags: (none)
+OpenGL core profile profile mask: core profile
+
+OpenGL version string: 4.6 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.24.04.4
+OpenGL shading language version string: 4.60
+OpenGL context flags: (none)
+OpenGL profile mask: compatibility profile
+
+OpenGL ES profile version string: OpenGL ES 3.1 Mesa 25.2.8-0ubuntu0.24.04.4
+OpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.10
+
+name of display: :0
+display: :0  screen: 0
+direct rendering: Yes
+Extended renderer info (GLX_MESA_query_renderer):
+    Vendor: Microsoft Corporation (0xffffffff)
+    Device: D3D12 (Intel(R) UHD Graphics) (0xffffffff)
+    Version: 25.2.8
+    Accelerated: yes
+    Video memory: 8209MB
+    Unified memory: yes
+    Preferred profile: core (0x1)
+    Max core profile version: 4.1
+    Max compat profile version: 4.1
+    Max GLES1 profile version: 1.1
+    Max GLES[23] profile version: 3.0
+Memory info (GL_ATI_meminfo):
+    VBO free memory - total: 7413 MB, largest block: 7413 MB
+    VBO free aux. memory - total: 0 MB, largest block: 0 MB
+    Texture free memory - total: 7413 MB, largest block: 7413 MB
+    Texture free aux. memory - total: 0 MB, largest block: 0 MB
+    Renderbuffer free memory - total: 7413 MB, largest block: 7413 MB
+    Renderbuffer free aux. memory - total: 0 MB, largest block: 0 MB
+Memory info (GL_NVX_gpu_memory_info):
+    Dedicated video memory: 8209 MB
+    Total available memory: 8209 MB
+    Currently available dedicated video memory: 7413 MB
+OpenGL vendor string: Microsoft Corporation
+OpenGL renderer string: D3D12 (Intel(R) UHD Graphics)
+OpenGL core profile version string: 4.1 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4
+OpenGL core profile shading language version string: 4.10
+OpenGL core profile context flags: (none)
+OpenGL core profile profile mask: core profile
+
+OpenGL version string: 4.1 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.24.04.4
+OpenGL shading language version string: 4.10
+OpenGL context flags: (none)
+OpenGL profile mask: compatibility profile
+
+OpenGL ES profile version string: OpenGL ES 3.0 Mesa 25.2.8-0ubuntu0.24.04.4
+OpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.00
+
+libgl1-mesa-dri:
+  Installed: 25.2.8-0ubuntu0.24.04.4
+  Candidate: 25.2.8-0ubuntu0.24.04.4
+  Version table:
+ *** 25.2.8-0ubuntu0.24.04.4 500
+        500 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages
+        100 /var/lib/dpkg/status
+     25.2.8-0ubuntu0.24.04.2 500
+        500 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages
+     24.0.5-1ubuntu1 500
+        500 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages
+mesa-libgallium:
+  Installed: 25.2.8-0ubuntu0.24.04.4
+  Candidate: 25.2.8-0ubuntu0.24.04.4
+  Version table:
+ *** 25.2.8-0ubuntu0.24.04.4 500
+        500 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages
+        100 /var/lib/dpkg/status
+     25.2.8-0ubuntu0.24.04.2 500
+        500 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages
+libgz-rendering8:
+  Installed: 8.3.0-1~noble
+  Candidate: 8.3.0-1~noble
+  Version table:
+ *** 8.3.0-1~noble 500
+        500 https://packages.osrfoundation.org/gazebo/ubuntu-stable noble/main amd64 Packages
+        100 /var/lib/dpkg/status
+ros-jazzy-gz-rendering-vendor:
+  Installed: 0.0.7-1noble.20260905.065113
+  Candidate: 0.0.7-1noble.20260905.065113
+  Version table:
+ *** 0.0.7-1noble.20260905.065113 500
+        500 http://packages.ros.org/ros2/ubuntu noble/main amd64 Packages
+        100 /var/lib/dpkg/status
+DISPLAY=:0
+GZ_CONFIG_PATH=/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz
+GZ_SIM_RESOURCE_PATH=/opt/ros/jazzy/share
+LD_LIBRARY_PATH=/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib
+WAYLAND_DISPLAY=wayland-0
+	libgallium-25.2.8-0ubuntu0.24.04.4.so (libc6,x86-64) => /lib/x86_64-linux-gnu/libgallium-25.2.8-0ubuntu0.24.04.4.so
+	libd3d12core.so (libc6,x86-64) => /usr/lib/wsl/lib/libd3d12core.so
+	libd3d12.so (libc6,x86-64) => /usr/lib/wsl/lib/libd3d12.so
+	libGLdispatch.so.0 (libc6,x86-64) => /lib/x86_64-linux-gnu/libGLdispatch.so.0
+	libGLdispatch.so (libc6,x86-64) => /lib/x86_64-linux-gnu/libGLdispatch.so
+	libGLX_mesa.so.0 (libc6,x86-64) => /lib/x86_64-linux-gnu/libGLX_mesa.so.0
+	libGLX.so.0 (libc6,x86-64) => /lib/x86_64-linux-gnu/libGLX.so.0
+	libGLX.so (libc6,x86-64) => /lib/x86_64-linux-gnu/libGLX.so
+	libGLU.so.1 (libc6,x86-64) => /lib/x86_64-linux-gnu/libGLU.so.1
+	libGLU.so (libc6,x86-64) => /lib/x86_64-linux-gnu/libGLU.so
+	libGLEW.so.2.2 (libc6,x86-64) => /lib/x86_64-linux-gnu/libGLEW.so.2.2
+	libGLEW.so (libc6,x86-64) => /lib/x86_64-linux-gnu/libGLEW.so
+	libGLESv2.so.2 (libc6,x86-64) => /lib/x86_64-linux-gnu/libGLESv2.so.2
+	libGLESv2.so (libc6,x86-64) => /lib/x86_64-linux-gnu/libGLESv2.so
+	libGLESv1_CM.so.1 (libc6,x86-64) => /lib/x86_64-linux-gnu/libGLESv1_CM.so.1
+	libGLESv1_CM.so (libc6,x86-64) => /lib/x86_64-linux-gnu/libGLESv1_CM.so
+	libGL.so.1 (libc6,x86-64) => /lib/x86_64-linux-gnu/libGL.so.1
+	libGL.so (libc6,x86-64) => /lib/x86_64-linux-gnu/libGL.so
+	libEGL_mesa.so.0 (libc6,x86-64) => /lib/x86_64-linux-gnu/libEGL_mesa.so.0
+	libEGL.so.1 (libc6,x86-64) => /lib/x86_64-linux-gnu/libEGL.so.1
+	libEGL.so (libc6,x86-64) => /lib/x86_64-linux-gnu/libEGL.so
+[Sun Nov  1 21:02:01 2026] RBP: 0000728220bfd910 R08: 000000000000002e R09: 0000728248f3f170
+[Sun Nov  1 21:02:01 2026] R10: 00005aa119041600 R11: 000072821c0bcc40 R12: 0000728220bfd930
+[Sun Nov  1 21:02:01 2026] R13: 0000000000000000 R14: 0000728248829f40 R15: 0000000000000021
+[Sun Nov  1 21:02:01 2026] FS:  0000728220bff6c0 GS:  0000000000000000
+[Sun Nov  1 21:02:01 2026] WSL (15085 - CaptureCrash): Capturing crash for pid: 13887, executable: !usr!bin!ruby3.2, signal: 11, port: 50005
+[Sun Nov  1 21:02:47 2026] misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22
+[Sun Nov  1 21:02:47 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:02:47 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:02:47 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:02:47 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:47 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:02:47 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:02:47 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:02:47 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:02:49 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:41 2026] ruby[15264]: segfault at 758cb643eb10 ip 0000758d013c1a10 sp 0000758cddffd8c0 error 4 in libgcc_s.so.1[21a10,758d013a4000+24000] likely on CPU 1 (core 0, socket 0)
+[Sun Nov  1 21:04:41 2026] Code: a0 00 00 00 e9 41 fe ff ff 90 3c 04 0f 85 d9 2d fe ff 41 be 18 00 00 00 e9 d5 fd ff ff 0f 1f 44 00 00 49 8b 84 24 98 00 00 00 <80> 38 48 0f 85 67 ff ff ff 48 ba c7 c0 0f 00 00 00 0f 05 48 39 50
+[Sun Nov  1 21:04:41 2026] ruby3.2: ruby: potentially unexpected fatal signal 11.
+[Sun Nov  1 21:04:41 2026] CPU: 1 UID: 1000 PID: 15264 Comm: ruby Not tainted 6.18.54.1-microsoft-standard-WSL2 #1 PREEMPT(none) 
+[Sun Nov  1 21:04:41 2026] RIP: 0033:0x758d013c1a10
+[Sun Nov  1 21:04:41 2026] Code: a0 00 00 00 e9 41 fe ff ff 90 3c 04 0f 85 d9 2d fe ff 41 be 18 00 00 00 e9 d5 fd ff ff 0f 1f 44 00 00 49 8b 84 24 98 00 00 00 <80> 38 48 0f 85 67 ff ff ff 48 ba c7 c0 0f 00 00 00 0f 05 48 39 50
+[Sun Nov  1 21:04:41 2026] RSP: 002b:0000758cddffd8c0 EFLAGS: 00010246
+[Sun Nov  1 21:04:41 2026] RAX: 0000758cb643eb10 RBX: 0000758cddffda20 RCX: 0000000000000000
+[Sun Nov  1 21:04:41 2026] RDX: 0000000000000001 RSI: 0000566e2b621fc0 RDI: 0000758ccc1d9000
+[Sun Nov  1 21:04:41 2026] RBP: 0000758cddffd910 R08: 000000000000002e R09: 0000758d064d0170
+[Sun Nov  1 21:04:41 2026] R10: 0000566e2b624280 R11: 0000758cd80bcd50 R12: 0000758cddffd930
+[Sun Nov  1 21:04:41 2026] R13: 0000000000000000 R14: 0000758d05af8f40 R15: 0000000000000021
+[Sun Nov  1 21:04:41 2026] FS:  0000758cddfff6c0 GS:  0000000000000000
+[Sun Nov  1 21:04:41 2026] WSL (15689 - CaptureCrash): Capturing crash for pid: 14878, executable: !usr!bin!ruby3.2, signal: 11, port: 50005
+[Sun Nov  1 21:04:44 2026] misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22
+[Sun Nov  1 21:04:44 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:04:44 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:04:44 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:04:44 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:44 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:04:44 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:04:44 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:04:44 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:45 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:46 2026] misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22
+[Sun Nov  1 21:04:46 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:04:46 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:04:46 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:04:46 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[Sun Nov  1 21:04:46 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:04:46 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:04:46 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[Sun Nov  1 21:04:46 2026] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2

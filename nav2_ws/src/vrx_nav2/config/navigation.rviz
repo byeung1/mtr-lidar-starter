@@ -1,0 +1,106 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: nav2_rviz_plugins/Navigation 2
+    Name: Navigation 2
+Visualization Manager:
+  Class: ""
+  Global Options:
+    Fixed Frame: map
+    Background Color: 35; 35; 35
+    Frame Rate: 10
+  Displays:
+    - Class: rviz_default_plugins/Map
+      Name: Bounded water prior
+      Enabled: true
+      Topic:
+        Value: /map
+        Durability Policy: Transient Local
+        Reliability Policy: Reliable
+      Alpha: 0.3
+    - Class: rviz_default_plugins/RobotModel
+      Name: WAM-V
+      Enabled: true
+      Description Source: Topic
+      Description Topic:
+        Value: /wamv/robot_description
+        Reliability Policy: Reliable
+        Durability Policy: Transient Local
+      TF Prefix: wamv
+      Visual Enabled: true
+      Collision Enabled: false
+    - Class: rviz_default_plugins/TF
+      Name: TF
+      Enabled: true
+      Show Axes: true
+      Show Names: true
+    - Class: rviz_default_plugins/PointCloud2
+      Name: Filtered LiDAR
+      Enabled: true
+      Topic:
+        Value: /nav/points
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 3
+      Position Transformer: XYZ
+      Color Transformer: AxisColor
+      Style: Points
+      Size (Pixels): 2
+      Decay Time: 0
+    - Class: rviz_default_plugins/Map
+      Name: Global costmap
+      Enabled: true
+      Topic:
+        Value: /global_costmap/costmap
+        Reliability Policy: Reliable
+        Durability Policy: Transient Local
+      Color Scheme: costmap
+      Alpha: 0.5
+    - Class: rviz_default_plugins/Map
+      Name: Local costmap
+      Enabled: true
+      Topic:
+        Value: /local_costmap/costmap
+        Reliability Policy: Reliable
+        Durability Policy: Transient Local
+      Color Scheme: costmap
+      Alpha: 0.5
+    - Class: rviz_default_plugins/Path
+      Name: Global path
+      Enabled: true
+      Topic:
+        Value: /plan
+      Color: 0; 255; 0
+    - Class: rviz_default_plugins/Path
+      Name: Controller path
+      Enabled: true
+      Topic:
+        Value: /received_global_plan
+      Color: 255; 180; 0
+    - Class: rviz_default_plugins/PointStamped
+      Name: Controller lookahead
+      Enabled: true
+      Topic:
+        Value: /lookahead_point
+      Color: 255; 0; 255
+    - Class: rviz_default_plugins/Polygon
+      Name: Footprint
+      Enabled: true
+      Topic:
+        Value: /local_costmap/published_footprint
+      Color: 0; 255; 255
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: nav2_rviz_plugins/GoalTool
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Target Frame: nav_base
+      Distance: 40
+      Pitch: 1.4
+      Yaw: 0
+Window Geometry:
+  Width: 1200
+  Height: 800

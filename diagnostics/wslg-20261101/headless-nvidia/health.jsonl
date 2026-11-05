@@ -1,0 +1,41 @@
+{"wall_seconds": 10.176, "clouds": 0, "cloud_sim_first": null, "cloud_sim_last": null, "clocks": 2, "clock_first": 0.008, "clock_last": 0.012, "max_cloud_gap": 0.0, "seconds_since_cloud": null, "nonincreasing_stamps": 0, "finite_points": 0, "occupied_cells": 0, "forward_roi_points": 0, "forward_roi_cells": 0}
+{"wall_seconds": 20.197, "clouds": 96, "cloud_sim_first": 0.1, "cloud_sim_last": 6.4, "clocks": 1625, "clock_first": 0.008, "clock_last": 6.504, "max_cloud_gap": 0.42, "seconds_since_cloud": 0.156, "nonincreasing_stamps": 41, "finite_points": 11459, "occupied_cells": 14, "forward_roi_points": 0, "forward_roi_cells": 0}
+{"wall_seconds": 30.2, "clouds": 196, "cloud_sim_first": 0.1, "cloud_sim_last": 12.6, "clocks": 3167, "clock_first": 0.008, "clock_last": 12.672, "max_cloud_gap": 0.524, "seconds_since_cloud": 0.075, "nonincreasing_stamps": 83, "finite_points": 11614, "occupied_cells": 15, "forward_roi_points": 0, "forward_roi_cells": 0}
+{"wall_seconds": 40.203, "clouds": 285, "cloud_sim_first": 0.1, "cloud_sim_last": 19.0, "clocks": 4774, "clock_first": 0.008, "clock_last": 19.1, "max_cloud_gap": 0.887, "seconds_since_cloud": 0.094, "nonincreasing_stamps": 123, "finite_points": 11434, "occupied_cells": 16, "forward_roi_points": 0, "forward_roi_cells": 0}
+{"wall_seconds": 50.204, "clouds": 394, "cloud_sim_first": 0.1, "cloud_sim_last": 25.5, "clocks": 6397, "clock_first": 0.008, "clock_last": 25.592, "max_cloud_gap": 0.887, "seconds_since_cloud": 0.116, "nonincreasing_stamps": 173, "finite_points": 11490, "occupied_cells": 16, "forward_roi_points": 0, "forward_roi_cells": 0}
+{"wall_seconds": 60.229, "clouds": 479, "cloud_sim_first": 0.1, "cloud_sim_last": 31.7, "clocks": 7950, "clock_first": 0.008, "clock_last": 31.804, "max_cloud_gap": 0.979, "seconds_since_cloud": 0.155, "nonincreasing_stamps": 209, "finite_points": 11522, "occupied_cells": 14, "forward_roi_points": 0, "forward_roi_cells": 0}
+{"wall_seconds": 70.25, "clouds": 563, "cloud_sim_first": 0.1, "cloud_sim_last": 38.0, "clocks": 9521, "clock_first": 0.008, "clock_last": 38.088, "max_cloud_gap": 0.979, "seconds_since_cloud": 0.105, "nonincreasing_stamps": 244, "finite_points": 11463, "occupied_cells": 19, "forward_roi_points": 0, "forward_roi_cells": 0}
+{"wall_seconds": 80.279, "clouds": 617, "cloud_sim_first": 0.1, "cloud_sim_last": 43.7, "clocks": 10975, "clock_first": 0.008, "clock_last": 43.904, "max_cloud_gap": 0.979, "seconds_since_cloud": 0.351, "nonincreasing_stamps": 244, "finite_points": 11474, "occupied_cells": 16, "forward_roi_points": 0, "forward_roi_cells": 0}
+{"wall_seconds": 90.282, "clouds": 665, "cloud_sim_first": 0.1, "cloud_sim_last": 49.9, "clocks": 12535, "clock_first": 0.008, "clock_last": 50.144, "max_cloud_gap": 0.979, "seconds_since_cloud": 0.381, "nonincreasing_stamps": 244, "finite_points": 11423, "occupied_cells": 19, "forward_roi_points": 0, "forward_roi_cells": 0}
+{"wall_seconds": 100.284, "clouds": 712, "cloud_sim_first": 0.1, "cloud_sim_last": 56.1, "clocks": 14042, "clock_first": 0.008, "clock_last": 56.172, "max_cloud_gap": 1.382, "seconds_since_cloud": 0.051, "nonincreasing_stamps": 244, "finite_points": 11429, "occupied_cells": 16, "forward_roi_points": 0, "forward_roi_cells": 0}
+{"wall_seconds": 110.285, "clouds": 751, "cloud_sim_first": 0.1, "cloud_sim_last": 62.1, "clocks": 15539, "clock_first": 0.008, "clock_last": 62.16, "max_cloud_gap": 1.821, "seconds_since_cloud": 0.057, "nonincreasing_stamps": 244, "finite_points": 11707, "occupied_cells": 13, "forward_roi_points": 0, "forward_roi_cells": 0}
+{"wall_seconds": 119.672, "clouds": 791, "cloud_sim_first": 0.1, "cloud_sim_last": 67.8, "clocks": 16977, "clock_first": 0.008, "clock_last": 67.912, "max_cloud_gap": 1.96, "seconds_since_cloud": 0.167, "nonincreasing_stamps": 244, "finite_points": 11525, "occupied_cells": 16, "forward_roi_points": 0, "forward_roi_cells": 0}
+Traceback (most recent call last):
+  File "/home/byeung1/mtr-lidar-starter/scripts/vrx-health.py", line 70, in <module>
+    rclpy.spin_once(node, timeout_sec=0.2)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 226, in spin_once
+    executor.spin_once(timeout_sec=timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 907, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 877, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 781, in _wait_for_ready_callbacks
+    wait_set.wait(timeout_nsec)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/byeung1/mtr-lidar-starter/scripts/vrx-health.py", line 77, in <module>
+    rclpy.shutdown()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 134, in shutdown
+    _shutdown(context=context)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/utilities.py", line 82, in shutdown
+    context.shutdown()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/context.py", line 129, in shutdown
+    self.__context.shutdown()
+rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:333

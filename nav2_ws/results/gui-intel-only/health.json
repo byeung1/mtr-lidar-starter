@@ -1,0 +1,19 @@
+{
+  "duration": 40.00900068199917,
+  "gui_exit_code": null,
+  "gui_pid": 34979,
+  "clouds": 133,
+  "maximum_arrival_gap": 1.2874305740006093,
+  "safety": {
+    "armed": false,
+    "reason": "disarmed",
+    "left_N": 0.0,
+    "right_N": 0.0,
+    "speed": 0.003966215095463411,
+    "yaw_rate": 0.00010892340995684468,
+    "command_v": 0.0,
+    "command_w": 0.0,
+    "last_fault": "stale_lidar"
+  },
+  "real_time_factor": 0.4394863313394738
+}

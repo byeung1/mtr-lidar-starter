@@ -1,0 +1,5 @@
+[0.328s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/byeung1/mtr-lidar-starter/nav2_ws/.deps/root/opt/ros/jazzy' in the environment variable AMENT_PREFIX_PATH doesn't contain any 'local_setup.*' files.
+Starting >>> vrx_nav2
+Finished <<< vrx_nav2 [1.66s]
+
+Summary: 1 package finished [1.85s]

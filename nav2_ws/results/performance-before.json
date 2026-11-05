@@ -1,0 +1,40 @@
+{
+  "wall_seconds": 55.041444201999184,
+  "warmup_seconds": 20.0,
+  "processes": [
+    {
+      "command": "gz sim -v 4 -r -s sydney_regatta.sdf",
+      "cpu_ticks": 12045,
+      "rss_kb": 1088140,
+      "cpu_percent": 121.23050123041413
+    }
+  ],
+  "raw": {
+    "messages": 128,
+    "max_wall_gap": 0.9782744230014941,
+    "sim_first": 28.8,
+    "sim_last": 45.9
+  },
+  "filtered": {
+    "messages": 134,
+    "max_wall_gap": 0.94554112699916,
+    "sim_first": 28.7,
+    "sim_last": 45.9
+  },
+  "real_time_factor": 0.5088785611967854,
+  "safety_latest": {
+    "armed": false,
+    "reason": "disarmed",
+    "left_N": 0.0,
+    "right_N": 0.0,
+    "speed": -0.0014333189712305379,
+    "yaw_rate": 1.2972713400123334e-05,
+    "command_v": 0.0,
+    "command_w": 0.0,
+    "last_fault": "",
+    "last_fault_details": {}
+  },
+  "safety_reasons": [
+    "disarmed"
+  ]
+}

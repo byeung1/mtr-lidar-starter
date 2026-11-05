@@ -1,0 +1,2 @@
+[INFO] [1793588321.405415000] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/world/sydney_regatta/clock (gz.msgs.Clock) -> /world/sydney_regatta/clock (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[INFO] [1793588418.448405020] [rclcpp]: signal_handler(SIGINT/SIGTERM)

@@ -1,0 +1,13 @@
+[INFO] [1793597186.757716651] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1793597186.757843343] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[INFO] [1793597186.868528768] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1793597186.994580291] [rviz]: Subscribing to: /nav/points
+
+[INFO] [1793597187.273622611] [rviz2]: Trying to create a map of size 200 x 160 using 1 swatches
+[INFO] [1793597187.277773649] [rviz2]: Trying to create a map of size 96 x 96 using 1 swatches
+[INFO] [1793597187.279925601] [rviz2]: Trying to create a map of size 200 x 160 using 1 swatches
+[ERROR] [1793597187.336800266] [rviz2]: rviz/glsl120/indexed_8bit_image.vert
+rviz/glsl120/indexed_8bit_image.frag
+ GLSL link result : 
+active samplers with a different type refer to the same texture image unit
+[INFO] [1793597535.275212903] [rclcpp]: signal_handler(SIGINT/SIGTERM)

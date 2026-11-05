@@ -1,0 +1,37 @@
+[19:51:57.138] <5>WSLGd: FontFolder:16: FontMonitor: start monitoring /mnt/wslg/distro/usr/share/fonts
+[19:51:57.139] <5>WSLGd: FontMonitorThread:230: FontMonitor: monitoring thread started.
+[19:51:57.139] <5>WSLGd: DumpMonitorFolders:127: FontMonitor: monitoring /mnt/wslg/distro/usr/share/fonts, and it is *not* added to X11 font path
+dbus[19]: Unknown username "pulse" in message bus configuration file
+dbus[22]: Unable to set up transient service directory: XDG_RUNTIME_DIR "/mnt/wslg/runtime-dir" can be written by others (mode 040777)
+(WW) Option "-listen" for file descriptors is deprecated
+Please use "-listenfd" instead.
+Xwayland glamor: GBM Wayland interfaces not available
+Failed to initialize glamor, falling back to sw
+The XKEYBOARD keymap compiler (xkbcomp) reports:
+> Warning:          Unsupported maximum keycode 708, clipping.
+>                   X11 cannot support keycodes above 255.
+Errors from xkbcomp are not fatal to the X server
+could not load cursor 'grabbing'
+could not load cursor 'dnd-move'
+could not load cursor 'dnd-copy'
+[19:59:20.282] <5>WSLGd: Run:110: pid 13 terminated with signal 11, /usr/bin/sh -c /usr/bin/weston --backend=rdp-backend.so --modules=wslgd-notify.so --xwayland --socket=wayland-0 --shell=rdprail-shell.so --log=/mnt/wslg/weston.log --logger-scopes=log,rdp-backend,rdprail-shell 
+(EE) failed to read Wayland events: Connection reset by peer
+[19:59:21.059] <5>WSLGd: Run:108: pid 18 exited with status 0, /init /mnt/c/Program Files/WSL/msrdc.exe msrdc.exe /wslg /silent /v:85A98BB9-3C0B-482C-B56C-4EB604F91D23 /hvsocketserviceid:00000001-FACB-11E6-BD58-64006A7986D3 /plugin:WSLDVC_PACKAGE /wslgsharedmemorypath:WSL\85A98BB9-3C0B-482C-B56C-4EB604F91D23\wslg C:\Program Files\WSL\wslg.rdp 
+(WW) Option "-listen" for file descriptors is deprecated
+Please use "-listenfd" instead.
+Xwayland glamor: GBM Wayland interfaces not available
+Failed to initialize glamor, falling back to sw
+The XKEYBOARD keymap compiler (xkbcomp) reports:
+> Warning:          Unsupported maximum keycode 708, clipping.
+>                   X11 cannot support keycodes above 255.
+Errors from xkbcomp are not fatal to the X server
+could not load cursor 'grabbing'
+could not load cursor 'dnd-move'
+could not load cursor 'dnd-copy'
+[20:15:59.467] <5>WSLGd: Run:108: pid 4671 exited with status 0, /init /mnt/c/Program Files/WSL/msrdc.exe msrdc.exe /wslg /silent /v:85A98BB9-3C0B-482C-B56C-4EB604F91D23 /hvsocketserviceid:00000001-FACB-11E6-BD58-64006A7986D3 /plugin:WSLDVC_PACKAGE /wslgsharedmemorypath:WSL\85A98BB9-3C0B-482C-B56C-4EB604F91D23\wslg C:\Program Files\WSL\wslg.rdp 
+Error: debug scope named 'rdp-audio' is already registered.
+Error: debug scope named 'rdp-audio-in' is already registered.
+The XKEYBOARD keymap compiler (xkbcomp) reports:
+> Warning:          Unsupported maximum keycode 708, clipping.
+>                   X11 cannot support keycodes above 255.
+Errors from xkbcomp are not fatal to the X server

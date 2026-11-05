@@ -1,0 +1,22 @@
+[INFO] [1793587514.125162081] [map_server]: 
+	map_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1793587514.125386127] [map_server]: Creating
+[INFO] [1793587514.414524951] [map_server]: Configuring
+[INFO] [1793587514.414636065] [map_io]: Loading yaml file: /home/byeung1/mtr-lidar-starter/nav2_ws/src/vrx_nav2/config/water.yaml
+[INFO] [1793587514.419257649] [map_io]: resolution: 0.25
+[INFO] [1793587514.419296916] [map_io]: origin[0]: -10
+[INFO] [1793587514.419303096] [map_io]: origin[1]: -20
+[INFO] [1793587514.419306500] [map_io]: origin[2]: 0
+[INFO] [1793587514.419310151] [map_io]: free_thresh: 0.196
+[INFO] [1793587514.419314111] [map_io]: occupied_thresh: 0.65
+[INFO] [1793587514.419319143] [map_io]: mode: trinary
+[INFO] [1793587514.419323913] [map_io]: negate: 0
+[INFO] [1793587514.419542892] [map_io]: Loading image_file: /home/byeung1/mtr-lidar-starter/nav2_ws/src/vrx_nav2/config/water.pgm
+[INFO] [1793587514.421009569] [map_io]: Read map /home/byeung1/mtr-lidar-starter/nav2_ws/src/vrx_nav2/config/water.pgm: 200 X 160 map @ 0.25 m/cell
+[INFO] [1793587602.803052096] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1793587602.803200506] [map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[INFO] [1793587602.803347289] [map_server]: Cleaning up
+[INFO] [1793587602.803431509] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[INFO] [1793587602.817994613] [map_server]: Destroying

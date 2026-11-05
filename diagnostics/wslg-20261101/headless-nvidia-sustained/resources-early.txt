@@ -1,0 +1,30 @@
+Mon Nov  2 02:23:06 UTC 2026
+    PID %CPU   RSS     ELAPSED
+  17606  136 2182076     04:07
+  17970 12.7 265668      02:09
+6240f1909000-7ffd4f623000 ---p 00000000 00:00 0                          [rollup]
+Rss:             2182140 kB
+Pss:             2107556 kB
+Pss_Dirty:       1973208 kB
+Pss_Anon:        1973208 kB
+Pss_File:         134348 kB
+Pss_Shmem:             0 kB
+Shared_Clean:     139972 kB
+Shared_Dirty:          0 kB
+Private_Clean:     68960 kB
+Private_Dirty:   1973208 kB
+Referenced:      2182140 kB
+Anonymous:       1973208 kB
+KSM:                   0 kB
+LazyFree:              0 kB
+AnonHugePages:         0 kB
+ShmemPmdMapped:        0 kB
+FilePmdMapped:         0 kB
+Shared_Hugetlb:        0 kB
+Private_Hugetlb:       0 kB
+Swap:                  0 kB
+SwapPss:               0 kB
+Locked:                0 kB
+               total        used        free      shared  buff/cache   available
+Mem:           7.6Gi       3.0Gi       3.4Gi        25Mi       1.5Gi       4.7Gi
+Swap:          2.0Gi       239Mi       1.8Gi

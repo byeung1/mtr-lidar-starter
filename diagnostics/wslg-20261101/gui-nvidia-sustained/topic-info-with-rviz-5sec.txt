@@ -1,0 +1,51 @@
+Type: sensor_msgs/msg/PointCloud2
+
+Publisher count: 1
+
+Node name: ros_gz_bridge
+Node namespace: /
+Topic type: sensor_msgs/msg/PointCloud2
+Topic type hash: RIHS01_9198cabf7da3796ae6fe19c4cb3bdd3525492988c70522628af5daa124bae2b5
+Endpoint type: PUBLISHER
+GID: 01.0f.cc.29.08.3f.df.32.00.00.00.00.00.00.14.03
+QoS profile:
+  Reliability: RELIABLE
+  History (Depth): UNKNOWN
+  Durability: VOLATILE
+  Lifespan: Infinite
+  Deadline: Infinite
+  Liveliness: AUTOMATIC
+  Liveliness lease duration: Infinite
+
+Subscription count: 2
+
+Node name: rviz
+Node namespace: /
+Topic type: sensor_msgs/msg/PointCloud2
+Topic type hash: RIHS01_9198cabf7da3796ae6fe19c4cb3bdd3525492988c70522628af5daa124bae2b5
+Endpoint type: SUBSCRIPTION
+GID: 01.0f.cc.29.14.41.a1.4e.00.00.00.00.00.00.1e.04
+QoS profile:
+  Reliability: BEST_EFFORT
+  History (Depth): UNKNOWN
+  Durability: VOLATILE
+  Lifespan: Infinite
+  Deadline: Infinite
+  Liveliness: AUTOMATIC
+  Liveliness lease duration: Infinite
+
+Node name: vrx_stability_observer
+Node namespace: /
+Topic type: sensor_msgs/msg/PointCloud2
+Topic type hash: RIHS01_9198cabf7da3796ae6fe19c4cb3bdd3525492988c70522628af5daa124bae2b5
+Endpoint type: SUBSCRIPTION
+GID: 01.0f.cc.29.d7.3e.72.9c.00.00.00.00.00.00.13.04
+QoS profile:
+  Reliability: BEST_EFFORT
+  History (Depth): UNKNOWN
+  Durability: VOLATILE
+  Lifespan: Infinite
+  Deadline: Infinite
+  Liveliness: AUTOMATIC
+  Liveliness lease duration: Infinite
+

@@ -1,0 +1,49 @@
+WSL version: 3.0.3.0
+Kernel version: 6.18.54.1-1
+WSLg version: 1.0.79
+MSRDC version: 1.2.7391
+Direct3D version: 1.611.1-81528511
+DXCore version: 10.0.26100.1-240331-1435.ge-release
+Windows version: 10.0.26300.9711
+Sun Nov  1 21:08:39 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 620.67.01              KMD Version: 621.01        CUDA UMD Version: 13.5     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 3050 ...    On  |   00000000:01:00.0 Off |                  N/A |
+| N/A   55C    P0             11W /   60W |       0MiB /   4096MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+xwininfo: Window id: 0x3a7 (the root window) (has no name)
+
+  Root window id: 0x3a7 (the root window) (has no name)
+  Parent window id: 0x0 (none)
+     7 children:
+     0x600001 (has no name): ()  1x1+0+0  +0+0
+        1 child:
+        0xa00002 (has no name): ()  1x1+0+0  +0+0
+     0x202fb7 (has no name): ()  1276x1097+407+-32  +407+-32
+        1 child:
+        0x400012 "Gazebo Sim": ("gz-sim-gui" "Gazebo GUI")  1200x1000+38+59  +445+27
+           1 child:
+           0x800002 (has no name): ()  1x1+0+0  +445+27
+     0x400014 "Gazebo GUI": ()  1x1+0+0  +0+0
+     0x400004 "Qt Selection Owner for gz-sim-gui": ()  3x3+0+0  +0+0
+     0x200027 "Weston WM": ()  10x10+0+0  +0+0
+     0x200002 (has no name): ()  8192x8192+0+0  +0+0
+     0x200001 (has no name): ()  10x10+0+0  +0+0
+
+Service providers [Address, Request Message Type, Response Message Type]:
+  tcp://172.27.186.187:35015, gz.msgs.StringMsg, gz.msgs.Boolean

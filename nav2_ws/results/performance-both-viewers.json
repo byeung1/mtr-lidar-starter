@@ -1,0 +1,72 @@
+{
+  "wall_seconds": 50.00154344300063,
+  "warmup_seconds": 5.0,
+  "processes": [
+    {
+      "command": "gz sim -v 4 -r -s sydney_regatta.sdf",
+      "cpu_ticks": 26573,
+      "rss_kb": 1305152,
+      "cpu_percent": 103.59310290402749
+    },
+    {
+      "command": "/usr/bin/python3 /home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/lib/vrx_nav2/ground_truth --ros-args --params-file /tmp/launch_params_pusyyczo",
+      "cpu_ticks": 6647,
+      "rss_kb": 92652,
+      "cpu_percent": 27.22624995868562
+    },
+    {
+      "command": "/usr/bin/python3 /home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/lib/vrx_nav2/cloud_filter --ros-args --params-file /tmp/launch_params_o87rzpg7",
+      "cpu_ticks": 11090,
+      "rss_kb": 86896,
+      "cpu_percent": 46.00680605263611
+    },
+    {
+      "command": "/usr/bin/python3 /home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/lib/vrx_nav2/thrust_adapter --ros-args --params-file /tmp/launch_params_ncjgun3e",
+      "cpu_ticks": 6743,
+      "rss_kb": 80548,
+      "cpu_percent": 29.070967302825135
+    },
+    {
+      "command": "gz sim -g -v 3",
+      "cpu_ticks": 16852,
+      "rss_kb": 1033484,
+      "cpu_percent": 100.7926886225627
+    },
+    {
+      "command": "rviz2 -d nav2_ws/src/vrx_nav2/config/navigation.rviz --ros-args -p use_sim_time:=true",
+      "cpu_ticks": 5165,
+      "rss_kb": 309928,
+      "cpu_percent": 35.205208109843284
+    }
+  ],
+  "raw": {
+    "messages": 294,
+    "max_wall_gap": 0.7078122120001353,
+    "sim_first": 223.6,
+    "sim_last": 266.9
+  },
+  "filtered": {
+    "messages": 326,
+    "max_wall_gap": 0.6206654430006893,
+    "sim_first": 223.6,
+    "sim_last": 266.9
+  },
+  "real_time_factor": 0.9624232672242714,
+  "safety_latest": {
+    "armed": false,
+    "reason": "disarmed",
+    "left_N": 0.0,
+    "right_N": 0.0,
+    "speed": 0.0003248367729080475,
+    "yaw_rate": 1.542104790395326e-05,
+    "command_v": 0.0,
+    "command_w": 0.0,
+    "last_fault": "",
+    "last_fault_details": {}
+  },
+  "safety_reasons": [
+    "command_timeout",
+    "disarmed",
+    "running"
+  ]
+}

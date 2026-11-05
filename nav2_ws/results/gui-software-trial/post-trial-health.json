@@ -1,0 +1,23 @@
+{
+  "clock": {
+    "messages": 618,
+    "first": 287.404,
+    "last": 289.876
+  },
+  "lidar": {
+    "messages": 17,
+    "first": 287.5,
+    "last": 289.7
+  },
+  "safety": {
+    "armed": true,
+    "reason": "running",
+    "left_N": 2.978055843835719,
+    "right_N": 73.61203798091812,
+    "speed": 0.44594968725082057,
+    "yaw_rate": 0.08229889240300747,
+    "command_v": 0.45,
+    "command_w": 0.08309104194853517,
+    "last_fault": ""
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "wall_seconds": 55.00031280700023,
+  "warmup_seconds": 20.0,
+  "processes": [
+    {
+      "command": "gz sim -v 4 -r -s sydney_regatta.sdf",
+      "cpu_ticks": 9368,
+      "rss_kb": 1030608,
+      "cpu_percent": 126.94421597593038
+    },
+    {
+      "command": "/usr/bin/python3 /home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/lib/vrx_nav2/ground_truth --ros-args --params-file /tmp/launch_params_eoweuh8i",
+      "cpu_ticks": 1250,
+      "rss_kb": 90724,
+      "cpu_percent": 16.889696452448188
+    },
+    {
+      "command": "/usr/bin/python3 /home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/lib/vrx_nav2/cloud_filter --ros-args --params-file /tmp/launch_params_uo_rsa46",
+      "cpu_ticks": 1834,
+      "rss_kb": 85596,
+      "cpu_percent": 25.634615427827455
+    },
+    {
+      "command": "/usr/bin/python3 /home/byeung1/mtr-lidar-starter/nav2_ws/install/vrx_nav2/lib/vrx_nav2/thrust_adapter --ros-args --params-file /tmp/launch_params_phgwo817",
+      "cpu_ticks": 1223,
+      "rss_kb": 80136,
+      "cpu_percent": 16.80396195268957
+    }
+  ],
+  "raw": {
+    "messages": 133,
+    "max_wall_gap": 1.3023226900004374,
+    "sim_first": 18.1,
+    "sim_last": 36.8
+  },
+  "filtered": {
+    "messages": 145,
+    "max_wall_gap": 0.7386036890002288,
+    "sim_first": 18.0,
+    "sim_last": 36.8
+  },
+  "real_time_factor": 0.5396973431080789,
+  "safety_latest": {
+    "armed": false,
+    "reason": "disarmed",
+    "left_N": 0.0,
+    "right_N": 0.0,
+    "speed": -0.0014690247523998956,
+    "yaw_rate": 7.707715740277938e-06,
+    "command_v": 0.0,
+    "command_w": 0.0,
+    "last_fault": "",
+    "last_fault_details": {}
+  },
+  "safety_reasons": [
+    "disarmed"
+  ]
+}
