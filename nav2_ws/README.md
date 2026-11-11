@@ -23,6 +23,62 @@ from about 0.51× to 1.00× real time; the combined Intel Gazebo + NVIDIA RViz t
 ran at about 0.96×. These are bounded tests on this laptop, not a universal rate
 guarantee. See [the performance diagnosis and results](results/PERFORMANCE.md).
 
+## Click a destination directly in Gazebo
+
+The **Boat navigation** panel sends water-surface clicks to Nav2. It uses the
+same planner, LiDAR costmaps and guarded thruster adapter as the waypoint client.
+The boat travels to a fixed clicked destination; it does not continuously follow
+the mouse. Click again to cancel the old goal and request a new destination.
+
+Build the ROS package after pulling these changes. From the repository root,
+source ROS and VRX, then run `colcon build --symlink-install --packages-select vrx_nav2`.
+If using the nested workspace build described above, build there instead.
+Start `navigation.launch.py` as usual (Terminal 1); it now includes the
+`click_goal` bridge. For a simulation that was already running before the update,
+source its install environment and run this in a separate terminal:
+
+```bash
+ros2 run vrx_nav2 click_goal --ros-args -p use_sim_time:=true
+```
+
+Open the new viewer **instead of Terminal 4's viewer**:
+
+```bash
+# From the repository root, in Ubuntu/WSL:
+bash nav2_ws/click_viewer.sh
+```
+
+The script compiles the Gazebo GUI plugin using the installed Gazebo 8 / Qt 5
+development libraries. If development packages are missing, install
+`ros-jazzy-gz-gui-vendor`, `ros-jazzy-gz-rendering-vendor`,
+`ros-jazzy-gz-transport-vendor`, `qtdeclarative5-dev`, `cmake` and `g++`.
+The viewer uses the simpler Ogre renderer on Intel; the sky effect is omitted.
+The existing server retains its original rendering and sensor configuration.
+
+1. Enable **Click to navigate** in the Boat navigation panel.
+2. Left-click water near the boat. Dragging still moves the camera.
+3. Read the destination and navigation result in the panel.
+4. Press **Stop boat** to request cancellation and disarm thrust.
+
+Each new destination requests arming through `/nav/arm`; stale sensors or other
+arming faults are reported in the panel. Arrival and navigation failure disarm
+the boat. Do not send waypoint or RViz goals at the same time as GUI goals.
+Keep the bridge terminal running if it was started separately.
+
+Clicks are camera-ray intersections with mean water level `z=0`, transformed
+using the same default origin as simulation localization: world
+`(-532, 162)`, heading `1` radian. The bridge rejects points outside the static
+water map or on its occupied/unknown cells. Nav2 checks its LiDAR obstacle
+costmaps during planning and control; a blocked destination may fail instead of
+being reachable. Waves, camera projection and the 0.8 m goal tolerance mean
+arrival is approximate. This tool is for this simulated Sydney world only.
+If changing localization's origin parameters, set identical values on
+`click_goal` as well.
+
+Validation: the automated coordinate/navigation suite is under `src/vrx_nav2/test`.
+`test/click_goal_probe.py` is an explicit live smoke test that moves the boat
+four metres, checks arrival, and tests cancellation/disarming.
+
 ## Terminal 1 — simulation and Nav2
 
 Paste:

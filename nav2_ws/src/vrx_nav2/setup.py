@@ -13,4 +13,5 @@ setup(name='vrx_nav2', version='0.1.0', packages=['vrx_nav2'],
           'ground_truth = vrx_nav2.ground_truth:main',
           'cloud_filter = vrx_nav2.cloud_filter:main',
           'thrust_adapter = vrx_nav2.thrust_adapter:main',
-          'waypoints = vrx_nav2.waypoints:main']})
+          'waypoints = vrx_nav2.waypoints:main',
+          'click_goal = vrx_nav2.click_goal:main']})

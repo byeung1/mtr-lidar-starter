@@ -30,6 +30,8 @@ def generate_launch_description():
             overrides['default_nav_through_poses_bt_xml'] = os.path.join(share, 'behavior_trees', 'through_poses.xml')
         actions.append(Node(package=package, executable=name, name=name, output='screen',
             parameters=[params, overrides], remappings=[('cmd_vel', '/nav/cmd_vel')]))
+    actions.append(Node(package='vrx_nav2', executable='click_goal',
+                        parameters=[{'use_sim_time': True}], output='screen'))
     actions.append(Node(package='nav2_lifecycle_manager', executable='lifecycle_manager',
         name='lifecycle_manager_boat', output='screen', parameters=[{
             'use_sim_time': True, 'autostart': True, 'node_names': nodes,
