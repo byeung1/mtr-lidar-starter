@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <!-- Spawn at local-map (12,0), world z=2, yaw=1 using DEMO_README.md. -->
+  <model name="demo_box">
+    <static>true</static>
+    <link name="box">
+      <collision name="collision"><geometry><box><size>2 2 4</size></box></geometry></collision>
+      <visual name="visual">
+        <geometry><box><size>2 2 4</size></box></geometry>
+        <material><ambient>0.9 0.25 0.05 1</ambient><diffuse>0.9 0.25 0.05 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+</sdf>

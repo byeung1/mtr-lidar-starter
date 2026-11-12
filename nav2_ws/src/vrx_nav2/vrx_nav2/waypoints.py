@@ -18,6 +18,7 @@ def main():
         parser.error('Expected one or more finite [x,y,yaw] triples')
     rclpy.init(args=ros_args)
     node = rclpy.create_node('boat_waypoint_client', parameter_overrides=[rclpy.parameter.Parameter('use_sim_time', value=True)])
+    node.get_logger().info('Map goals [x metres, y metres, yaw radians]: '+json.dumps(points))
     action_type = NavigateToPose if len(points) == 1 else FollowWaypoints
     client = ActionClient(node, action_type, '/navigate_to_pose' if len(points) == 1 else '/follow_waypoints')
     if not client.wait_for_server(timeout_sec=30):

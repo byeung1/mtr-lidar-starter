@@ -13,10 +13,12 @@ def generate_launch_description():
     nodes = ['map_server', 'planner_server', 'controller_server', 'bt_navigator', 'waypoint_follower']
     actions = [DeclareLaunchArgument('start_sim', default_value='true'),
                DeclareLaunchArgument('initially_armed', default_value='false'),
+               DeclareLaunchArgument('localization', default_value='gps_imu', choices=['gps_imu', 'ground_truth']),
                DeclareLaunchArgument('camera_rate', default_value='2.0'),
                IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(share, 'launch', 'interfaces.launch.py')),
                    launch_arguments={'start_sim': LaunchConfiguration('start_sim'),
                                      'initially_armed': LaunchConfiguration('initially_armed'),
+                                     'localization': LaunchConfiguration('localization'),
                                      'camera_rate': LaunchConfiguration('camera_rate')}.items())]
     for name in nodes:
         package = {'map_server': 'nav2_map_server', 'planner_server': 'nav2_planner',

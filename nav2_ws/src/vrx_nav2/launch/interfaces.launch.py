@@ -5,7 +5,7 @@ from launch import LaunchDescription
 from launch.actions import (DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable,
                             OpaqueFunction, SetLaunchConfiguration, RegisterEventHandler)
 from launch.event_handlers import OnShutdown
-from launch.conditions import IfCondition
+from launch.conditions import IfCondition, LaunchConfigurationEquals
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
@@ -33,6 +33,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument('start_sim', default_value='true'),
         DeclareLaunchArgument('initially_armed', default_value='false'),
+        DeclareLaunchArgument('localization', default_value='gps_imu', choices=['gps_imu', 'ground_truth']),
         DeclareLaunchArgument('camera_rate', default_value='2.0',
                              description='Camera Hz for this local Nav2 model (LiDAR unchanged); use 30 for stock rate'),
         SetEnvironmentVariable('GALLIUM_DRIVER', 'd3d12'),
@@ -49,7 +50,14 @@ def generate_launch_description():
                         '/world/sydney_regatta/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock'],
              remappings=[(topic, '/lidar/points'), ('/world/sydney_regatta/clock', '/clock')],
              parameters=[{'use_sim_time': True}]),
-        Node(package='vrx_nav2', executable='ground_truth', parameters=[{'use_sim_time': True}], output='screen'),
+        Node(package='vrx_nav2', executable='ground_truth', parameters=[{'use_sim_time': True}], output='screen',
+             condition=LaunchConfigurationEquals('localization', 'ground_truth')),
+        Node(package='vrx_nav2', executable='sensor_localization', parameters=[{'use_sim_time': True}], output='screen',
+             condition=LaunchConfigurationEquals('localization', 'gps_imu')),
+        Node(package='robot_localization', executable='ekf_node', name='sensor_ekf',
+             condition=LaunchConfigurationEquals('localization', 'gps_imu'), output='screen',
+             parameters=[os.path.join(get_package_share_directory('vrx_nav2'), 'config', 'localization.yaml')],
+             remappings=[('odometry/filtered', '/nav/localization/filtered')]),
         Node(package='vrx_nav2', executable='cloud_filter', parameters=[{'use_sim_time': True}], output='screen'),
         Node(package='vrx_nav2', executable='thrust_adapter', output='screen', parameters=[{
             'use_sim_time': True, 'initially_armed': LaunchConfiguration('initially_armed')}]),

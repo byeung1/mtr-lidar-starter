@@ -1,8 +1,18 @@
 # Start VRX, Nav2, waypoints and the viewers
 
+For a terminal-by-terminal demonstration with waypoint missions and reproducible
+obstacle spawn commands, use [DEMO_README.md](demo/DEMO_README.md).
+
 These instructions start from **no running simulation processes**. Use a separate
 Ubuntu/WSL terminal for each numbered section. Every block includes its own
 working directory and environment setup.
+
+Navigation now defaults to **GPS + IMU localization**, using the installed Jazzy
+`robot_localization` extended Kalman filter. GPS supplies position; IMU supplies
+orientation and angular velocity; the filter estimates linear velocity from
+successive positions. LiDAR still supplies obstacles. Accelerometer readings are
+not double-integrated into position. See [localization details](results/LOCALIZATION.md).
+This remains a simulation development baseline, not a physical-boat controller.
 
 After updating the code, rebuild once with all simulations stopped:
 
@@ -36,7 +46,7 @@ If using the nested workspace build described above, build there instead.
 Start `navigation.launch.py` as usual (Terminal 1); it now includes the
 `click_goal` bridge. For a simulation that was already running before the update,
 source its install environment and run this in a separate terminal:
-
+ 
 ```bash
 ros2 run vrx_nav2 click_goal --ros-args -p use_sim_time:=true
 ```
@@ -65,15 +75,16 @@ arming faults are reported in the panel. Arrival and navigation failure disarm
 the boat. Do not send waypoint or RViz goals at the same time as GUI goals.
 Keep the bridge terminal running if it was started separately.
 
-Clicks are camera-ray intersections with mean water level `z=0`, transformed
-using the same default origin as simulation localization: world
-`(-532, 162)`, heading `1` radian. The bridge rejects points outside the static
+Clicks are camera-ray intersections with mean water level `z=0`. The bridge
+aligns the Gazebo world with the current navigation frame using synchronized
+Gazebo boat pose and `/nav/odom`, supporting GPS/IMU and ground-truth localization.
+Gazebo pose translates GUI coordinates only; it does not publish localization
+or TF. The bridge rejects stale alignment and points outside the static
 water map or on its occupied/unknown cells. Nav2 checks its LiDAR obstacle
 costmaps during planning and control; a blocked destination may fail instead of
 being reachable. Waves, camera projection and the 0.8 m goal tolerance mean
 arrival is approximate. This tool is for this simulated Sydney world only.
-If changing localization's origin parameters, set identical values on
-`click_goal` as well.
+The bridge relies on the current identity `map -> odom` convention.
 
 Validation: the automated coordinate/navigation suite is under `src/vrx_nav2/test`.
 `test/click_goal_probe.py` is an explicit live smoke test that moves the boat
@@ -89,7 +100,7 @@ bash nav2_ws/run.sh
 ```
 
 Leave this terminal running. It starts **one headless Sydney Regatta simulation**,
-the LiDAR and simulation-clock bridges, localization/TF, Nav2 and the guarded
+the LiDAR and simulation-clock bridges, GPS/IMU localization/TF, Nav2 and the guarded
 thruster adapter. No separate LiDAR bridge is needed.
 
 Wait for:
@@ -104,6 +115,18 @@ source. All sensors remain present, and the LiDAR configuration is unchanged.
 If you need the original 30 Hz camera feeds, start with
 `bash nav2_ws/run.sh camera_rate:=30.0`; expect higher rendering load.
 Do not also launch `competition.launch.py` or another simulator.
+
+The first accepted GPS fix and IMU heading define the local origin: +X is the
+initial forward heading and +Y is left. Start this mode with a fresh, stationary
+simulation. Restarting localization alone while the boat has moved would redefine
+the waypoint frame. There is no AMCL initial-pose step. A stale GPS or IMU stops
+the navigation pose feed and the thrust watchdog disarms the boat; fresh EKF
+prediction messages cannot bypass this check.
+
+For a reversible comparison with the previous baseline, start Terminal 1 with
+`bash nav2_ws/run.sh localization:=ground_truth`. Never run both localization
+modes together. Existing demonstration obstacle coordinates assume the normal
+fresh spawn; they are approximate relative to the measured GPS/IMU datum.
 
 ## Terminal 2 — arm and send waypoints
 
@@ -133,21 +156,35 @@ After that completes, try two more waypoints:
 ros2 run vrx_nav2 waypoints '[[7,0,0],[10,1,0]]'
 ```
 
-Alternatively, immediately after a fresh simulation start, this is the tested
-short two-waypoint sequence:
+Alternatively, immediately after a fresh simulation start, use this short
+two-waypoint sequence (previously tested with ground truth; GPS/IMU test scope is
+listed in [LOCALIZATION.md](results/LOCALIZATION.md)):
 
 ```bash
 ros2 run vrx_nav2 waypoints '[[4,0,0],[7,0,0]]'
 ```
 
 Run one waypoint command at a time. Each triple is `[x, y, yaw]`, in **metres and
-radians**, relative to the local map origin at the boat's nominal starting pose.
+radians**, relative to the local map origin measured at localization startup.
 +X is its initial forward direction; +Y is left. Coordinates are absolute in this
 local map, not relative to the boat's current position. Start with forward goals.
 
 `status=4`, `error_code=0` means the navigation action succeeded. For multiple
 waypoints, also check `missed_waypoints=[]`. The configured position tolerance is
 0.8 m. The boat can coast after thrust reaches zero.
+
+**Driving to the origin is not a simulation reset.** `[4,0,0]` requests x=4 m,
+y=0 m, yaw=0 rad. `[0,0,4]` requests the origin with yaw=4 rad (about 229 degrees),
+which can require a wide curved approach with this forward-only boat. To obtain
+the original boat pose, zero motion, and a clean obstacle/costmap scene, use the
+stop/restart procedure instead of navigating back.
+
+The November 9 arrival fix uses a 0.25 m/s cruise limit, a shorter 1.25–2.5 m
+velocity-scaled lookahead, earlier path-based approach scaling, and no tracking
+point extrapolation past the goal. Position tolerance (0.8 m) and heading tolerance
+(0.7 rad) are unchanged. One live retest reached `(4,0,0)` successfully after the
+old profile repeatedly missed the goal. See [arrival tests](results/ARRIVAL.md).
+
 
 To inspect the safety gate in this terminal when no waypoint client is running:
 
@@ -232,7 +269,7 @@ The supplied configuration uses `map` as the fixed frame and includes:
 The boat must be armed from Terminal 2 before moving. Use the Nav2 goal tool in
 RViz to select a position and forward heading, or use the waypoint commands in
 Terminal 2. Do not send both at once. No AMCL initial-pose step is needed for this
-simulation ground-truth baseline.
+GPS/IMU baseline.
 
 ## Stop everything
 
@@ -265,8 +302,9 @@ extracted Nav2 dependencies. A successful build ends with `1 package finished`.
 
 ## Understanding slow motion and stops
 
-The boat is intentionally limited to **0.45 m/s** and slows further near a goal.
-At real-time simulation speed that is about one metre every 2.2 seconds. A low
+Nav2 now requests at most **0.25 m/s** and slows further near a goal.
+At real-time simulation speed that is about one metre every four seconds. The
+adapter retains its independent 0.45 m/s hard ceiling. A low
 simulation rate makes this look even slower; the fixes target simulation
 throughput, not a higher boat-speed limit.
 

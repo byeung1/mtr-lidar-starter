@@ -2,7 +2,8 @@
 
 This is a separate ROS workspace and package. It leaves the starter's NumPy
 Processor, Pygame viewer, recordings, and VRX source unchanged. This first version
-uses simulated ground truth, not GNSS localization. It is a development baseline,
+defaults to simulated GPS + IMU localization through a Jazzy robot_localization
+EKF. Ground truth is an explicit fallback (`localization:=ground_truth`). It is a development baseline,
 not a validated autonomous boat controller.
 
 ## Start
@@ -19,7 +20,7 @@ bash nav2_ws/run.sh
 ```
 
 The wrapper launches headless Sydney Regatta, LiDAR and world-clock bridges,
-ground-truth localization, cloud filtering, the thrust adapter, map server,
+GPS/IMU localization, cloud filtering, the thrust adapter, map server,
 planner, controller, navigators and waypoint follower. It starts DISARMED.
 Ctrl+C the wrapper to shut down its process group, including Gazebo descendants.
 
@@ -54,7 +55,7 @@ GALLIUM_DRIVER=d3d12 MESA_D3D12_DEFAULT_ADAPTER_NAME=NVIDIA \
 The configuration includes robot model, TF, filtered LiDAR, map, both costmaps,
 global path, controller's transformed path, lookahead and footprint. Use the
 Nav2 goal tool for a position and forward heading. The Nav2 panel supports queued
-waypoints. No AMCL initial-pose step is needed for this ground-truth baseline.
+waypoints. No AMCL initial-pose step is needed for this GPS/IMU baseline.
 Behind-the-boat goals, sharp headings and final-yaw alignment are deliberately
 limited by forward-only operation; choose achievable forward goals first.
 
@@ -115,7 +116,8 @@ for context. See [performance results](results/PERFORMANCE.md).
 ## Architecture and actual interfaces
 
 ```text
-Gazebo world Pose_V -> sim_ground_truth -> /nav/odom + TF
+GPS + IMU -> local measurement conversion -> sensor EKF -> freshness gate
+                                                         -> /nav/odom + TF
                                                  |
 GPU LiDAR -> /lidar/points -> nav_cloud_filter -> /nav/points
                                                  |
@@ -130,8 +132,12 @@ map prior + obstacle/inflation layers -> Smac Hybrid planner -> RPP controller
 
 The inspected ROS sensor interfaces include
 `/wamv/sensors/gps/gps/fix` (`NavSatFix`) and
-`/wamv/sensors/imu/imu/data` (`Imu`). They are retained but not fused in this
-baseline. VRX's default launch had sensor TF and joint states but no ROS odometry.
+`/wamv/sensors/imu/imu/data` (`Imu`). They are now fused in the default baseline.
+VRX's default launch had sensor TF and joint states but no ROS odometry.
+
+The following describes only the optional ground-truth fallback; the default
+sensor pipeline, datum, safety gate and limitations are documented in
+[LOCALIZATION.md](results/LOCALIZATION.md).
 
 Ground truth subscribes natively to Gazebo
 `/world/sydney_regatta/pose/info` and selects the model named `wamv`. This avoids
@@ -162,9 +168,9 @@ The launch disables VRX's competition-topic bridge and bridges the always-named
 suppressed if another simulator was present at startup, so bridging it blindly
 caused a real zero-clock failure during development. All ROS nodes use sim time.
 
-For a real robot, replace the entire ground-truth node and its TF authorities
-with a validated GNSS/IMU/velocity localization system, including a consistent
-local Cartesian datum and heading. Latitude/longitude waypoint conversion is a
+For a real robot, validate and calibrate the GPS/IMU pipeline, heading source,
+covariances and outage behavior, and provide continuous local odometry where
+required. Do not use the ground-truth fallback. Latitude/longitude waypoint conversion is a
 separate later integration. Do not add AMCL without its map/sensor prerequisites.
 
 ## Costmaps and boat motion assumptions
@@ -194,8 +200,10 @@ x=[-3.1,2.7], y=[-1.4,1.4] m, plus 0.2 m padding. Inflation is 4 m; it is a grad
 cost field, not four metres of guaranteed hard clearance. Smac Hybrid checks the
 full footprint with Dubins forward-only paths and a 4 m minimum turning radius.
 
-Regulated Pure Pursuit follows these paths at at most 0.45 m/s, with long
-lookahead, curvature/cost regulation and collision checking. It has no boat
+Regulated Pure Pursuit now follows these paths at at most 0.25 m/s, with a
+1.25–2.5 m lookahead, curvature/cost regulation and collision checking. The
+November 9 tuning disables endpoint extrapolation and retains the existing
+position/heading goal tolerances; see results/ARRIVAL.md. It has no boat
 hydrodynamic model. The adapter closes a simple surge/yaw velocity loop using
 the inspected drag coefficients, differential thrust, and conservative limits.
 It is not an ideal differential-drive mapping, but it is still an initial

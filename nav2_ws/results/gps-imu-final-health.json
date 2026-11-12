@@ -1,0 +1,75 @@
+{
+  "duration_wall_seconds": 20.00105245299983,
+  "counts": {
+    "safety": 368,
+    "cloud": 19,
+    "odom": 354,
+    "localization": 36
+  },
+  "state": {
+    "safety": {
+      "armed": false,
+      "reason": "disarmed",
+      "left_N": 0.0,
+      "right_N": 0.0,
+      "speed": -0.00048223262265956993,
+      "yaw_rate": -0.009578785433538082,
+      "command_v": 0.0,
+      "command_w": 0.0,
+      "last_fault": "",
+      "last_fault_details": {}
+    },
+    "cloud": {
+      "received": 1072,
+      "processed": 1072,
+      "invalid": 0,
+      "dropped": 0,
+      "pending": 0,
+      "raw_wall_age": 0.161,
+      "processed_wall_age": 0.158,
+      "last_error": ""
+    },
+    "odom": {
+      "x": 3.2751674027186533,
+      "y": 0.19148408021404012,
+      "v": -0.00048223262265956993
+    },
+    "localization": {
+      "source": "gps_imu_ekf",
+      "inputs_fresh": true,
+      "datum_initialized": true,
+      "error": "",
+      "input_wall_ages": {
+        "imu": 0.005362055000659893,
+        "gps": 0.023996146000172303
+      }
+    }
+  },
+  "nodes": [
+    "optical_frame_publisher",
+    "optical_frame_publisher",
+    "optical_frame_publisher",
+    "ros_gz_bridge",
+    "frame_publisher",
+    "robot_state_publisher",
+    "nav_lidar_bridge",
+    "sensor_localization",
+    "sensor_ekf",
+    "transform_listener_impl_5977ae9ba7f0",
+    "nav_cloud_filter",
+    "sim_thrust_adapter",
+    "map_server",
+    "planner_server",
+    "global_costmap",
+    "transform_listener_impl_618d4f782720",
+    "controller_server",
+    "local_costmap",
+    "transform_listener_impl_63e3cec38d90",
+    "bt_navigator",
+    "bt_navigator_navigate_to_pose_rclcpp_node",
+    "bt_navigator_navigate_through_poses_rclcpp_node",
+    "waypoint_follower",
+    "lifecycle_manager_boat",
+    "localization_final_health"
+  ]
+}

@@ -11,6 +11,7 @@ setup(name='vrx_nav2', version='0.1.0', packages=['vrx_nav2'],
       install_requires=['setuptools'], zip_safe=True,
       entry_points={'console_scripts': [
           'ground_truth = vrx_nav2.ground_truth:main',
+          'sensor_localization = vrx_nav2.sensor_localization:main',
           'cloud_filter = vrx_nav2.cloud_filter:main',
           'thrust_adapter = vrx_nav2.thrust_adapter:main',
           'waypoints = vrx_nav2.waypoints:main',
