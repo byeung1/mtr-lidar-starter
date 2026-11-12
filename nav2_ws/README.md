@@ -302,6 +302,28 @@ extracted Nav2 dependencies. A successful build ends with `1 package finished`.
 
 ## Understanding slow motion and stops
 
+The default navigation map is now **200 × 200 m**, covering local x/y from
+`-100` to `100` m, rather than the original x `[-10,40]`, y `[-20,20]` course.
+RViz displays the map; its window and decorative grid do not limit movement.
+The map's occupied outer border and boat-clearance costs still limit navigation
+near ±100 m. This expands the old boundary; it does not provide unlimited travel.
+LiDAR, footprint, inflation and sensor watchdog settings are unchanged. Free map
+cells are an assumed water prior, not proof of clear water or a surveyed shoreline.
+
+Rebuild and restart Terminal 1 to load the new map; an already-running map server
+keeps its old map. Start the clickable Gazebo viewer and RViz as usual. A goal
+such as `[45,0,0]` is now inside the map, but actual reachability still depends on
+obstacles and boat motion. At 0.25 m/s, a 45 m trip takes at least three minutes.
+
+To restore the original small course for a wall-spanning demo, use:
+
+```bash
+cd ~/mtr-lidar-starter
+bash nav2_ws/run.sh map:="$PWD/nav2_ws/src/vrx_nav2/config/water.yaml"
+```
+
+The same `map:=/absolute/path/to/map.yaml` option accepts another prepared map.
+
 Nav2 now requests at most **0.25 m/s** and slows further near a goal.
 At real-time simulation speed that is about one metre every four seconds. The
 adapter retains its independent 0.45 m/s hard ceiling. A low

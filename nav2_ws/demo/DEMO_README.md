@@ -151,6 +151,13 @@ yaw **1 radian**. The measured GPS/IMU datum makes the local placement approxima
 Do not enter `(12,0)` directly as Gazebo world coordinates. Obstacles are static,
 4 m tall and centred at world z=2 m, extending from the water plane to z=4 m.
 
+The default map now covers **200 × 200 m**, from local `-100` to `100` m on
+each axis, so destinations outside the original 50 × 40 m demo grid are allowed.
+RViz is only a viewer. The new map remains finite and its outer border still
+requires boat clearance. Rebuild and restart Terminal 1 after updating to load it;
+the LiDAR layers and safety watchdogs remain active. The map is an assumed water
+prior, so stay in observed water and do not infer a mapped shoreline from it.
+
 The Nav2 cruise limit is **0.25 m/s**, with slower approaches. A long obstacle course
 can take a few minutes. `status=4` and `error_code=0` mean action success; a
 multi-waypoint result should also have `missed_waypoints=[]`. Position tolerance
@@ -236,7 +243,14 @@ cancel/disarm and record the result; obstacle-avoidance acceptance is unfinished
 
 ## Demo C — reject a fully blocked route (experiment)
 
-Reset first. In **Terminal 3**, spawn the red wall:
+Reset first and start **Terminal 1 with the original small-course map**:
+
+```bash
+cd ~/mtr-lidar-starter
+bash nav2_ws/run.sh map:="$PWD/nav2_ws/src/vrx_nav2/config/water.yaml"
+```
+
+Open the viewers normally. In **Terminal 3**, spawn the red wall:
 
 ```bash
 cd ~/mtr-lidar-starter
@@ -248,6 +262,8 @@ ros2 run ros_gz_sim create -world sydney_regatta \
 
 `demo_wall` spans the 40 m local test-course width at x=12. Wait for LiDAR and
 the costmaps to show it. Then use the same Terminal 2 arm/goal block from Demo B.
+With the default larger map, the wall does not span the course and Nav2 may
+route around its ends; that would not be a fully blocked-route test.
 
 Expected safe behavior is refusal to plan or stopping before the wall. An action
 abort (`status=6`) can be the correct outcome here. Confirm the boat does not
@@ -258,6 +274,8 @@ a blocked-route experiment; it is not a command to push through the obstacle.
 
 Run each layout in a **separate fresh simulation**, not together. Both layouts
 use two wall sections at local x=12, with the opening centred on y=0.
+Use Demo C's original-map startup command for both gap layouts; the larger map
+would also permit routes around the wall sections instead of through the gap.
 
 For a **5.5 m wide opening**, paste in **Terminal 3**:
 

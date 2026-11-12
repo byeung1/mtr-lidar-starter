@@ -15,6 +15,8 @@ def generate_launch_description():
                DeclareLaunchArgument('initially_armed', default_value='false'),
                DeclareLaunchArgument('localization', default_value='gps_imu', choices=['gps_imu', 'ground_truth']),
                DeclareLaunchArgument('camera_rate', default_value='2.0'),
+               DeclareLaunchArgument('map', default_value=os.path.join(share, 'config', 'open_water.yaml'),
+                                     description='Water prior YAML; water.yaml restores the original bounded demo course'),
                IncludeLaunchDescription(PythonLaunchDescriptionSource(os.path.join(share, 'launch', 'interfaces.launch.py')),
                    launch_arguments={'start_sim': LaunchConfiguration('start_sim'),
                                      'initially_armed': LaunchConfiguration('initially_armed'),
@@ -26,7 +28,7 @@ def generate_launch_description():
                    'waypoint_follower': 'nav2_waypoint_follower'}[name]
         overrides = {'use_sim_time': True}
         if name == 'map_server':
-            overrides['yaml_filename'] = os.path.join(share, 'config', 'water.yaml')
+            overrides['yaml_filename'] = LaunchConfiguration('map')
         if name == 'bt_navigator':
             overrides['default_nav_to_pose_bt_xml'] = os.path.join(share, 'behavior_trees', 'to_pose.xml')
             overrides['default_nav_through_poses_bt_xml'] = os.path.join(share, 'behavior_trees', 'through_poses.xml')

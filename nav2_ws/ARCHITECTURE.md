@@ -185,10 +185,13 @@ obstacles can be missed; those require a later perception design.**
 Marking and clearing are enabled. Clearing rays end only at finite real returns;
 no synthetic max-range points are invented. Missing returns do not clear space.
 Old marks can therefore persist when the sensor cannot provide contrary evidence.
-Local window: 24 x 24 m, 0.25 m cells. Global map: 50 x 40 m, 0.25 m cells.
+Local rolling window: 24 x 24 m, 0.25 m cells. Default global map:
+200 x 200 m, 0.25 m cells, x/y [-100,100]. Original 50 x 40 m map is selectable
+with `map:=/absolute/path/to/water.yaml` for bounded wall/gap demos.
 Outside the map cannot be planned through; unknown traversal is disabled.
 
-`water.pgm` is an explicit **assumed-navigable bounded-water prior**, with an
+`open_water.pgm` (default) and `water.pgm` (original demo) are explicit
+**assumed-navigable bounded-water priors**, with an
 occupied border. It is not a surveyed map or a LiDAR-generated free-space map,
 and not a map of all Sydney terrain. Its free interior is a supervised test-course
 assumption, not evidence that unobserved water is safe. LiDAR adds obstacles to
