@@ -2,14 +2,17 @@
 import math
 import queue
 import time
+from pathlib import Path
 
 import rclpy
+from ament_index_python.packages import get_package_share_directory
 from rclpy.action import ActionClient
 from rclpy.clock import Clock, ClockType
 from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped
 from nav_msgs.msg import OccupancyGrid, Odometry
-from nav2_msgs.action import NavigateToPose
+from nav_msgs.srv import GetMap
+from nav2_msgs.action import ComputePathToPose, FollowPath, NavigateToPose
 from std_srvs.srv import SetBool
 from rclpy.qos import QoSProfile, DurabilityPolicy
 from gz.transport13 import Node as GzNode
@@ -34,6 +37,7 @@ class ClickGoal(Node):
         self.world_pose = None
         self.gz.subscribe(Pose_V, '/world/sydney_regatta/pose/info', self.on_world_pose)
         self.action = ActionClient(self, NavigateToPose, '/navigate_to_pose')
+        self.tree = str(Path(get_package_share_directory('vrx_nav2')) / 'behavior_trees' / 'click_to_pose.xml')
         self.arm = self.create_client(SetBool, '/nav/arm')
         self.pose = None
         self.pose_wall = -math.inf
@@ -45,6 +49,10 @@ class ClickGoal(Node):
         self.create_subscription(Odometry, '/nav/odom', self.on_pose, 10)
         self.create_subscription(OccupancyGrid, '/map', self.on_map,
                                  QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL))
+        self.map_client = self.create_client(GetMap, '/map_server/map')
+        self.map_request = None
+        self.map_requested_at = 0.
+        self.create_timer(1., self.fetch_map, clock=Clock(clock_type=ClockType.STEADY_TIME))
         self.create_timer(.1, self.tick, clock=Clock(clock_type=ClockType.STEADY_TIME))
         self.create_timer(1., self.publish_status, clock=Clock(clock_type=ClockType.STEADY_TIME))
 
@@ -84,7 +92,29 @@ class ClickGoal(Node):
                 break
 
     def on_map(self, msg):
-        self.grid = msg
+        if (msg.header.frame_id == 'map' and msg.info.resolution > 0 and msg.info.width and msg.info.height
+                and len(msg.data) == msg.info.width * msg.info.height):
+            self.grid = msg
+
+    def fetch_map(self):
+        # Request the active grid if initial transient-local delivery was missed.
+        if self.grid is not None or not self.map_client.service_is_ready():
+            return
+        now = time.monotonic()
+        if self.map_request is not None:
+            if not self.map_request.done():
+                if now-self.map_requested_at < 5.:
+                    return
+                self.map_client.remove_pending_request(self.map_request)
+            else:
+                response = self.map_request.result()
+                if response is not None:
+                    self.on_map(response.map)
+                    if self.grid is not None:
+                        self.get_logger().info('Loaded the water map from the map server service.')
+                        return
+        self.map_requested_at = now
+        self.map_request = self.map_client.call_async(GetMap.Request())
 
     def status(self, text):
         self.text = text
@@ -178,6 +208,7 @@ class ClickGoal(Node):
             self.status('Cannot arm: '+response.message)
             return
         goal = NavigateToPose.Goal()
+        goal.behavior_tree = self.tree
         goal.pose.header.frame_id = 'map'
         goal.pose.header.stamp = self.get_clock().now().to_msg()
         goal.pose.pose.position.x, goal.pose.pose.position.y = x, y
@@ -211,7 +242,16 @@ class ClickGoal(Node):
         if response.status == 4 and response.result.error_code == 0:
             self.status('Arrived. Click another water destination to continue.')
         else:
-            self.status(f'Navigation ended: status={response.status}, {response.result.error_msg}. Boat disarmed.')
+            reasons = {
+                ComputePathToPose.Result.NO_VALID_PATH: 'Nav2 could not find a clear route to the destination.',
+                ComputePathToPose.Result.TIMEOUT: 'Nav2 reached its route search limit.',
+                ComputePathToPose.Result.GOAL_OCCUPIED: 'The destination is blocked by an obstacle.',
+                FollowPath.Result.NO_VALID_CONTROL: 'The controller stopped because it could not follow the path safely.',
+                FollowPath.Result.FAILED_TO_MAKE_PROGRESS: 'The boat could not make progress along the route.',
+            }
+            reason = response.result.error_msg or reasons.get(
+                response.result.error_code, f'Navigation ended (status {response.status}).')
+            self.status(f'{reason} Boat disarmed.')
 
 
 def main():

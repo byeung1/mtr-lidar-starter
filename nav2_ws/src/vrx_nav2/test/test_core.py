@@ -58,9 +58,10 @@ def test_saturation_and_slew():
         previous = current
 
 
-def test_spin_and_reverse_are_rejected():
+def test_pivot_uses_opposing_thrust_and_reverse_is_rejected():
     c = ThrustControl()
-    assert c.step(0, .1, 0, 0, .1) == (0, 0)
+    left, right = c.step(0, .1, 0, 0, .1)
+    assert left < 0 < right
     assert c.step(-.2, 0, 0, 0, .1) == (0, 0)
 
 
@@ -84,6 +85,17 @@ def test_swept_footprint_catches_ahead_not_side_obstacle():
     assert imminent_obstacle(np.array([[4., 0., 1.]]), .45, 0)
     assert not imminent_obstacle(np.array([[4., 3., 1.]]), .45, 0)
     assert not imminent_obstacle(np.empty((0, 3)), .45, 0)
+
+
+def test_high_speed_approach_slows_before_the_braking_horizon_is_blocked():
+    from vrx_nav2.core import obstacle_limited_command
+
+    obstacle = np.array([[7., 0., 1.]])
+    assert obstacle_limited_command(obstacle, .2, (1., 0.)) == (.5, 0.)
+    assert obstacle_limited_command(obstacle, 1., (1., 0.)) is None
+    side_obstacle = np.array([[2., 2., 1.]])
+    assert obstacle_limited_command(side_obstacle, 0., (0., .22)) is None
+    assert obstacle_limited_command(side_obstacle, 0., (0., -.22)) == (0., -.22)
 
 
 def test_cloud_waits_for_clock_without_restamping():

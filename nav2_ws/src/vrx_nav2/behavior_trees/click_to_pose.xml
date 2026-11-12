@@ -1,0 +1,24 @@
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <RecoveryNode number_of_retries="2" name="ReplanAfterStop">
+      <PipelineSequence name="PlanAndFollowClick">
+      <RateController hz="1.0">
+        <Fallback>
+          <ReactiveSequence>
+            <Inverter><GlobalUpdatedGoal/></Inverter>
+            <IsPathValid path="{path}"/>
+          </ReactiveSequence>
+          <ComputePathToPose goal="{goal}" path="{path}" planner_id="ClickGrid"
+                             error_code_id="{compute_path_error_code}"/>
+        </Fallback>
+      </RateController>
+      <FollowPath path="{path}" controller_id="FollowPath" goal_checker_id="click_goal_checker"
+                  error_code_id="{follow_path_error_code}"/>
+      </PipelineSequence>
+      <Delay delay_msec="1500">
+        <ComputePathToPose goal="{goal}" path="{path}" planner_id="ClickGrid"
+                           error_code_id="{compute_path_error_code}"/>
+      </Delay>
+    </RecoveryNode>
+  </BehaviorTree>
+</root>

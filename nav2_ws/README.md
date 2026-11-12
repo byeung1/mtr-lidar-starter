@@ -324,11 +324,12 @@ bash nav2_ws/run.sh map:="$PWD/nav2_ws/src/vrx_nav2/config/water.yaml"
 
 The same `map:=/absolute/path/to/map.yaml` option accepts another prepared map.
 
-Nav2 now requests at most **0.25 m/s** and slows further near a goal.
-At real-time simulation speed that is about one metre every four seconds. The
-adapter retains its independent 0.45 m/s hard ceiling. A low
-simulation rate makes this look even slower; the fixes target simulation
-throughput, not a higher boat-speed limit.
+Nav2 requests up to **1.0 m/s** on clear stretches and slows earlier for turns
+and the final approach. The thrust adapter caps the speed command at 1.0 m/s.
+Gazebo clicks complete within 0.8 m of the destination at any heading.
+Click routes use the Smac 2D planner and allow the boat to pivot toward the
+route. The planner reserves space for the hull to turn, and the thrust adapter
+checks LiDAR returns along the pivot.
 
 Read the gate from Terminal 2:
 

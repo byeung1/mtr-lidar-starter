@@ -12,7 +12,7 @@ from sensor_msgs.msg import PointCloud2
 from sensor_msgs_py import point_cloud2
 from std_msgs.msg import Float64, String
 from std_srvs.srv import SetBool
-from .core import BASE_FRAME, Sample, ThrustControl, imminent_obstacle
+from .core import BASE_FRAME, Sample, ThrustControl, obstacle_limited_command
 
 
 class ThrustAdapter(Node):
@@ -150,14 +150,17 @@ class ThrustAdapter(Node):
         reason = fault or ('disarmed' if not self.armed else '')
         if not reason and now-self.command_wall > 1.0:
             reason = 'command_timeout'
-        if not reason and imminent_obstacle(self.points, max(self.velocity[0], self.command[0]), self.command[1]):
-            reason = 'obstacle_stop'
+        command = None
+        if not reason:
+            command = obstacle_limited_command(self.points, self.velocity[0], self.command)
+            if command is None:
+                reason = 'obstacle_stop'
         dt = 0. if self.previous_sim is None else sim-self.previous_sim
         self.previous_sim = sim
         if reason:
             self.neutral()
         else:
-            self.publish_force(*self.control.step(*self.command, *self.velocity, dt))
+            self.publish_force(*self.control.step(*command, *self.velocity, dt))
         self.reason = reason or 'running'
         self.status.publish(String(data=json.dumps(dict(armed=self.armed, reason=self.reason,
             left_N=self.control.left, right_N=self.control.right,

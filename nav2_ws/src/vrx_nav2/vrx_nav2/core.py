@@ -95,12 +95,21 @@ def filter_points(sensor_xyz, translation, quaternion):
     return sensor_xyz[keep], base[keep]
 
 
-def imminent_obstacle(points, speed, yaw_rate):
+def imminent_obstacle(points, speed, yaw_rate, pivot=False):
     """Conservative swept hull over a braking horizon, using only real returns."""
     points = np.asarray(points)
     if not len(points):
         return False
     speed = max(0., speed)
+    if pivot:
+        # Check the padded hull through the next three seconds of rotation.
+        for angle in np.linspace(0., yaw_rate*3., 12):
+            x = points[:, 0]*math.cos(angle)+points[:, 1]*math.sin(angle)
+            y = -points[:, 0]*math.sin(angle)+points[:, 1]*math.cos(angle)
+            if np.any((x > -3.3) & (x < 2.9) & (np.abs(y) < 1.6)):
+                return True
+        if speed <= .05:
+            return False
     # 2 m minimum forward stopping reserve; no instantaneous-stop assumption.
     distance = max(2., speed*1.5 + speed*speed/(2*.08))
     for distance_along in np.linspace(0., distance, 12):
@@ -115,6 +124,24 @@ def imminent_obstacle(points, speed, yaw_rate):
         if np.any((x > -3.3) & (x < 2.9) & (np.abs(y) < 1.6)):
             return True
     return False
+
+
+def obstacle_limited_command(points, speed, command):
+    """Keep the requested curvature while reducing speed near a blocked braking horizon."""
+    forward, yaw_rate = command
+    if 0. <= forward < .01 and abs(yaw_rate) > .01:
+        if imminent_obstacle(points, abs(speed), yaw_rate, pivot=True):
+            return None
+        return command
+    if not imminent_obstacle(points, max(speed, forward), yaw_rate):
+        return command
+    if imminent_obstacle(points, speed, yaw_rate):
+        return None
+    for scale in (.5, .25):
+        candidate = forward*scale, yaw_rate*scale
+        if not imminent_obstacle(points, max(speed, candidate[0]), candidate[1]):
+            return candidate
+    return None
 
 
 @dataclass
@@ -147,14 +174,18 @@ class ThrustControl:
     def step(self, v_cmd, w_cmd, speed, yaw_rate, dt):
         if not all(math.isfinite(v) for v in (v_cmd, w_cmd, speed, yaw_rate, dt)) or dt < 0:
             return self.zero()
-        # No reverse navigation or in-place spin; negative force is braking only.
-        if v_cmd < 0 or (v_cmd < .01 and abs(w_cmd) > .01):
+        # Opposing thrust can pivot the simulated boat. Translational reverse is disabled.
+        if v_cmd < 0:
             return self.zero()
         if dt == 0:
             return self.left, self.right  # Hold between clock messages; wall watchdog still runs.
-        v_cmd, w_cmd = min(v_cmd, .45), max(-.12, min(.12, w_cmd))
+        turn_limit = .22 if v_cmd < .01 else .12
+        v_cmd, w_cmd = min(v_cmd, 1.), max(-turn_limit, min(turn_limit, w_cmd))
         dt = min(dt, .1)
-        self.target_speed += np.clip(v_cmd-self.target_speed, -.12*dt, .08*dt)
+        if v_cmd < .01:
+            self.target_speed = 0.
+        else:
+            self.target_speed += np.clip(v_cmd-self.target_speed, -.12*dt, .08*dt)
         force = 100*self.target_speed + 150*self.target_speed**2 + 300*(self.target_speed-speed)
         torque = 800*w_cmd + 800*w_cmd*abs(w_cmd) + 700*(w_cmd-yaw_rate)
         desired = np.array([(force-torque/1.027135)/2, (force+torque/1.027135)/2])
