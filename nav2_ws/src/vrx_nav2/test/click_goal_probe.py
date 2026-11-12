@@ -8,21 +8,30 @@ import math
 import time
 import rclpy
 from geometry_msgs.msg import PoseStamped
+from nav_msgs.msg import Odometry
 from std_msgs.msg import String
 from gz.transport13 import Node as GzNode
 from gz.msgs10.vector3d_pb2 import Vector3d
 from gz.msgs10.boolean_pb2 import Boolean
 from gz.msgs10.stringmsg_pb2 import StringMsg
+from gz.msgs10.pose_v_pb2 import Pose_V
+from vrx_nav2.core import quat_yaw
 
 
 def main():
     rclpy.init()
     node = rclpy.create_node('click_goal_probe')
-    poses, safety, statuses = [], [], []
-    node.create_subscription(PoseStamped, '/nav/ground_truth', lambda m: poses.append(m), 10)
+    poses, safety, statuses, worlds = [], [], [], []
+    node.create_subscription(Odometry, '/nav/odom', lambda m: poses.append(m), 10)
     node.create_subscription(String, '/nav/safety_status', lambda m: safety.append(json.loads(m.data)), 10)
     gz = GzNode()
     gz.subscribe(StringMsg, '/nav/click_goal/status', lambda m: statuses.append(m.data))
+    def world_pose(msg):
+        for pose in msg.pose:
+            if pose.name == 'wamv':
+                worlds.append(pose)
+                break
+    gz.subscribe(Pose_V, '/world/sydney_regatta/pose/info', world_pose)
     goals = gz.advertise('/nav/click_goal/world', Vector3d)
     stop = gz.advertise('/nav/click_goal/stop', Boolean)
 
@@ -35,20 +44,23 @@ def main():
         raise AssertionError(f'Timed out. Last status: {statuses[-3:]}')
 
     try:
-        until(lambda: poses and safety and statuses, 15)
+        until(lambda: poses and safety and statuses and worlds, 20)
         goals.publish(Vector3d(x=0., y=0., z=0.))
         until(lambda: 'outside navigable water' in statuses[-1], 5)
         print('PASS: out-of-map click rejected', flush=True)
-        p = poses[-1].pose
+        p = poses[-1].pose.pose
         yaw = 2*math.atan2(p.orientation.z, p.orientation.w)
         x, y = p.position.x+4*math.cos(yaw), p.position.y+4*math.sin(yaw)
-        c, s = math.cos(1.), math.sin(1.)
-        world = Vector3d(x=-532+c*x-s*y, y=162+s*x+c*y, z=0.)
+        wp = worlds[-1]
+        q = wp.orientation
+        world_yaw = quat_yaw((q.x, q.y, q.z, q.w))
+        c, s = math.cos(world_yaw), math.sin(world_yaw)
+        world = Vector3d(x=wp.position.x+4*c, y=wp.position.y+4*s, z=0.)
         goals.publish(world)
         until(lambda: statuses[-1].startswith('Navigating'), 10)
         print(f'Navigating to {x:.2f}, {y:.2f}', flush=True)
         until(lambda: statuses[-1].startswith('Arrived'), 75)
-        p = poses[-1].pose.position
+        p = poses[-1].pose.pose.position
         error = math.hypot(p.x-x, p.y-y)
         assert error < 1., error
         print(f'PASS: reached goal, error {error:.3f} m', flush=True)

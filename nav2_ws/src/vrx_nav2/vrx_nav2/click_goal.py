@@ -8,7 +8,7 @@ from rclpy.action import ActionClient
 from rclpy.clock import Clock, ClockType
 from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped
-from nav_msgs.msg import OccupancyGrid
+from nav_msgs.msg import OccupancyGrid, Odometry
 from nav2_msgs.action import NavigateToPose
 from std_srvs.srv import SetBool
 from rclpy.qos import QoSProfile, DurabilityPolicy
@@ -16,21 +16,23 @@ from gz.transport13 import Node as GzNode
 from gz.msgs10.vector3d_pb2 import Vector3d
 from gz.msgs10.boolean_pb2 import Boolean
 from gz.msgs10.stringmsg_pb2 import StringMsg
+from gz.msgs10.pose_v_pb2 import Pose_V
 
-from .click_geometry import world_to_map
+from .click_geometry import aligned_world_to_map
+from .core import quat_yaw, BASE_FRAME
 
 
 class ClickGoal(Node):
     def __init__(self):
         super().__init__('gazebo_click_goal')
-        for key, value in [('origin_x', -532.), ('origin_y', 162.), ('origin_yaw', 1.)]:
-            self.declare_parameter(key, value)
-        self.origin = [self.get_parameter(k).value for k in ('origin_x', 'origin_y', 'origin_yaw')]
         self.events = queue.Queue(maxsize=16)
         self.gz = GzNode()
         self.status_pub = self.gz.advertise('/nav/click_goal/status', StringMsg)
         self.gz.subscribe(Vector3d, '/nav/click_goal/world', self.on_click)
         self.gz.subscribe(Boolean, '/nav/click_goal/stop', self.on_stop)
+        # GUI-coordinate alignment only: never publishes navigation pose/TF.
+        self.world_pose = None
+        self.gz.subscribe(Pose_V, '/world/sydney_regatta/pose/info', self.on_world_pose)
         self.action = ActionClient(self, NavigateToPose, '/navigate_to_pose')
         self.arm = self.create_client(SetBool, '/nav/arm')
         self.pose = None
@@ -40,7 +42,7 @@ class ClickGoal(Node):
         self.busy = False
         self.generation = 0
         self.text = 'Ready: enable Click to navigate, then click the water.'
-        self.create_subscription(PoseStamped, '/nav/ground_truth', self.on_pose, 10)
+        self.create_subscription(Odometry, '/nav/odom', self.on_pose, 10)
         self.create_subscription(OccupancyGrid, '/map', self.on_map,
                                  QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL))
         self.create_timer(.1, self.tick, clock=Clock(clock_type=ClockType.STEADY_TIME))
@@ -66,7 +68,20 @@ class ClickGoal(Node):
             self.put(('stop', None))
 
     def on_pose(self, msg):
-        self.pose, self.pose_wall = msg, time.monotonic()
+        if msg.header.frame_id != 'odom' or msg.child_frame_id != BASE_FRAME:
+            return
+        pose = PoseStamped()
+        pose.header, pose.pose = msg.header, msg.pose.pose
+        self.pose, self.pose_wall = pose, time.monotonic()
+
+    def on_world_pose(self, msg):
+        for pose in msg.pose:
+            if pose.name == 'wamv':
+                q = pose.orientation
+                self.world_pose = (msg.header.stamp.sec+msg.header.stamp.nsec*1e-9,
+                                   time.monotonic(), (pose.position.x, pose.position.y,
+                                   quat_yaw((q.x, q.y, q.z, q.w))))
+                break
 
     def on_map(self, msg):
         self.grid = msg
@@ -97,13 +112,22 @@ class ClickGoal(Node):
         if self.busy:
             self.status('Waiting for Nav2 response. Click again in a moment, or Stop.')
             return
-        try:
-            x, y = world_to_map(*value, *self.origin)
-        except ValueError as error:
-            self.status(str(error))
-            return
         if not self.pose or time.monotonic()-self.pose_wall > 2.:
             self.status('Cannot navigate: fresh boat position unavailable.')
+            return
+        stamp = self.pose.header.stamp.sec+self.pose.header.stamp.nanosec*1e-9
+        now = self.get_clock().now().nanoseconds*1e-9
+        world = self.world_pose
+        if (world is None or time.monotonic()-world[1] > 1.
+                or abs(stamp-world[0]) > .15 or not -.1 <= now-stamp <= .8):
+            self.status('Cannot navigate: fresh synchronized GUI/boat alignment unavailable.')
+            return
+        p, q = self.pose.pose.position, self.pose.pose.orientation
+        try:
+            x, y = aligned_world_to_map(*value, world[2],
+                                       (p.x, p.y, quat_yaw((q.x, q.y, q.z, q.w))))
+        except ValueError as error:
+            self.status(str(error))
             return
         if self.grid is None or self.grid.header.frame_id != 'map':
             self.status('Cannot navigate: water map unavailable.')
